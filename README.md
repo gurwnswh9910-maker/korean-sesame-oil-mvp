@@ -19,8 +19,10 @@
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 - Public validation form: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
+- Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
 
 GitHub Issue Form은 공개 검증 신호만 받는다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
+GitHub 로그인이 필요한 경로이므로, 일반 소비자 대상 게시에서는 Google Forms 또는 Tally로 마찰을 낮추는 후속 개선이 필요하다.
 
 ## 실행 원칙
 

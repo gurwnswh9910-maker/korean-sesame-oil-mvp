@@ -1,0 +1,5 @@
+checked_at,artifact,check,result,evidence,next_action
+2026-06-27T16:40:00+09:00,GitHub Pages,landing HTTP check,pass,"200 OK; title=韓国市場のしぼりたてごま油; CTA present; hero asset present; no FORM_URL placeholder","Drive real traffic from posting_copy.md"
+2026-06-27T16:40:00+09:00,GitHub Issue Form,waitlist form availability,partial,"Issue template exists; unauthenticated users are redirected to GitHub login","Use as public GitHub-native signal; switch to Google Form/Tally for lower-friction consumer traffic"
+2026-06-27T16:40:00+09:00,GitHub Issue,validation tracker,pass,"Issue #1 open with mvp-validation label","Record daily channel metrics and customer replies"
+
