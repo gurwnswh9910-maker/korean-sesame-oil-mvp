@@ -19,6 +19,7 @@
 - 외부 게시나 계정 작업은 게시 URL, 계정/채널, 시각, 권한 근거, 원문 파일, 설정값, 다음 측정 시각을 남긴다.
 - 소비자-facing 링크는 기본적으로 Vercel clean URL을 사용한다.
 - 제품 외 콘텐츠로 타겟을 검증할 때는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`를 사용하고, `content_travel`, `content_shinokubo`, `content_homecook` source를 분리한다.
+- 신오쿠보/한국식품점 대체재 전환 검증은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`를 사용한다. 이 검증은 `신오쿠보를 좋아한다`가 아니라 구매처, 브랜드/店名, 용량·가격, 향 보존 불만, 제조일/강한 향/100ml小瓶/구입 편의 전환 조건이 있는 응답을 강한 신호로 센다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
@@ -30,6 +31,7 @@
 
 - Vercel landing: `https://korean-sesame-oil-mvp.vercel.app/`
 - Vercel content MVP: `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`
+- Vercel Shin-Okubo content MVP: `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`
 - Vercel article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Vercel answer memo: `https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood`
 - Vercel note/mobile answer entry: `https://korean-sesame-oil-mvp.vercel.app/answer-note`

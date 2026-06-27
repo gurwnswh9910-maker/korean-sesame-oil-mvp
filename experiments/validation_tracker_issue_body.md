@@ -8,6 +8,7 @@
 - Short note/mobile answer: https://korean-sesame-oil-mvp.vercel.app/answer-note
 - Structured quick answer: https://korean-sesame-oil-mvp.vercel.app/quick-answer
 - Product-external content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
+- Shin-Okubo substitute-check content MVP: https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
@@ -37,6 +38,7 @@
 - `/answer-note` mobile answer hub: changed from Notion direct redirect to a Vercel page with note comment, Notion form, copyable memo, and detail-page choices to reduce mobile dropoff
 - `/quick-answer` structured answer composer: added to turn multi-question choices into a single Notion-compatible `Submission`, reducing friction from the 1-line Notion form while preserving purchase-context fields
 - Product-external content MVP: `/korea-trip-goma` added to test target density through Korea travel/Shin-Okubo/home-cooking content before asking direct purchase intent
+- Shin-Okubo substitute-check MVP: `/shinokubo-goma` added to test whether people who already buy or browse Korean sesame oil in Shin-Okubo/Korean supermarkets have a switching reason around store/brand, volume/price, aroma retention, manufacturing date, 100ml small bottle, or repurchase convenience
 - Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, usage dish, aroma-retention experience, and a switching condition or complaint
 - `/answer-note` deployment check: first rewrite-only deploy returned 404, fixed by adding `docs/answer-note.html`; final production uses file-based clean URL without the underscore duplicate/rewrite, returns 200 with title `30秒回答 | 韓国式しぼりたてごま油`, no redirect, and mobile/desktop Playwright overflow count 0
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
@@ -49,6 +51,7 @@
 - Automation: `.github/workflows/summarize-waitlist.yml` runs daily, on waitlist issues, manually, and on push to response input CSVs/channel log to refresh validation summaries
 - Latest deploy: 2026-06-28T00:08+09:00 added `/quick-answer`; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/ASmFY1pCzn4aNWcheknGJiEBkPvz`; browser mobile390 verified source propagation, note route mapping, memo generation, overflow count 0
 - 2026-06-28T00:32+09:00 update: `/korea-trip-goma?src=note_content_travel` now has a first-screen `/quick-answer` CTA; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/FojaxfiyMfUzn9YorE2KJxJMajsR`; latest response recheck still found 0 real responses
+- 2026-06-28T00:52+09:00 update: `/shinokubo-goma` deployed to production; inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/52yWZmVCXTND4DUhzsro8VbMyWgc`; HTTP and mobile390 browser checks passed; note posting packet prepared but live note status is `ready_not_published` because previous Edge CDP direct note edit was unstable; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 
 ## 성공 기준
 

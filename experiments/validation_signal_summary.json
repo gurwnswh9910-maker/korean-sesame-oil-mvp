@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T15:34:42+00:00",
+  "generated_at": "2026-06-28T00:53:46+09:00",
   "verdict": "insufficient_external_evidence",
   "reasons": [
     "External response threshold has not been met."
@@ -24,9 +24,9 @@
     "bundle_price_positive": 0
   },
   "channel_status": {
-    "rows": 10,
-    "posted_yes": 6,
-    "ready_or_pending": 6,
+    "rows": 12,
+    "posted_yes": 7,
+    "ready_or_pending": 8,
     "held_or_excluded": 3
   }
 }
