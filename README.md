@@ -14,6 +14,7 @@
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
+- `mvp/note_article.html`: GitHub Pages에 직접 배포하는 note형 공개 설명 기사
 - `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
 - `mvp/field_interview_script.md`: 오프라인 10명 인터뷰 스크립트
 - `mvp/runbook_first_traffic.md`: 첫 외부 트래픽 실행 런북
@@ -38,6 +39,7 @@
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 - Share note: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html
+- Public article: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
 - Field interview QR: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html
 - Printable flyer PDF: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview_flyer.pdf
 - Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98

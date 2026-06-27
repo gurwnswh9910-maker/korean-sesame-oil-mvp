@@ -6,6 +6,7 @@
 
 - Landing: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/`
 - Share note: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html`
+- Public article: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html`
 - Field QR page: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html`
 - Printable flyer: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview_flyer.pdf`
 - Primary form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
@@ -20,7 +21,7 @@
 
 게시 source: `note_kfood`
 
-`mvp/note_article_draft.md`를 사용한다. 게시 후 `experiments/channel_posting_log.csv`의 `note kfood` 행에 게시 URL을 기록한다.
+`mvp/note_article_draft.md`를 사용한다. 현재 브라우저는 note에 로그인되어 있지 않으므로, 실제 note 계정 게시 전에는 로그인/게시 권한 확인이 필요하다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
 
 ### 2. X/Threads 짧은 게시 1개
 
@@ -69,6 +70,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 
 - 온라인 게시 후 `experiments/channel_posting_log.csv`의 `posted`, `post_url`, `visits`, `form_submits`, `replies`를 업데이트한다.
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
+- GitHub Pages article은 `article_github` source로 Notion/GitHub 응답을 기록한다.
 - 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.
 - Notion 응답은 Notion UI/export로 확인한다.
 - GitHub fallback 응답은 `experiments/waitlist_summary.md` 또는 GitHub Issues에서 확인한다.

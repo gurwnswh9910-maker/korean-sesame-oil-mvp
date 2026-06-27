@@ -23,6 +23,10 @@
 
 https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=note_kfood
 
+ログイン前に共有する場合はこちらの説明ページも使えます。
+
+https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
+
 特に知りたいのはこの3つです。
 
 1. 最近6か月以内にごま油を買ったか

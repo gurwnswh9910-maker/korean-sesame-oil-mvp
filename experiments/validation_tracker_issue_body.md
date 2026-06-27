@@ -6,6 +6,7 @@
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
+- Public article: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -24,6 +25,7 @@
 - Field interview update: 신오쿠보/한국식품점에서 이미 한국식 참기름을 봤거나 산 적이 있는지 묻고, 있으면 제조일/향 보존/소량/재구매 편의가 전환 이유인지 확인
 - Channel rules gate: `mvp/channel_rules_and_permission_gate.md`; first account-side post should be note, X/Threads only one manual follow-up post, Konest held for rule check, Tunagate excluded for platform posting
 - First note draft: `mvp/note_article_draft.md`
+- GitHub Pages article: `mvp/note_article.html` / `docs/note_article.html`; source `article_github`
 
 ## 성공 기준
 

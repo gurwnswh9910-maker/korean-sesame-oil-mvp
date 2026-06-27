@@ -13,10 +13,10 @@
 |---|---|---|---|
 | 리서치로 먼저 1차 가설 검증 | 완료 | `research/01_research_brief.md`에 일본 가정용 참기름 시장, 生使い, 한국 참기름 수출/관광객 신호, 경쟁 구도, 규제 리스크 정리 | 충족 |
 | 2차 핵심가설 수립 | 완료 | `research/01_research_brief.md`의 H1 향 재현, H2 첫 고객 세그먼트, H3 규제/비용 리스크, H4 대체재 인지 가설 | 충족 |
-| MVP 제작 | 완료 | `mvp/index.html`, `mvp/share_note.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
+| MVP 제작 | 완료 | `mvp/index.html`, `mvp/share_note.html`, `mvp/note_article.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
 | MVP 게시 | 완료 | GitHub Pages live: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/` | 충족 |
 | 검증 경로 구축 | 완료 | Notion 1줄 응답 form, GitHub Issue fallback, source tracking, QR flyer, `experiments/channel_posting_log.csv`, `experiments/field_interview_log.csv` | 충족 |
-| 실제 외부 반응 검증 | 미완료 | 2026-06-27T18:50+09:00 기준 GitHub waitlist issue list = `[]`; Notion response count는 UI/export 확인 필요; 외부 계정 게시는 `mvp/channel_rules_and_permission_gate.md` 권한 확인 전이라 미실행 | 미충족 |
+| 실제 외부 반응 검증 | 미완료 | 2026-06-27T19:00+09:00 기준 GitHub waitlist issue list = `[]`; Notion response count는 UI/export 확인 필요; note 브라우저는 미로그인이라 계정 게시 미실행; 대신 GitHub Pages article 공개 URL 추가 | 미충족 |
 | 사업 관련 GitHub skill/plugin 활용 | 완료 | GitHub startup pressure-test skill을 검토하고 behavior-over-compliments 기준으로 수요 행동 신호 중심 설계 반영 | 충족 |
 | 판매 전 규제/비용 gate | 완료 | `research/02_import_label_unit_economics_gate.md`, `experiments/unit_economics_template.csv` | 충족 |
 
@@ -37,7 +37,8 @@
 
 1. `mvp/channel_rules_and_permission_gate.md` 기준으로 외부 계정 게시 권한을 확인한다
 2. note에 `mvp/note_article_draft.md`를 게시하고 `src=note_kfood` 반응을 24h/72h 기록한다
-3. note 반응이 0이면 X/Threads에 `x_threads_travel` 짧은 글 1개만 게시한다
-4. 신오쿠보/한국식품점/한국요리 모임에서는 `field_interview_flyer.pdf`를 인쇄하거나 `field_interview.html` QR을 보여주고, 이미 한국식 참기름 대체재를 본 적이 있는지 묻는다
-5. 반응은 `experiments/channel_posting_log.csv`와 `experiments/field_interview_log.csv`에 기록
-6. 10명 또는 30응답 중 먼저 도달하는 지점에서 Go/Pivot/Stop 판정
+3. note 계정 게시 전까지는 `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html`를 공개 설명형 URL로 공유한다
+4. note 반응이 0이면 X/Threads에 `x_threads_travel` 짧은 글 1개만 게시한다
+5. 신오쿠보/한국식품점/한국요리 모임에서는 `field_interview_flyer.pdf`를 인쇄하거나 `field_interview.html` QR을 보여주고, 이미 한국식 참기름 대체재를 본 적이 있는지 묻는다
+6. 반응은 `experiments/channel_posting_log.csv`와 `experiments/field_interview_log.csv`에 기록
+7. 10명 또는 30응답 중 먼저 도달하는 지점에서 Go/Pivot/Stop 판정
