@@ -16,6 +16,7 @@
 - note content post: https://note.com/dreamy_viola8978/n/n3f3af286cf6d
 - note Shin-Okubo post: https://note.com/dreamy_viola8978/n/n700b325ba824
 - note home-cooking post: https://note.com/dreamy_viola8978/n/n08bad3dce2a9
+- note rice-bowl/TKG post: https://note.com/dreamy_viola8978/n/nbb21605544ca
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -50,6 +51,7 @@
 - note account-side posting: live and mobile-first; public note has no GitHub Pages links, auto translation off, AI training compensation off, comments on, and tags `#韓国旅行 #韓国料理 #新大久保 #ごま油 #おうち韓国`
 - note Shin-Okubo posting: published 2026-06-28T01:04:46+09:00 at `https://note.com/dreamy_viola8978/n/n700b325ba824`; source `note_content_shinokubo`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#韓国料理 #新大久保 #ごま油 #韓国食品 #おうち韓国`
 - note home-cooking posting: published 2026-06-28T01:49:44+09:00 at `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`; source `note_content_homecook`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#韓国料理 #ビビンバ #ナムル #ごま油 #おうち韓国`
+- note rice-bowl/TKG posting: published 2026-06-28T02:20:24+09:00 at `https://note.com/dreamy_viola8978/n/nbb21605544ca`; source `note_content_homecook_ricebowl`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#卵かけご飯 #韓国海苔 #ごま油 #おうちごはん #韓国料理`
 - note dashboard precheck: 2026-06-27T22:30+09:00 dashboard shows 0 views / 0 comments / 0 スキ, but latest aggregation is 2026-06-27 21:45, before the 21:46 publish time, so this is not counted as post-publish zero response
 - current response check: GitHub waitlist label issues `[]`, local public/social and field files have no real rows, Notion export absent, Notion data-source search found no response rows, and exact `/answer-note` URL web search found no public response/share
 - 24h follow-up automation: Codex heartbeat `note-24h` scheduled for 2026-06-28T21:50+09:00
@@ -60,6 +62,8 @@
 - 2026-06-28T01:05+09:00 update: `/shinokubo-goma` deployed and note Shin-Okubo post published at `https://note.com/dreamy_viola8978/n/n700b325ba824`; public HTTP/API checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 - 2026-06-28T01:55+09:00 update: `/homecook-goma` deployed/refined with Korean seaweed rice/TKG sub-wedge and note home-cooking post published at `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`; public HTTP/API/browser checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 - 2026-06-28T02:12+09:00 update: note dashboard/API early check shows 5 total views, 0 comments, 0 likes, 0 waitlist issues, and no Notion submission rows found via available search. `/answer-note` and `/quick-answer` note comment routing now sends `note_content_travel` to note 2, `note_content_shinokubo` to note 3, and `note_content_homecook` to note 4; `/homecook-goma?src=note_content_homecook` now shows a note comment CTA.
+- 2026-06-28T02:20+09:00 update: note rice-bowl/TKG post published at `https://note.com/dreamy_viola8978/n/nbb21605544ca` with source `note_content_homecook_ricebowl`; this tests lighter daily scenes such as Korean seaweed rice and TKG before counting any demand evidence.
+- 2026-06-28T02:27+09:00 update: rice-bowl/TKG source routing corrected and redeployed; `/quick-answer`, `/answer-note`, and `/homecook-goma` with `src=note_content_homecook_ricebowl` all send the note comment CTA back to note 5 `https://note.com/dreamy_viola8978/n/nbb21605544ca`; real response count remains 0.
 
 ## 성공 기준
 

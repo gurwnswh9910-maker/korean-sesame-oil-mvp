@@ -258,8 +258,10 @@
       if (answerLink) answerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (heroAnswerLink) heroAnswerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
-      if (noteCommentLink && source === "note_content_homecook") {
-        noteCommentLink.href = "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
+      if (noteCommentLink && source.indexOf("note_content_homecook") === 0) {
+        noteCommentLink.href = source.indexOf("note_content_homecook_ricebowl") === 0
+          ? "https://note.com/dreamy_viola8978/n/nbb21605544ca"
+          : "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
         noteCommentLink.classList.remove("is-hidden");
       }
       var copyButton = document.getElementById("copy-template");
