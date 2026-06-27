@@ -1,0 +1,3 @@
+date,channel,post_url,message_variant,visits,cta_clicks,form_submits,reply_count,interviews_done,price_accepted_count,sample_purchase_requests,notes
+2026-06-27,example,{POST_URL},travel_memory,0,0,0,0,0,0,0,"폼 URL 교체 후 기록 시작"
+

@@ -1,0 +1,72 @@
+name: 入荷案内・検証協力
+description: 韓国式しぼりたてごま油の入荷検証に協力する
+title: "[入荷案内] "
+labels:
+  - waitlist
+  - mvp-validation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        これは正式販売前の需要検証フォームです。
+        公開Issueとして投稿されるため、メールアドレス、住所、電話番号などの個人情報は書かないでください。
+  - type: dropdown
+    id: experience
+    attributes:
+      label: 韓国旅行や韓国料理店で、印象に残ったごま油の香りはありますか
+      options:
+        - ある
+        - ない
+        - 覚えていない
+    validations:
+      required: true
+  - type: input
+    id: recent_purchase
+    attributes:
+      label: 最近6か月以内に買ったごま油のブランド/購入場所
+      placeholder: 例：かどや、スーパー / 韓国食品店 / 新大久保 / 韓国旅行中など
+    validations:
+      required: true
+  - type: checkboxes
+    id: dishes
+    attributes:
+      label: 主に使いたい料理
+      options:
+        - label: ビビンバ
+        - label: ナムル
+        - label: キンパ
+        - label: 卵かけご飯
+        - label: ラーメン
+        - label: 冷奴
+        - label: 焼肉
+        - label: その他
+    validations:
+      required: true
+  - type: dropdown
+    id: single_price
+    attributes:
+      label: 100ml 1,480円なら入荷案内を受け取りたいですか
+      options:
+        - はい
+        - 迷う
+        - いいえ
+    validations:
+      required: true
+  - type: dropdown
+    id: bundle_price
+    attributes:
+      label: 3本 3,980円なら誰かと分けたいですか
+      options:
+        - はい
+        - 迷う
+        - いいえ
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: 価格・容量・香りについてのコメント
+      placeholder: 個人情報は書かず、使いたい料理や価格感だけ教えてください。
+    validations:
+      required: false
+

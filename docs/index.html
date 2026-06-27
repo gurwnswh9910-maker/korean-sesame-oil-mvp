@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韓国市場のしぼりたてごま油</title>
+  <meta name="description" content="韓国の市場で出会う、しぼりたてごま油の香りを少量ボトルで。正式販売前の入荷案内ページです。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #231f20;
+      --muted: #6e6258;
+      --line: #ded3c4;
+      --paper: #fffaf2;
+      --cream: #f4eadb;
+      --red: #b5352f;
+      --green: #26715c;
+      --gold: #c5892b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      padding: 48px 20px 64px;
+      background:
+        linear-gradient(90deg, rgba(22,18,16,0.88) 0%, rgba(22,18,16,0.68) 42%, rgba(22,18,16,0.16) 100%),
+        url("assets/hero-sesame-oil.png") center / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-inner,
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      color: #ffe7bb;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.3rem, 8vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 24px 0 0;
+      font-size: clamp(1.05rem, 2.3vw, 1.45rem);
+      color: #fff4df;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--ink);
+      background: #ffe0a3;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,0.55);
+      color: var(--white);
+    }
+
+    section {
+      padding: 64px 20px;
+    }
+
+    .band {
+      background: var(--cream);
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.55rem, 4vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--red);
+      font-size: 1.02rem;
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .price {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .price .yen {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--green);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      border-top: 3px solid var(--gold);
+      padding-top: 14px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .notice {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fffdf8;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 30px 20px 48px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: 86vh;
+        background-position: 58% center;
+      }
+
+      h1 {
+        max-width: 330px;
+        font-size: 2rem;
+        line-height: 1.12;
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+      }
+
+      .grid,
+      .price-row,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">正式販売前の入荷案内</p>
+        <h1>韓国市場の<br>しぼりたてごま油を、<br>日本の食卓へ。</h1>
+        <p class="hero-copy">ふたを開けた瞬間に広がる、あの香ばしさ。ビビンバ、ナムル、卵かけご飯、ラーメンの仕上げに使うための少量ボトルを検証中です。</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+          <a class="button secondary" href="#price">価格を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2>スーパーのごま油ではなく、韓国旅行で覚えた香り。</h2>
+        <p class="lead">このMVPは、正式な販売ページではありません。日本で韓国式の香りが強いごま油を少量入荷した場合、本当に使いたい人がいるかを確認するための案内ページです。</p>
+        <div class="grid">
+          <div class="item">
+            <strong>香り重視</strong>
+            炒め油ではなく、仕上げに一滴たらして香りを立たせる使い方を想定しています。
+          </div>
+          <div class="item">
+            <strong>少量ボトル</strong>
+            開封後に香りが落ちる前に使い切りやすい100mlサイズから検証します。
+          </div>
+          <div class="item">
+            <strong>K-food向け</strong>
+            ビビンバ、ナムル、キンパ、冷奴、卵かけご飯、ラーメンに合わせます。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price" class="band">
+      <div class="section-inner">
+        <h2>まずはこの価格で反応を見ています。</h2>
+        <p class="lead">価格は輸入・表示・配送条件の確認前の検証用です。正式販売時には変更される可能性があります。</p>
+        <div class="price-row">
+          <div class="price">
+            <p>お試し小瓶</p>
+            <div class="yen">100ml 1,480円</div>
+            <p>ひとり暮らし、香りの違いを試したい方向け。</p>
+          </div>
+          <div class="price">
+            <p>シェア/ギフト</p>
+            <div class="yen">3本 3,980円</div>
+            <p>家族や友人と分ける、韓国料理好きへの小さなギフト向け。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2>入荷案内までの流れ</h2>
+        <div class="steps">
+          <div class="step">公開フォームに回答</div>
+          <div class="step">容量と価格の希望を回答</div>
+          <div class="step">輸入・表示条件を確認</div>
+          <div class="step">少量入荷できる場合だけ案内</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner">
+        <h2>まだ買わなくて大丈夫です。</h2>
+        <p class="lead">今知りたいのは、韓国の市場や食堂で覚えたごま油の香りを、日本の家でも使いたい人がいるかどうかです。</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+        </div>
+        <p class="notice">注意: 食品として販売する場合は、日本の食品衛生法に基づく輸入手続き、食品表示、アレルゲン表示、賞味期限、保存方法などの確認が必要です。このページは正式販売前の需要検証です。GitHub Issueは公開されるため、住所・電話番号・メールアドレスなどの個人情報は書かないでください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">Korean market sesame oil MVP. Demand validation is collected through public GitHub Issues.</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# 일본 한국식 방앗간 참기름 MVP 검증
+
+이 저장소는 일본에서 한국식 방앗간 참기름이 팔릴지 검증하기 위한 1차 리서치, 핵심가설, MVP 랜딩, 게시 문안, 측정 템플릿을 모은 작업 폴더다.
+
+## 결론
+
+1차 결론은 `조건부 진행`이다. 일본 참기름 시장은 이미 크고 성장 중이며, 일본 내 K-food/한국여행 경험에서 "갓 짠 한국 참기름의 향"이라는 구체적 차별 신호가 있다. 다만 실제 판매 전에는 일본 식품 수입신고, 일본어 라벨, 원재료/알레르겐/원산지/보존 표시, 신선도 물류를 먼저 해결해야 한다.
+
+## 핵심 산출물
+
+- `research/01_research_brief.md`: 1차 리서치와 2차 핵심가설
+- `research/hypothesis_scorecard.csv`: 가설 점수표
+- `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
+- `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
+- `mvp/validation_plan.md`: 2주 검증 계획과 KPI
+- `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
+
+## 공개 MVP
+
+- Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+- Public validation form: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
+
+GitHub Issue Form은 공개 검증 신호만 받는다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
+
+## 실행 원칙
+
+- MVP는 결제 의향이 아니라 행동으로 검증한다.
+- 첫 검증은 광고보다 수동 게시/수동 대화로 한다.
+- 판매 확정 표현은 규제 확인 전 사용하지 않는다.
+- 공개 게시 전에는 CTA 폼 URL, 연락처, 배송 가능성, 가격/배송비 조건을 확정한다.
