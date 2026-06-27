@@ -12,6 +12,7 @@
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
+- `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
 
