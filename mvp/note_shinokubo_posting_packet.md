@@ -1,9 +1,11 @@
 # note 게시 패킷: 신오쿠보/한국식품점 대체재 체크
 
-상태: ready_not_published
+상태: published
 작성 시각: 2026-06-28T00:42+09:00
+게시 시각: 2026-06-28T01:04:46+09:00
 게시 권한: note 계정은 이 프로젝트에 한해 Codex 자유 게시 허용
-보류 이유: 직전 live note 편집 시 CDP 텍스트 삽입/로딩 안정성이 낮았으므로, 먼저 Vercel 공개면과 KB를 안정화한다.
+공개 URL: https://note.com/dreamy_viola8978/n/n700b325ba824
+게시 결과: 공개 API 기준 published, 무료 글, 댓글 허용, 자동 번역 disabled, AI 학습 대가 환원 excluded, 원하는 태그 5개 확인.
 
 ## 게시 목적
 
@@ -77,12 +79,15 @@ https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_shinokubo
 
 ## 게시 후 검증
 
-- public note URL
-- 비로그인 HTTP 200
-- 본문에 `shinokubo-goma?src=note_content_shinokubo` 포함
-- 댓글 허용 여부
-- 무료 글 여부
-- 자동 번역 off, AI 학습 대가 환원 off 여부
+- public note URL: https://note.com/dreamy_viola8978/n/n700b325ba824
+- 비로그인 HTTP 200 확인
+- 본문에 `shinokubo-goma?src=note_content_shinokubo` 포함 확인
+- 본문에 `quick-answer?src=note_content_shinokubo` 포함 확인
+- 댓글 허용: yes
+- 무료 글: yes
+- 자동 번역: disabled
+- AI 학습 대가 환원: excluded
+- 태그: `#韓国料理`, `#新大久保`, `#ごま油`, `#韓国食品`, `#おうち韓国`
 - 24h/72h 조회수, 스키, 댓글
 - Notion/Form/note 댓글 원본 응답 수
 

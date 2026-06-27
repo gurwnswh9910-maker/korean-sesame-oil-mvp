@@ -13,6 +13,7 @@
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 - note content post: https://note.com/dreamy_viola8978/n/n3f3af286cf6d
+- note Shin-Okubo post: https://note.com/dreamy_viola8978/n/n700b325ba824
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -44,6 +45,7 @@
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
 - X public answer path: MVP pages include `Xで公開回答` intent links with hashtag `#韓国ごま油検証`; only real answer URLs recorded in `experiments/public_social_responses.csv` count as responses
 - note account-side posting: live and mobile-first; public note has no GitHub Pages links, auto translation off, AI training compensation off, comments on, and tags `#韓国旅行 #韓国料理 #新大久保 #ごま油 #おうち韓国`
+- note Shin-Okubo posting: published 2026-06-28T01:04:46+09:00 at `https://note.com/dreamy_viola8978/n/n700b325ba824`; source `note_content_shinokubo`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#韓国料理 #新大久保 #ごま油 #韓国食品 #おうち韓国`
 - note dashboard precheck: 2026-06-27T22:30+09:00 dashboard shows 0 views / 0 comments / 0 スキ, but latest aggregation is 2026-06-27 21:45, before the 21:46 publish time, so this is not counted as post-publish zero response
 - current response check: GitHub waitlist label issues `[]`, local public/social and field files have no real rows, Notion export absent, Notion data-source search found no response rows, and exact `/answer-note` URL web search found no public response/share
 - 24h follow-up automation: Codex heartbeat `note-24h` scheduled for 2026-06-28T21:50+09:00
@@ -51,7 +53,7 @@
 - Automation: `.github/workflows/summarize-waitlist.yml` runs daily, on waitlist issues, manually, and on push to response input CSVs/channel log to refresh validation summaries
 - Latest deploy: 2026-06-28T00:08+09:00 added `/quick-answer`; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/ASmFY1pCzn4aNWcheknGJiEBkPvz`; browser mobile390 verified source propagation, note route mapping, memo generation, overflow count 0
 - 2026-06-28T00:32+09:00 update: `/korea-trip-goma?src=note_content_travel` now has a first-screen `/quick-answer` CTA; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/FojaxfiyMfUzn9YorE2KJxJMajsR`; latest response recheck still found 0 real responses
-- 2026-06-28T00:52+09:00 update: `/shinokubo-goma` deployed to production; inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/52yWZmVCXTND4DUhzsro8VbMyWgc`; HTTP and mobile390 browser checks passed; note posting packet prepared but live note status is `ready_not_published` because previous Edge CDP direct note edit was unstable; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
+- 2026-06-28T01:05+09:00 update: `/shinokubo-goma` deployed and note Shin-Okubo post published at `https://note.com/dreamy_viola8978/n/n700b325ba824`; public HTTP/API checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 
 ## 성공 기준
 
