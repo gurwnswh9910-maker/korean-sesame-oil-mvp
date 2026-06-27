@@ -1,7 +1,7 @@
 # Goal Completion Audit
 
 작성일: 2026-06-27
-최근 확인: 2026-06-27T19:55:00+09:00
+최근 확인: 2026-06-27T20:05:00+09:00
 
 ## 원래 목표
 
@@ -16,7 +16,7 @@
 | MVP 제작 | 완료 | `mvp/index.html`, `mvp/share_note.html`, `mvp/note_article.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
 | MVP 게시 | 완료 | GitHub Pages live: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/` | 충족 |
 | 검증 경로 구축 | 완료 | Notion 1줄 응답 form, X 공개 응답 intent, GitHub Issue fallback, source tracking, article direct form/share controls, QR flyer, `experiments/channel_posting_log.csv`, `experiments/field_interview_log.csv` | 충족 |
-| 실제 외부 반응 검증 | 미완료 | 2026-06-27T19:55+09:00 기준 GitHub waitlist issue list = `[]`; `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0; exact MVP URL/hashtag discovery search도 직접 응답 0건 | 미충족 |
+| 실제 외부 반응 검증 | 미완료 | 2026-06-27T20:05+09:00 기준 GitHub waitlist issue list = `[]`; `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0; exact MVP URL/hashtag discovery search도 직접 응답 0건 | 미충족 |
 | 사업 관련 GitHub skill/plugin 활용 | 완료 | GitHub startup pressure-test skill을 검토하고 behavior-over-compliments 기준으로 수요 행동 신호 중심 설계 반영 | 충족 |
 | 판매 전 규제/비용 gate | 완료 | `research/02_import_label_unit_economics_gate.md`, `experiments/unit_economics_template.csv` | 충족 |
 
@@ -42,4 +42,5 @@
 5. 신오쿠보/한국식품점/한국요리 모임에서는 `field_interview_flyer.pdf`를 인쇄하거나 `field_interview.html` QR을 보여주고, 이미 한국식 참기름 대체재를 본 적이 있는지 묻는다
 6. 오사카 코리아타운/서울 중부시장/한국여행 구매 경험도 대체재/여행 기억 질문에 포함한다
 7. 반응은 `experiments/channel_posting_log.csv`, `experiments/public_social_responses.csv`, `experiments/field_interview_log.csv`에 기록
-8. 10명 또는 30응답 중 먼저 도달하는 지점에서 Go/Pivot/Stop 판정
+8. 응답 입력 CSV 또는 채널 로그를 push하면 GitHub Actions가 통합 summary를 자동 갱신한다
+9. 10명 또는 30응답 중 먼저 도달하는 지점에서 Go/Pivot/Stop 판정

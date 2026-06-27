@@ -1,6 +1,15 @@
 name: Summarize waitlist responses
 
 on:
+  push:
+    paths:
+      - "experiments/notion_submissions_export.csv"
+      - "experiments/public_social_responses.csv"
+      - "experiments/field_interview_log.csv"
+      - "experiments/channel_posting_log.csv"
+      - "scripts/summarize_waitlist.py"
+      - "scripts/summarize_validation_signals.py"
+      - ".github/workflows/summarize-waitlist.yml"
   issues:
     types: [opened, edited, labeled, reopened]
   workflow_dispatch:

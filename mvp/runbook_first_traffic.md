@@ -76,6 +76,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - Notion 응답은 Notion UI/export로 확인한다.
 - GitHub fallback 응답은 `experiments/waitlist_summary.md` 또는 GitHub Issues에서 확인한다.
 - 공개 X 응답은 검색/수동 확인 후 `experiments/public_social_responses.csv`로 옮긴다.
+- Notion export, 공개 X 응답 CSV, 오프라인 인터뷰 CSV, 채널 로그 CSV를 push하면 GitHub Actions가 `experiments/validation_signal_summary.md/json`을 다시 만든다. summary 파일만 bot이 커밋하는 push는 입력 path가 아니므로 반복 실행되지 않는다.
 
 ## 1차 판정
 

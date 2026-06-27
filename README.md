@@ -57,7 +57,7 @@
 Notion Form은 일반 소비자용 1차 CTA다. 현재 도구로 만든 폼은 1줄 응답 방식이며, 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
 GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 fallback으로 유지한다.
 
-응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽고, `scripts/summarize_validation_signals.py`로 Notion export, GitHub fallback, X 공개 응답 URL 수동 수집, 오프라인 인터뷰를 합쳐 자동 갱신한다.
+응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽고, `scripts/summarize_validation_signals.py`로 Notion export, GitHub fallback, X 공개 응답 URL 수동 수집, 오프라인 인터뷰를 합쳐 자동 갱신한다. 워크플로는 매일 실행되고, 응답 입력 CSV나 채널 로그가 push될 때도 다시 실행된다.
 채널별 게시에는 `?src=x_threads_travel`처럼 source 파라미터를 붙인다. 랜딩은 Notion Form URL에 source를 넘기고, GitHub fallback은 Issue 제목의 `[src:...]`에 넣어 집계한다.
 
 ## 실행 원칙
