@@ -19,16 +19,16 @@
 - 使い方: ビビンバ、ナムル、キンパ、卵かけご飯、ラーメン、冷奴、焼肉の仕上げ
 - 目的: 炒め油ではなく、最後に香りを足すための少量ボトル
 
-スマホで読んでいる方は、QRではなくこのままリンクをタップしてください。30秒だけ、回答メモを残してもらえるとうれしいです。住所、電話番号、メールアドレスは不要です。
+スマホで読んでいる方は、QRではなくこのままリンクをタップしてください。住所、電話番号、メールアドレスは不要です。
 
-30秒回答ページ:
-https://korean-sesame-oil-mvp.vercel.app/answer-note
+質問に沿って30秒で答える:
+https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_kfood
+
+noteコメント・匿名フォーム・説明を選ぶ:
+https://korean-sesame-oil-mvp.vercel.app/answer-note?src=note_kfood
 
 韓国旅行・新大久保の買い方メモ:
 https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content
-
-フォームに貼り付ける回答メモ:
-https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood
 
 詳しい説明:
 https://korean-sesame-oil-mvp.vercel.app/note

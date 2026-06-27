@@ -12,6 +12,8 @@
 
 비로그인 HTTP 확인: 200, 본문에 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel` 포함. 단, HTML에 `noindex`가 있어 검색 유입은 약할 수 있다.
 
+2026-06-28T00:32+09:00 보완: live note 본문에 `/quick-answer?src=note_content_travel`를 직접 추가하려 했지만 CDP 편집 탭이 불안정해 공개 반영하지 않았다. 대신 note 본문이 이미 보내는 `/korea-trip-goma?src=note_content_travel`의 첫 화면에 `/quick-answer` CTA를 추가해 전환 단계를 줄였다.
+
 ## 목적
 
 기존 note 글은 제품/입하 안내에 가까웠다. 두 번째 note를 낸다면 제품 판매글이 아니라, 타겟 밀집구역을 찾기 위한 콘텐츠형 질문글로 낸다.
@@ -34,10 +36,14 @@
 これは商品販売ではありません。
 韓国旅行、新大久保、韓国スーパー、ネット、日本のスーパーで買ったごま油について、どこで買ったか、香りは最後まで残ったか、日本で買い直すなら何が決め手になるかを集める30秒メモです。
 
+先に質問に沿って答える場合はこちらです。
+https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_travel
+
+背景メモを見てから答える場合はこちらです。
+https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel
+
 住所、電話番号、メールアドレスは不要です。
 フォームが面倒ならnoteコメントでも大丈夫です。
-
-https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel
 
 #韓国旅行 #韓国料理 #新大久保 #ごま油 #おうち韓国
 ```
