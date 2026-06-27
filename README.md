@@ -12,6 +12,8 @@
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
+- `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
+- `mvp/field_interview_script.md`: 오프라인 10명 인터뷰 스크립트
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
@@ -27,6 +29,7 @@
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 - Share note: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html
+- Field interview QR: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html
 - Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
