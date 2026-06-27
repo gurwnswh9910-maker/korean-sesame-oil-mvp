@@ -59,6 +59,7 @@
 - 2026-06-28T00:32+09:00 update: `/korea-trip-goma?src=note_content_travel` now has a first-screen `/quick-answer` CTA; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/FojaxfiyMfUzn9YorE2KJxJMajsR`; latest response recheck still found 0 real responses
 - 2026-06-28T01:05+09:00 update: `/shinokubo-goma` deployed and note Shin-Okubo post published at `https://note.com/dreamy_viola8978/n/n700b325ba824`; public HTTP/API checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 - 2026-06-28T01:55+09:00 update: `/homecook-goma` deployed/refined with Korean seaweed rice/TKG sub-wedge and note home-cooking post published at `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`; public HTTP/API/browser checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
+- 2026-06-28T02:12+09:00 update: note dashboard/API early check shows 5 total views, 0 comments, 0 likes, 0 waitlist issues, and no Notion submission rows found via available search. `/answer-note` and `/quick-answer` note comment routing now sends `note_content_travel` to note 2, `note_content_shinokubo` to note 3, and `note_content_homecook` to note 4; `/homecook-goma?src=note_content_homecook` now shows a note comment CTA.
 
 ## 성공 기준
 

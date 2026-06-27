@@ -24,6 +24,7 @@
 - 밥친구/한국김/TKG 같은 `밥 한 그릇 5분 완성` 축은 홈쿡 검증의 하위 문제로 본다. 강한 신호는 반복 사용 빈도, 현재 참기름 단품 구매처, 소량/향 보존/가격 전환 조건이 함께 있을 때만 센다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
+- `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시를 허용했다. X, Threads, Konest, 다른 커뮤니티는 별도 허용 전 게시하지 않는다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.

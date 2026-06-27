@@ -356,7 +356,17 @@
       var source = (params.get("src") || "quick_answer").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
       var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
       var primaryNoteUrl = "https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9";
-      var contentNoteUrl = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";
+      var travelNoteUrl = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";
+      var shinokuboNoteUrl = "https://note.com/dreamy_viola8978/n/n700b325ba824";
+      var homecookNoteUrl = "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
+
+      function noteUrlForSource(value) {
+        if (value === "note_content_homecook") return homecookNoteUrl;
+        if (value === "note_content_shinokubo") return shinokuboNoteUrl;
+        if (value.indexOf("note_content") === 0) return travelNoteUrl;
+        if (value.indexOf("note_kfood") === 0) return primaryNoteUrl;
+        return "";
+      }
 
       function one(name) {
         var selected = form.querySelector('[name="' + name + '"]:checked');
@@ -395,11 +405,9 @@
           xLink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent("#韓国ごま油検証\n" + submission.value) + "&url=" + encodeURIComponent(currentUrl);
         }
         if (noteLink) {
-          if (source.indexOf("note_content") === 0) {
-            noteLink.href = contentNoteUrl;
-            noteLink.classList.remove("is-hidden");
-          } else if (source.indexOf("note_kfood") === 0) {
-            noteLink.href = primaryNoteUrl;
+          var noteUrl = noteUrlForSource(source);
+          if (noteUrl) {
+            noteLink.href = noteUrl;
             noteLink.classList.remove("is-hidden");
           } else {
             noteLink.classList.add("is-hidden");

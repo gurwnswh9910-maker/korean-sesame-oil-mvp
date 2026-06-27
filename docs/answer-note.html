@@ -213,8 +213,21 @@
       var source = (params.get("src") || "note_kfood").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
       var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
       var primaryNoteUrl = "https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9";
-      var contentNoteUrl = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";
-      var noteUrl = source.indexOf("note_content") === 0 ? contentNoteUrl : primaryNoteUrl;
+      var travelNoteUrl = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";
+      var shinokuboNoteUrl = "https://note.com/dreamy_viola8978/n/n700b325ba824";
+      var homecookNoteUrl = "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
+      function noteUrlForSource(value) {
+        if (value === "note_content_homecook") return homecookNoteUrl;
+        if (value === "note_content_shinokubo") return shinokuboNoteUrl;
+        if (value.indexOf("note_content") === 0) return travelNoteUrl;
+        return primaryNoteUrl;
+      }
+      function detailUrlForSource(value) {
+        if (value === "note_content_homecook") return "/homecook-goma?src=" + encodeURIComponent(value);
+        if (value === "note_content_shinokubo") return "/shinokubo-goma?src=" + encodeURIComponent(value);
+        return "/korea-trip-goma?src=" + encodeURIComponent(value);
+      }
+      var noteUrl = noteUrlForSource(source);
       var currentUrl = window.location.origin + "/answer-note?src=" + encodeURIComponent(source);
       var formLink = document.getElementById("form-link");
       var detailLink = document.getElementById("detail-link");
@@ -226,7 +239,7 @@
       var copyStatus = document.getElementById("copy-status");
       if (builderLink) builderLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
-      if (detailLink) detailLink.href = "/korea-trip-goma?src=" + encodeURIComponent(source);
+      if (detailLink) detailLink.href = detailUrlForSource(source);
       if (noteCommentLink) noteCommentLink.href = noteUrl;
       if (template) template.value = "流入元: " + source + "\n" + template.value;
       if (xAnswerLink) {

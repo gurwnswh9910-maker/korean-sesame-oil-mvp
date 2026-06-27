@@ -229,6 +229,7 @@
         <textarea id="response-template" readonly>流入元: content_homecook / 最近作った料理: ビビンバ・ナムル・キンパ・韓国のりご飯・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 今使うごま油: 日本のスーパー・韓国スーパー・新大久保・ネット・韓国旅行・その他 / ブランドや店名:  / 容量と価格:  / 香りの不満: 最後の香りが弱い・開封後に弱くなる・重い・いつもの油で十分・覚えていない / 買い直すなら決め手: 製造日・強い香り・100ml小瓶・価格・買いやすさ・ギフト向き・その他 / 100ml 1,480円: はい・迷う・いいえ / コメント:</textarea>
         <div class="actions">
           <button class="button" id="copy-template" type="button">メモをコピー</button>
+          <a class="button secondary is-hidden" id="note-comment-link" href="https://note.com/dreamy_viola8978/n/n08bad3dce2a9">noteコメントで答える</a>
           <a class="button secondary" id="answer-link" href="/quick-answer?src=content_homecook">質問に沿ってメモを作る</a>
           <a class="button secondary" id="form-link" href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=content_homecook">フォームを開く</a>
         </div>
@@ -253,9 +254,14 @@
       var answerLink = document.getElementById("answer-link");
       var heroAnswerLink = document.getElementById("hero-answer-link");
       var formLink = document.getElementById("form-link");
+      var noteCommentLink = document.getElementById("note-comment-link");
       if (answerLink) answerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (heroAnswerLink) heroAnswerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
+      if (noteCommentLink && source === "note_content_homecook") {
+        noteCommentLink.href = "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
+        noteCommentLink.classList.remove("is-hidden");
+      }
       var copyButton = document.getElementById("copy-template");
       var copyStatus = document.getElementById("copy-status");
       if (copyButton && template && copyStatus) {
