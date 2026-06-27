@@ -10,6 +10,7 @@
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
+- note content post: https://note.com/dreamy_viola8978/n/n3f3af286cf6d
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -31,6 +32,7 @@
 - First note draft: `mvp/note_article_draft.md`
 - Vercel article: `docs/note.html` / `docs/note_article.html`; source `article`
 - note account-side post: published 2026-06-27T21:46+09:00 at `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`; updated 2026-06-27T22:10+09:00 for mobile CTA with `/answer-note`, `/share?src=note_kfood`, and a note comment template
+- note product-external content post: published 2026-06-27T23:38+09:00 at `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`; source `note_content_travel`; asks last purchase place, aroma retention, and switching conditions before direct purchase intent
 - `/answer-note` mobile answer hub: changed from Notion direct redirect to a Vercel page with note comment, Notion form, copyable memo, and detail-page choices to reduce mobile dropoff
 - Product-external content MVP: `/korea-trip-goma` added to test target density through Korea travel/Shin-Okubo/home-cooking content before asking direct purchase intent
 - Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, and a switching condition or complaint

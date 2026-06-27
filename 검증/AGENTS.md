@@ -33,7 +33,8 @@
 - Vercel answer memo: `https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood`
 - Vercel note/mobile answer entry: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
 - Vercel offline page: `https://korean-sesame-oil-mvp.vercel.app/field`
-- note post: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`
+- note post 1: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`
+- note post 2 content: `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`
 - Primary form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
 
 ## 갱신할 파일

@@ -35,7 +35,13 @@ https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 
 2026-06-27T22:40+09:00에는 `/answer-note`를 Notion direct redirect에서 모바일 응답 허브로 바꿨다. 사용자는 같은 링크 안에서 note 댓글, Notion 폼, 복사용 메모, 상세 설명을 선택할 수 있다.
 
-두 번째 note를 낸다면 `mvp/note_content_posting_packet.md`의 콘텐츠형 글을 쓴다. 이 글의 링크는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel`이며 제품 가격보다 여행/신오쿠보 구매 경험을 먼저 묻는다.
+두 번째 note는 2026-06-27T23:38+09:00에 게시 완료했다.
+
+```text
+https://note.com/dreamy_viola8978/n/n3f3af286cf6d
+```
+
+이 글의 링크는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel`이며 제품 가격보다 여행/신오쿠보 구매 경험을 먼저 묻는다.
 
 ### 2. X/Threads 짧은 게시 1개
 
@@ -85,6 +91,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 
 - 온라인 게시 후 `experiments/channel_posting_log.csv`의 `posted`, `post_url`, `visits`, `form_submits`, `replies`를 업데이트한다.
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
+- note 2차 콘텐츠 게시물은 `note_content_travel` source로 별도 기록한다.
 - Vercel article은 `article` source로 Notion 응답을 기록한다. GitHub fallback은 내부용으로만 본다.
 - X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다.
 - 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.

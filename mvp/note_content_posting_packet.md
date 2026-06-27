@@ -2,7 +2,15 @@
 
 작성일: 2026-06-27
 
-상태: 초안 준비, 실제 게시 전 최신 로그인 세션과 중복 게시 리스크 확인 필요
+상태: 게시 완료, 24h/72h 반응 측정 대기
+
+공개 URL: https://note.com/dreamy_viola8978/n/n3f3af286cf6d
+
+게시 시각: 2026-06-27T23:38+09:00
+
+설정: 무료 글, 댓글 허용, 자동 번역 off, AI 학습 대가 환원 프로그램 off
+
+비로그인 HTTP 확인: 200, 본문에 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel` 포함. 단, HTML에 `noindex`가 있어 검색 유입은 약할 수 있다.
 
 ## 목적
 

@@ -1,7 +1,7 @@
 # Goal Completion Audit
 
 작성일: 2026-06-27
-최근 확인: 2026-06-27T23:17:00+09:00
+최근 확인: 2026-06-27T23:39:00+09:00
 
 ## 원래 목표
 
@@ -14,9 +14,9 @@
 | 리서치로 먼저 1차 가설 검증 | 완료 | `research/01_research_brief.md`에 일본 가정용 참기름 시장, 生使い, 한국 참기름 수출/관광객 신호, 경쟁 구도, 규제 리스크 정리 | 충족 |
 | 2차 핵심가설 수립 | 완료 | `research/01_research_brief.md`의 H1 향 재현, H2 첫 고객 세그먼트, H3 규제/비용 리스크, H4 대체재 인지 가설 | 충족 |
 | MVP 제작 | 완료 | `mvp/index.html`, `mvp/korea-trip-goma.html`, `mvp/share_note.html`, `mvp/note_article.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
-| MVP 게시 | 완료 | Vercel canonical live: `https://korean-sesame-oil-mvp.vercel.app/`; note post live: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`; GitHub Pages는 내부 fallback | 충족 |
+| MVP 게시 | 완료 | Vercel canonical live: `https://korean-sesame-oil-mvp.vercel.app/`; note 1차 post live: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`; note 2차 content post live: `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`; GitHub Pages는 내부 fallback | 충족 |
 | 검증 경로 구축 | 완료 | Notion 1줄 응답 form, X 공개 응답 intent, GitHub Issue fallback, source tracking, article direct form/share controls, QR flyer, `experiments/channel_posting_log.csv`, `experiments/field_interview_log.csv` | 충족 |
-| 실제 외부 반응 검증 | 미완료 | 2026-06-27T21:46+09:00 note post `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9` 공개 완료; 2026-06-27T22:00+09:00 Vercel canonical `https://korean-sesame-oil-mvp.vercel.app/` 배포 완료; 2026-06-27T23:17+09:00 제품 외 콘텐츠 MVP `/korea-trip-goma`와 욕구/문제 가설 KB 추가; 하지만 `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0 | 미충족 |
+| 실제 외부 반응 검증 | 미완료 | 2026-06-27T21:46+09:00 note 1차 post 공개 완료; 2026-06-27T23:38+09:00 note 2차 content post 공개 완료; 2026-06-27T22:00+09:00 Vercel canonical 배포 완료; 2026-06-27T23:17+09:00 제품 외 콘텐츠 MVP `/korea-trip-goma`와 욕구/문제 가설 KB 추가; 하지만 `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0 | 미충족 |
 | 사업 관련 GitHub skill/plugin 활용 | 완료 | GitHub startup pressure-test skill을 검토하고 behavior-over-compliments 기준으로 수요 행동 신호 중심 설계 반영 | 충족 |
 | 판매 전 규제/비용 gate | 완료 | `research/02_import_label_unit_economics_gate.md`, `experiments/unit_economics_template.csv` | 충족 |
 
@@ -35,9 +35,9 @@
 
 ## 다음 실행 순서
 
-1. `/korea-trip-goma`를 배포/검증하고 `content_travel`, `content_shinokubo`, `content_homecook` source를 분리한다.
-2. 24시간 후 note 전체뷰, 댓글, スキ, Notion 응답 수를 기록한다.
-3. note에 추가 게시를 한다면 `mvp/note_content_posting_packet.md`의 제품 외 콘텐츠 글을 사용한다.
+1. note 1차/2차 게시물의 24h/72h 전체뷰, 댓글, スキ, Notion 응답 수를 기록한다.
+2. `/korea-trip-goma`의 `content_travel`, `content_shinokubo`, `content_homecook` source를 분리한다.
+3. note 2차 글의 `note_content_travel` 유입을 별도 집계한다.
 4. X/Threads는 사용자 별도 허용 후 `x_threads_travel` 1개만 게시한다.
 5. 신오쿠보/한국식품점/한국요리 모임에서는 `field_interview_flyer.pdf`를 인쇄하거나 Vercel `/field` QR을 보여주고, 이미 한국식 참기름 대체재를 본 적이 있는지 묻는다.
 6. 오사카 코리아타운/서울 중부시장/한국여행 구매 경험도 대체재/여행 기억 질문에 포함한다.
