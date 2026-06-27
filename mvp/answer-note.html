@@ -175,18 +175,20 @@
         noteにコメントを残したくない場合はこちら。住所、電話番号、メールアドレスは不要です。
       </a>
       <a class="choice" id="detail-link" href="/share?src=note_kfood">
-        <strong>先に詳しく見る</strong>
-        価格仮説、使い方、注意点を見てから答えたい方向けです。
+        <strong>旅行・新大久保メモを見る</strong>
+        最後に買った場所、香りの残り方、買い直す条件を見てから答えたい方向けです。
       </a>
     </div>
 
     <section class="memo">
       <strong>コピー用メモ</strong>
-      <textarea id="response-template" readonly>香り経験: ある・ない・覚えていない
-最近買ったごま油:
+      <textarea id="response-template" readonly>最後に買った場所: 韓国旅行・新大久保・韓国スーパー・ネット・日本のスーパー・その他
+ブランドや店名:
+容量と価格:
 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他
+香りは最後まで残ったか: はい・途中で弱くなった・覚えていない
+日本で買い直すなら決め手: 製造日・強い香り・少量・価格・買いやすさ・その他
 100ml 1,480円: はい・迷う・いいえ
-3本 3,980円: はい・迷う・いいえ
 コメント:</textarea>
       <div class="actions">
         <button class="button" id="copy-template" type="button">メモをコピー</button>
@@ -216,7 +218,7 @@
       var copyButton = document.getElementById("copy-template");
       var copyStatus = document.getElementById("copy-status");
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
-      if (detailLink) detailLink.href = "/share?src=" + encodeURIComponent(source);
+      if (detailLink) detailLink.href = "/korea-trip-goma?src=" + encodeURIComponent(source);
       if (noteCommentLink) noteCommentLink.href = noteUrl;
       if (template) template.value = "流入元: " + source + "\n" + template.value;
       if (xAnswerLink) {

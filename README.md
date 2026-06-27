@@ -14,6 +14,7 @@
 - `research/04_public_discovery_and_benchmark_20260627.md`: MVP 응답 발견 여부와 주변 가격/대체재 벤치마크
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
+- `mvp/korea-trip-goma.html`: 제품 외 콘텐츠형 타겟 밀집 검증 페이지
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
 - `mvp/note_article.html`: note/Vercel용 공개 설명 기사
 - `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
@@ -47,6 +48,7 @@
 ## 공개 MVP
 
 - Landing: https://korean-sesame-oil-mvp.vercel.app/
+- Content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
 - Share note: https://korean-sesame-oil-mvp.vercel.app/share
 - Short answer link for note/mobile: https://korean-sesame-oil-mvp.vercel.app/answer-note
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note

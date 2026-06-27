@@ -6,6 +6,7 @@
 
 - Landing: https://korean-sesame-oil-mvp.vercel.app/
 - Short note/mobile answer: https://korean-sesame-oil-mvp.vercel.app/answer-note
+- Product-external content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
@@ -31,6 +32,8 @@
 - Vercel article: `docs/note.html` / `docs/note_article.html`; source `article`
 - note account-side post: published 2026-06-27T21:46+09:00 at `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`; updated 2026-06-27T22:10+09:00 for mobile CTA with `/answer-note`, `/share?src=note_kfood`, and a note comment template
 - `/answer-note` mobile answer hub: changed from Notion direct redirect to a Vercel page with note comment, Notion form, copyable memo, and detail-page choices to reduce mobile dropoff
+- Product-external content MVP: `/korea-trip-goma` added to test target density through Korea travel/Shin-Okubo/home-cooking content before asking direct purchase intent
+- Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, and a switching condition or complaint
 - `/answer-note` deployment check: first rewrite-only deploy returned 404, fixed by adding `docs/answer-note.html`; final production uses file-based clean URL without the underscore duplicate/rewrite, returns 200 with title `30秒回答 | 韓国式しぼりたてごま油`, no redirect, and mobile/desktop Playwright overflow count 0
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
 - X public answer path: MVP pages include `Xで公開回答` intent links with hashtag `#韓国ごま油検証`; only real answer URLs recorded in `experiments/public_social_responses.csv` count as responses

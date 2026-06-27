@@ -5,6 +5,7 @@
 ## 준비물
 
 - Landing: `https://korean-sesame-oil-mvp.vercel.app/`
+- Content MVP: `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`
 - Share note: `https://korean-sesame-oil-mvp.vercel.app/share`
 - Mobile note answer hub: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
 - Public article: `https://korean-sesame-oil-mvp.vercel.app/note`
@@ -17,6 +18,8 @@
 ## 오늘 할 일 60분 버전
 
 현재 우선 메시지: `韓国旅行や新大久保で、搾りたてのごま油の香りを覚えている人`을 먼저 찾는다. 넓은 주부층보다 과거 경험과 대체재 인지가 있는 사람을 먼저 검증한다.
+
+현재 우선 문제: `참기름을 사고 싶은가`가 아니라 마지막 구매 장소, 향이 끝까지 남았는지, 일본에서 다시 살 조건이다. 자세한 가설은 `검증/욕구_문제_가설_20260627.md`를 본다.
 
 ### 1. note 설명형 게시 1개
 
@@ -32,6 +35,8 @@ https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 
 2026-06-27T22:40+09:00에는 `/answer-note`를 Notion direct redirect에서 모바일 응답 허브로 바꿨다. 사용자는 같은 링크 안에서 note 댓글, Notion 폼, 복사용 메모, 상세 설명을 선택할 수 있다.
 
+두 번째 note를 낸다면 `mvp/note_content_posting_packet.md`의 콘텐츠형 글을 쓴다. 이 글의 링크는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel`이며 제품 가격보다 여행/신오쿠보 구매 경험을 먼저 묻는다.
+
 ### 2. X/Threads 짧은 게시 1개
 
 기본 순서는 note 게시 후 24시간 반응이 0일 때만 추가한다. 단, note 이메일 인증이 지연되고 사용자가 X/Threads 단일 게시를 명시 허용하면 이 경로를 먼저 써도 된다. 동일 문안 반복, 댓글 대량 발송, DM 발송은 하지 않는다. 실제 게시 절차는 `mvp/x_threads_posting_packet.md`를 따른다.
@@ -45,7 +50,7 @@ https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 
 100ml 1,480円前後なら試したいか、30秒だけ教えてください。正式販売前なので個人情報は不要です。
 
-https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_travel
+https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=x_threads_travel
 #韓国ごま油検証
 ```
 
@@ -93,6 +98,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - 24시간 안에 댓글/폼/오프라인 대화 합산 5건 이상이면 같은 메시지를 더 넓힌다.
 - note 24시간 전체뷰가 30 미만이면 메시지 판단보다 유입 부족으로 본다.
 - 10명 중 3명 이상이 최근 구매 행동을 말하면 H2 첫 고객 세그먼트를 유지한다.
+- 콘텐츠형 검증에서 강한 응답은 최근 구매처, 브랜드/매장, 용량/가격, 바꿀 조건 또는 불만 중 3개 이상을 포함해야 한다.
 - 신오쿠보/한국식품점에서 이미 대체재를 본 사람이 많으면 `한국산` 대신 `제조일/향 보존/소량/재구매 편의` 비교로 메시지를 바꾼다.
 - 신오쿠보나 한국식품점에서 이미 한국식 참기름을 사는 사람은 부정 신호가 아니라 전환 이유 검증 대상이다. 기존 구매처, 제조일 인지, 향 보존, 100ml 소량 선호를 따로 기록한다.
 - 가격 반응이 약하면 100ml 단품보다 3병 세트/선물용 또는 生使い 요리 완성도 메시지로 피벗한다.

@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>韓国旅行で覚えたしぼりたてごま油の香り</title>
-  <meta name="description" content="韓国旅行や新大久保で記憶に残った、しぼりたてごま油の香りを日本の家でも使いたい人がいるかを確認する入荷前アンケートです。">
+  <meta name="description" content="韓国旅行や新大久保で買ったごま油を、日本の家でどう使っているかを集める正式販売前の需要確認メモです。">
   <meta property="og:title" content="韓国旅行で覚えたしぼりたてごま油の香り">
-  <meta property="og:description" content="正式販売前の需要検証です。100ml 1,480円前後なら試したいか、30秒で教えてください。">
+  <meta property="og:description" content="買いたいかの前に、最後に買った場所、香りの残り方、日本で買い直す条件を30秒で教えてください。">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://korean-sesame-oil-mvp.vercel.app/assets/hero-sesame-oil.png">
   <meta property="og:url" content="https://korean-sesame-oil-mvp.vercel.app/note">
@@ -165,6 +165,7 @@
       <p class="lead">韓国旅行や新大久保で、ふたを開けた瞬間に「香りが違う」と感じたごま油はありますか。</p>
       <p>日本にもおいしいごま油はたくさんあります。だから今回知りたいのは、「韓国産だから買うか」ではありません。</p>
       <p>知りたいのは、韓国の市場や食堂で記憶に残る、仕上げに一滴たらしたときの強い香りを、日本の家でも少量で使いたい人がいるかどうかです。</p>
+      <p>ただし、いきなり「買いたいですか」とは聞きません。最後にどこでごま油を買ったか、香りは最後まで残ったか、日本で買い直すなら何が決め手になるかを先に知りたいです。</p>
 
       <div class="facts">
         <div class="fact">
@@ -190,25 +191,26 @@
 
       <h2>特に知りたいこと</h2>
       <ol>
-        <li>最近6か月以内にごま油を買ったか</li>
-        <li>韓国旅行、韓国料理店、新大久保などで印象に残ったごま油の香りがあるか</li>
-        <li>100ml 1,480円前後なら試したいか</li>
+        <li>最近6か月以内に、どこでごま油を買ったか</li>
+        <li>そのごま油は、最後まで香りが残ったか</li>
+        <li>日本で買い直すなら、製造日・強い香り・少量・価格・買いやすさのどれが決め手か</li>
       </ol>
       <p>新大久保や韓国食材店ですでに韓国式のごま油を買っている方は、どこで買っているか、何が決め手かも教えてください。</p>
       <p>既に買える商品がある場合は、製造日が分かること、香りが強いこと、少量で使い切れること、また買いやすいことのどれが替える理由になるかを知りたいです。</p>
 
       <div class="cta">
         <strong>30秒だけ、回答メモを残してください。</strong>
-        <p>住所、電話番号、メールアドレスは不要です。最後に買ったごま油、使いたい料理、価格感だけ教えてください。</p>
+        <p>住所、電話番号、メールアドレスは不要です。最後に買ったごま油、使い切れたか、買い直す条件だけ教えてください。</p>
         <div class="actions">
-          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
-          <a class="button secondary" data-detail-link href="/share?src=article">回答メモページへ</a>
+          <a class="button" data-detail-link href="/korea-trip-goma?src=article_content">旅行・新大久保メモへ</a>
+          <a class="button secondary" href="/answer-note?src=article">30秒で回答する</a>
+          <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
         </div>
       </div>
 
       <div class="quick-response">
         <strong>コピーしてフォームに貼り付ける回答メモ</strong>
-        <textarea id="response-template" readonly>流入元: article / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
+        <textarea id="response-template" readonly>流入元: article / 最後に買った場所: 韓国旅行・新大久保・韓国スーパー・ネット・日本のスーパー・その他 / ブランドや店名:  / 容量と価格:  / 何に使ったか: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 香りは最後まで残ったか: はい・途中で弱くなった・覚えていない / 日本で買い直すなら決め手: 製造日・強い香り・少量・価格・買いやすさ・その他 / 100ml 1,480円: はい・迷う・いいえ / コメント:</textarea>
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
@@ -241,7 +243,8 @@
         link.href = formBase + "?src=" + encodeURIComponent(source);
       });
       document.querySelectorAll("[data-detail-link]").forEach(function (link) {
-        link.href = "/share?src=" + encodeURIComponent(source);
+        var contentSource = source.indexOf("content") >= 0 ? source : source + "_content";
+        link.href = "/korea-trip-goma?src=" + encodeURIComponent(contentSource);
       });
       var template = document.getElementById("response-template");
       if (template) {
@@ -266,7 +269,7 @@
         });
       }
       var shareText = "韓国旅行で覚えたしぼりたてごま油の香り、日本の家でも使いたいですか？正式販売前の30秒アンケートです。";
-      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n香り経験: \n最近買ったごま油: \n100ml 1,480円: \nコメント:";
+      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n最後に買った場所: \nブランドや店名: \n香りは最後まで残ったか: \n日本で買い直す条件: \nコメント:";
       var x = document.getElementById("share-x");
       var line = document.getElementById("share-line");
       document.querySelectorAll("[data-social-answer-link]").forEach(function (link) {

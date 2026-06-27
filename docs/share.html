@@ -6,7 +6,7 @@
   <title>韓国式しぼりたてごま油の入荷前アンケート</title>
   <meta name="description" content="韓国の市場や食堂で記憶に残るごま油の香りを、日本の家でも使いたい人がいるかを確かめる入荷前アンケートです。">
   <meta property="og:title" content="韓国式しぼりたてごま油の入荷前アンケート">
-  <meta property="og:description" content="正式販売前の需要検証です。100ml 1,480円、3本 3,980円という仮価格で反応を見ています。">
+  <meta property="og:description" content="正式販売前の需要検証です。最後に買った場所、香りの残り方、日本で買い直す条件を集めています。">
   <meta property="og:image" content="https://korean-sesame-oil-mvp.vercel.app/assets/hero-sesame-oil.png">
   <meta property="og:type" content="article">
   <style>
@@ -234,14 +234,14 @@
 
     <section class="wrap">
       <h2>30秒で回答できます。</h2>
-      <p>個人情報は書かず、最後に買ったごま油、使いたい料理、価格感だけ教えてください。</p>
+      <p>個人情報は書かず、最後に買った場所、香りが最後まで残ったか、日本で買い直す条件だけ教えてください。</p>
       <div class="quick-response">
-        <textarea id="response-template" readonly>流入元: direct / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
+        <textarea id="response-template" readonly>流入元: direct / 最後に買った場所: 韓国旅行・新大久保・韓国スーパー・ネット・日本のスーパー・その他 / ブランドや店名:  / 容量と価格:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 香りは最後まで残ったか: はい・途中で弱くなった・覚えていない / 日本で買い直すなら決め手: 製造日・強い香り・少量・価格・買いやすさ・その他 / 100ml 1,480円: はい・迷う・いいえ / コメント:</textarea>
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
           <a class="button secondary" data-social-answer-link href="#">Xで公開回答</a>
-          <a class="button secondary" data-landing-link href="/">詳しいページを見る</a>
+          <a class="button secondary" data-landing-link href="/korea-trip-goma">旅行・新大久保メモを見る</a>
         </div>
         <p class="notice" id="copy-status">コピーしてフォームの1行入力欄に貼り付けてください。Xで回答する場合は公開投稿になります。</p>
       </div>
@@ -270,10 +270,10 @@
         link.href = formBase + "?src=" + encodeURIComponent(source);
       });
       document.querySelectorAll("[data-landing-link]").forEach(function (link) {
-        link.href = "/?src=" + encodeURIComponent(source + "_detail");
+        link.href = "/korea-trip-goma?src=" + encodeURIComponent(source + "_detail");
       });
       var pageUrl = window.location.origin + "/share?src=" + encodeURIComponent(source);
-      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n香り経験: \n最近買ったごま油: \n100ml 1,480円: \nコメント:";
+      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n最後に買った場所: \nブランドや店名: \n香りは最後まで残ったか: \n日本で買い直す条件: \nコメント:";
       document.querySelectorAll("[data-social-answer-link]").forEach(function (link) {
         link.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(socialText) + "&url=" + encodeURIComponent(pageUrl);
       });

@@ -2,6 +2,8 @@
 
 작성일: 2026-06-27
 
+최신 보정: 2026-06-27T23:17+09:00 현재 이 문서의 `note 계정 게시 상태` 행은 과거 상태다. 이후 note 이메일 인증과 게시가 완료되었고, 공개 note URL은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`다. 현재 소비자-facing canonical은 Vercel이며, 제품 외 콘텐츠 MVP는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`다. 최신 truth는 `검증/검증_원장.md`와 `검증/욕구_문제_가설_20260627.md`를 우선한다.
+
 ## 목적
 
 기존 리서치와 MVP 공개 이후, 현재 웹에서 보이는 한국식 방앗간/갓 짠 참기름 관련 신호가 2차 가설을 강화하는지 확인한다. 이 문서는 실제 MVP 응답이 아니라, 게시 전 메시지와 인터뷰 질문을 조정하기 위한 보조 리서치다.
