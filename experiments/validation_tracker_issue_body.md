@@ -10,6 +10,7 @@
 - Product-external content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
 - Shin-Okubo substitute-check content MVP: https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma
 - Home-cooking last-aroma content MVP: https://korean-sesame-oil-mvp.vercel.app/homecook-goma
+- Aroma-retention / big-bottle burden content MVP: https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
@@ -44,6 +45,7 @@
 - Product-external content MVP: `/korea-trip-goma` added to test target density through Korea travel/Shin-Okubo/home-cooking content before asking direct purchase intent
 - Shin-Okubo substitute-check MVP: `/shinokubo-goma` added to test whether people who already buy or browse Korean sesame oil in Shin-Okubo/Korean supermarkets have a switching reason around store/brand, volume/price, aroma retention, manufacturing date, 100ml small bottle, or repurchase convenience
 - Home-cooking last-aroma MVP: `/homecook-goma` added to test whether people making bibimbap/namul/kimbap/TKG/ramen/cold tofu/Korean seaweed rice have a last-aroma or aroma-retention problem strong enough to switch sesame oil
+- Aroma-retention MVP: `/aroma-loss-goma` added to test whether large bottles lose aroma before use-up and whether opened duration, remaining-bottle aroma, 100ml small bottle, manufacturing date, or light-blocking bottle create a stronger switching reason
 - Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, usage dish, aroma-retention experience, and a switching condition or complaint
 - `/answer-note` deployment check: first rewrite-only deploy returned 404, fixed by adding `docs/answer-note.html`; final production uses file-based clean URL without the underscore duplicate/rewrite, returns 200 with title `30秒回答 | 韓国式しぼりたてごま油`, no redirect, and mobile/desktop Playwright overflow count 0
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
@@ -65,6 +67,7 @@
 - 2026-06-28T02:20+09:00 update: note rice-bowl/TKG post published at `https://note.com/dreamy_viola8978/n/nbb21605544ca` with source `note_content_homecook_ricebowl`; this tests lighter daily scenes such as Korean seaweed rice and TKG before counting any demand evidence.
 - 2026-06-28T02:27+09:00 update: rice-bowl/TKG source routing corrected and redeployed; `/quick-answer`, `/answer-note`, and `/homecook-goma` with `src=note_content_homecook_ricebowl` all send the note comment CTA back to note 5 `https://note.com/dreamy_viola8978/n/nbb21605544ca`; real response count remains 0.
 - 2026-06-28T02:39+09:00 update: post-publish recheck still found 0 real responses. GitHub waitlist is empty, local social/interview files have no real rows, Notion export is absent, note API shows all five posts published with like_count/comment_count 0, note profile lists all five posts, and note dashboard still shows latest aggregation 2026-06-28 01:31 with only note 1 at 5 views / 0 comments / 0 likes. Next problem priority is open-after-aroma loss / big-bottle burden before adding more note posts.
+- 2026-06-28T02:57+09:00 update: `/aroma-loss-goma` deployed for open-after-aroma loss / big-bottle burden with source `content_aromaloss`; `/quick-answer` now captures `開封後どのくらい`; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/8YMa5hWcnStVF1siPwCpuLAKWs42`; mobile390 browser checks passed for `/aroma-loss-goma`, `/quick-answer`, and landing source/link/overflow behavior. `mvp/note_aromaloss_posting_packet.md` is ready_not_published until 24h recheck; real response count remains 0.
 
 ## 성공 기준
 

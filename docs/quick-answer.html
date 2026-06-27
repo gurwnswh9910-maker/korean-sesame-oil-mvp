@@ -271,6 +271,9 @@
             <label>容量と価格
               <input type="text" name="volume" autocomplete="off" placeholder="例: 100mlくらい / 300g / 1,000円前後">
             </label>
+            <label>開封後どのくらい
+              <input type="text" name="opened" autocomplete="off" placeholder="例: 1か月以内 / 半年くらい / 覚えていない">
+            </label>
           </div>
         </fieldset>
 
@@ -392,6 +395,7 @@
           "最後に買った場所: " + one("place"),
           "ブランドや店名: " + text("brand"),
           "容量と価格: " + text("volume"),
+          "開封後どのくらい: " + text("opened"),
           "使いたい料理: " + many("dish"),
           "香りは最後まで残ったか: " + one("aroma"),
           "日本で買い直すなら決め手: " + many("reason"),
