@@ -208,7 +208,9 @@
       var params = new URLSearchParams(window.location.search);
       var source = (params.get("src") || "note_kfood").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
       var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
-      var noteUrl = "https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9";
+      var primaryNoteUrl = "https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9";
+      var contentNoteUrl = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";
+      var noteUrl = source.indexOf("note_content") === 0 ? contentNoteUrl : primaryNoteUrl;
       var currentUrl = window.location.origin + "/answer-note?src=" + encodeURIComponent(source);
       var formLink = document.getElementById("form-link");
       var detailLink = document.getElementById("detail-link");
