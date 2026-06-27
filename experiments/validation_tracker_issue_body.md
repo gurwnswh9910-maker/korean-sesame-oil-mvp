@@ -64,6 +64,7 @@
 - 2026-06-28T02:12+09:00 update: note dashboard/API early check shows 5 total views, 0 comments, 0 likes, 0 waitlist issues, and no Notion submission rows found via available search. `/answer-note` and `/quick-answer` note comment routing now sends `note_content_travel` to note 2, `note_content_shinokubo` to note 3, and `note_content_homecook` to note 4; `/homecook-goma?src=note_content_homecook` now shows a note comment CTA.
 - 2026-06-28T02:20+09:00 update: note rice-bowl/TKG post published at `https://note.com/dreamy_viola8978/n/nbb21605544ca` with source `note_content_homecook_ricebowl`; this tests lighter daily scenes such as Korean seaweed rice and TKG before counting any demand evidence.
 - 2026-06-28T02:27+09:00 update: rice-bowl/TKG source routing corrected and redeployed; `/quick-answer`, `/answer-note`, and `/homecook-goma` with `src=note_content_homecook_ricebowl` all send the note comment CTA back to note 5 `https://note.com/dreamy_viola8978/n/nbb21605544ca`; real response count remains 0.
+- 2026-06-28T02:39+09:00 update: post-publish recheck still found 0 real responses. GitHub waitlist is empty, local social/interview files have no real rows, Notion export is absent, note API shows all five posts published with like_count/comment_count 0, note profile lists all five posts, and note dashboard still shows latest aggregation 2026-06-28 01:31 with only note 1 at 5 views / 0 comments / 0 likes. Next problem priority is open-after-aroma loss / big-bottle burden before adding more note posts.
 
 ## 성공 기준
 

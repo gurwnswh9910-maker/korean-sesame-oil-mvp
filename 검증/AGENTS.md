@@ -22,6 +22,7 @@
 - 신오쿠보/한국식품점 대체재 전환 검증은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`를 사용한다. 이 검증은 `신오쿠보를 좋아한다`가 아니라 구매처, 브랜드/店名, 용량·가격, 향 보존 불만, 제조일/강한 향/100ml小瓶/구입 편의 전환 조건이 있는 응답을 강한 신호로 센다.
 - 집밥 한국요리/마지막 향 검증은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`를 사용한다. 이 검증은 `韓国料理が好き`가 아니라 최근 만든 요리, 현재 참기름 구매처/브랜드, 용량·가격, 마지막 향 부족 또는 충분한 이유, 바꿀 조건이 있는 응답을 강한 신호로 센다.
 - 밥친구/한국김/TKG 같은 `밥 한 그릇 5분 완성` 축은 홈쿡 검증의 하위 문제로 본다. 강한 신호는 반복 사용 빈도, 현재 참기름 단품 구매처, 소량/향 보존/가격 전환 조건이 함께 있을 때만 센다.
+- note/콘텐츠 무응답이 이어질 때는 게시 수를 늘리기보다 `개봉 후 향 손실/큰 병 부담`, `기존 대체재 선택 피로`, `밥 한 그릇 5분 향미`를 비교한다. 최신 정리는 `검증/무응답_학습_및_다음검증_20260628.md`를 본다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
