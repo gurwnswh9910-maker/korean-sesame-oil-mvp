@@ -14,21 +14,24 @@
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
+- Notion Form: 로그인 마찰을 낮춘 1차 입하 안내/검증 폼
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
+- `experiments/notion_form_status.md`: Notion Form 공개 설정과 한계
 - `experiments/waitlist_responses.csv`: GitHub Issue Form 응답 자동 집계 CSV
 - `experiments/waitlist_summary.md`: 응답 요약 자동 집계
 
 ## 공개 MVP
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
-- Public validation form: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
+- Primary validation form: https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb
+- Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
 
-GitHub Issue Form은 공개 검증 신호만 받는다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
-GitHub 로그인이 필요한 경로이므로, 일반 소비자 대상 게시에서는 Google Forms 또는 Tally로 마찰을 낮추는 후속 개선이 필요하다.
+Notion Form은 일반 소비자용 1차 CTA다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
+GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 fallback으로 유지한다.
 
 응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽어 자동 갱신한다.
-채널별 게시에는 `?src=x_threads_travel`처럼 source 파라미터를 붙인다. 랜딩은 이 값을 Issue 제목의 `[src:...]`에 넣고, 집계 스크립트는 source별 응답 수를 요약한다.
+채널별 게시에는 `?src=x_threads_travel`처럼 source 파라미터를 붙인다. 랜딩은 Notion Form URL에 source를 넘기고, GitHub fallback은 Issue 제목의 `[src:...]`에 넣어 집계한다.
 
 ## 실행 원칙
 

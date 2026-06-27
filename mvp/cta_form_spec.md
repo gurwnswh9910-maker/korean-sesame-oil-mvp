@@ -6,19 +6,21 @@
 
 ## 현재 게시용 도구
 
-현재 공개 MVP는 GitHub Pages + GitHub Issue Form으로 게시한다.
+현재 공개 MVP는 GitHub Pages + Notion Form으로 게시한다. GitHub Issue Form은 로그인 가능한 사용자의 공개 fallback으로만 남긴다.
 
 - Landing: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/`
-- Issue Form: `https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml`
-- 개인정보 보호: 공개 이슈이므로 이메일, 주소, 전화번호를 받지 않는다.
+- Primary Form: `https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb`
+- GitHub fallback: `https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml`
+- 개인정보 보호: 이메일, 주소, 전화번호를 받지 않는다.
 - 검증 신호: 과거 구매 행동, 가격 수용, 사용 요리, 댓글/후속 대화
+- Notion 데이터베이스: `韓国式しぼりたてごま油 MVP 検証`
 
 ## 대체 권장 도구
 
-1. Google Forms 또는 Tally
-2. 응답 저장은 Google Sheets
+1. 연락처 수집이 필요해지면 Google Forms 또는 Tally로 전환
+2. 응답 저장은 Google Sheets 또는 Notion database export
 3. 개인정보 문구는 일본어로 명시
-4. 비공개 연락처 수집이 필요하면 GitHub Issue Form 대신 실제 폼 URL로 교체
+4. 결제/배송 전환 전에는 수입/식품표시 확인을 별도 gate로 둔다
 
 ## 일본어 폼 제목
 
@@ -32,18 +34,18 @@
 
 | 필수 | 필드 | 형식 |
 |---|---|---|
-| 예 | メールアドレス | email |
 | 예 | 最近6か月以内に買ったごま油のブランド/購入場所 | short text |
 | 예 | 韓国旅行や韓国料理店で、印象に残ったごま油の香りはありますか | multiple choice: ある / ない / 覚えていない |
 | 예 | 主に使いたい料理 | checkbox: ビビンバ / ナムル / キンパ / 卵かけご飯 / ラーメン / 冷奴 / 焼肉 / その他 |
 | 예 | 100ml 1,480円なら入荷案内を受け取りたいですか | multiple choice: はい / 迷う / いいえ |
 | 예 | 3本 3,980円なら誰かと分けたいですか | multiple choice: はい / 迷う / いいえ |
 | 아니오 | 価格や容量へのコメント | paragraph |
-| 예 | 個人情報の利用に同意します | checkbox |
+| 아니오 | このページをどこで知りましたか / 流入元 | short text |
 
 ## 개인정보 문구 초안
 
 ご入力いただいた情報は、韓国式ごま油の入荷案内と需要検証の目的でのみ使用します。正式販売前の検証であり、購入義務はありません。
+このフォームでは住所・電話番号・メールアドレスなどの個人情報は集めません。
 
 ## 게시 가능 조건
 

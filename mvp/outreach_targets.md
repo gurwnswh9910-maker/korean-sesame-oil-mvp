@@ -4,11 +4,12 @@
 
 ## 목적
 
-GitHub Pages로 공개한 MVP에 실제 일본어 트래픽을 넣고, 공개 Issue Form 또는 댓글/DM으로 행동 신호를 모은다.
+GitHub Pages로 공개한 MVP에 실제 일본어 트래픽을 넣고, Notion Form 또는 댓글/DM으로 행동 신호를 모은다.
 
 Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+Primary Form: https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb
 
-채널별 링크는 `?src=`를 붙인다. 랜딩은 이 값을 GitHub Issue 제목의 `[src:...]`에 넣어 집계한다.
+채널별 링크는 `?src=`를 붙인다. 랜딩은 Notion Form URL에 source를 넘기고, GitHub fallback은 이 값을 Issue 제목의 `[src:...]`에 넣어 집계한다. Notion Form 응답에서는 `流入元` 필드로 source를 대조한다.
 
 ## 우선순위
 
@@ -25,8 +26,8 @@ Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 1. 하루에 2개 채널만 게시한다.
 2. 게시 URL을 `experiments/measurement_sheet_template.csv` 형식으로 기록한다.
 3. 댓글/DM은 바로 판매하지 말고 최근 구매 행동을 묻는다.
-4. 긍정 댓글은 GitHub Issue Form 또는 비공개 폼으로 이동시킨다.
-5. GitHub 로그인이 어렵다는 반응이 나오면 Google Forms/Tally로 CTA를 교체한다.
+4. 긍정 댓글은 Notion Form으로 이동시키고, 더 긴 대화는 댓글/DM에서 최근 구매 행동을 묻는다.
+5. Notion Form 제출이 막히거나 source 추적이 약하면 Google Forms/Tally로 CTA를 교체한다.
 
 ## 주의
 

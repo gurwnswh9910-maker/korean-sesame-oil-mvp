@@ -249,7 +249,7 @@
         <h1>韓国市場の<br>しぼりたてごま油を、<br>日本の食卓へ。</h1>
         <p class="hero-copy">ふたを開けた瞬間に広がる、あの香ばしさ。ビビンバ、ナムル、卵かけご飯、ラーメンの仕上げに使うための少量ボトルを検証中です。</p>
         <div class="hero-actions">
-          <a class="button" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb">入荷案内フォームに回答</a>
           <a class="button secondary" href="#price">価格を見る</a>
         </div>
         <p class="source-note" id="source-note"></p>
@@ -313,18 +313,20 @@
         <h2>まだ買わなくて大丈夫です。</h2>
         <p class="lead">今知りたいのは、韓国の市場や食堂で覚えたごま油の香りを、日本の家でも使いたい人がいるかどうかです。</p>
         <div class="hero-actions">
-          <a class="button" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb">入荷案内フォームに回答</a>
+          <a class="button secondary" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">GitHubで公開回答</a>
         </div>
-        <p class="notice">注意: 食品として販売する場合は、日本の食品衛生法に基づく輸入手続き、食品表示、アレルゲン表示、賞味期限、保存方法などの確認が必要です。このページは正式販売前の需要検証です。GitHub Issueは公開されるため、住所・電話番号・メールアドレスなどの個人情報は書かないでください。</p>
+        <p class="notice">注意: 食品として販売する場合は、日本の食品衛生法に基づく輸入手続き、食品表示、アレルゲン表示、賞味期限、保存方法などの確認が必要です。このページは正式販売前の需要検証です。フォームでは住所・電話番号・メールアドレスなどの個人情報は集めません。GitHubで公開回答する場合も個人情報は書かないでください。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="section-inner">Korean market sesame oil MVP. Demand validation is collected through public GitHub Issues.</div>
+    <div class="section-inner">Korean market sesame oil MVP. Demand validation is collected through a public Notion form and optional GitHub feedback.</div>
   </footer>
   <script>
     (function () {
+      var notionFormBase = "https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb";
       var issueBase = "https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new";
       var params = new URLSearchParams(window.location.search);
       var source = params.get("src") || "";
@@ -341,6 +343,9 @@
           window.sessionStorage.setItem("mvp_source", source);
         } catch (error) {}
       }
+      document.querySelectorAll("[data-form-link]").forEach(function (link) {
+        link.href = source ? notionFormBase + "?src=" + encodeURIComponent(source) : notionFormBase;
+      });
       var issueParams = new URLSearchParams();
       issueParams.set("template", "waitlist.yml");
       issueParams.set("title", source ? "[入荷案内][src:" + source + "] " : "[入荷案内] ");
@@ -349,7 +354,7 @@
       });
       var sourceNote = document.getElementById("source-note");
       if (sourceNote && source) {
-        sourceNote.textContent = "検証用ソース: " + source;
+        sourceNote.textContent = "流入元メモ: " + source + "（フォームの流入元欄に入れてください）";
         sourceNote.style.display = "block";
       }
     })();
