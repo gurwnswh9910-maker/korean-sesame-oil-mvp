@@ -11,6 +11,7 @@
 - `research/01_research_brief.md`: 1차 리서치와 2차 핵심가설
 - `research/02_import_label_unit_economics_gate.md`: 일본 수입·표시·원가 gate
 - `research/03_live_signal_update_20260627.md`: 현재 웹 신호와 가설 보정
+- `research/04_public_discovery_and_benchmark_20260627.md`: MVP 응답 발견 여부와 주변 가격/대체재 벤치마크
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
@@ -37,6 +38,7 @@
 - `experiments/notion_submissions_export_template.csv`: Notion 1줄 응답 export용 템플릿
 - `experiments/public_social_responses.csv`: X 등 공개 응답 URL 수동 수집 CSV
 - `experiments/public_social_responses_template.csv`: X 등 공개 응답 URL 수동 수집 템플릿
+- `experiments/public_discovery_log.csv`: 직접 MVP 응답 검색과 주변 시장 신호 발견 로그
 - `experiments/validation_signal_summary.md`: Notion/GitHub/오프라인 신호 통합 판정 요약
 - `experiments/validation_signal_summary.json`: 통합 판정 요약의 기계 판독용 JSON
 - `scripts/summarize_validation_signals.py`: 검증 신호 통합 집계 스크립트

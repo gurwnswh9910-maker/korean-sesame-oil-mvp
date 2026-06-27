@@ -15,7 +15,7 @@ Primary Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 
 ## 우선순위
 
-2026-06-27 현재 웹 신호 업데이트(`../research/03_live_signal_update_20260627.md`) 기준, 신오쿠보/한국식품점은 단순 유입 채널이 아니라 기존 대체재 인지와 가격 비교를 확인하는 벤치마크 채널로도 본다.
+2026-06-27 현재 웹 신호 업데이트(`../research/03_live_signal_update_20260627.md`)와 공개 발견/벤치마크 업데이트(`../research/04_public_discovery_and_benchmark_20260627.md`) 기준, 신오쿠보/한국식품점/오사카 코리아타운은 단순 유입 채널이 아니라 기존 대체재 인지와 가격 비교를 확인하는 벤치마크 채널로도 본다.
 
 | 순위 | 채널 | 이유 | 게시 문안 |
 |---:|---|---|---|
@@ -24,6 +24,7 @@ Primary Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 | 3 | Konest 커뮤니티 | 한국여행 정보 탐색자가 있어 "한국에서 먹은 향을 일본에서 다시 사고 싶은가"를 묻기 좋다. 다만 규칙 확인/운영자 문의 전에는 보류한다. | `posting_copy.md` A, `?src=konest` |
 | 4 | Tunagate 한국요리/신오쿠보 모임 | 이용규약상 영업, 권유, 선전 목적 이용과 외부 서비스 유도가 금지되어 플랫폼 내 게시에는 맞지 않는다. | 게시 제외. 오프라인에서 자연스럽게 대화가 생긴 경우에만 질문 |
 | 5 | 신오쿠보 식재료점/한국식품점 수동 인터뷰 | 구매 직전/직후 고객에게 현재 대체재, 가격 저항, 제조일/향 보존 신뢰를 물을 수 있다. 이미 한국식 참기름을 사는 사람은 전환 이유 검증 대상이다. 온라인보다 샘플 판매 단가 검증에 강하다. | 인터뷰 질문 7개, `?src=offline_shinokubo` |
+| 6 | 한국여행/서울 중부시장/오사카 코리아타운 콘텐츠 독자층 | 최근 일본어 콘텐츠에서 한국 여행 중 참기름 구매와 일본 내 갓 짠 참기름 대체재가 함께 보인다. 제3자 글에 댓글을 다는 것은 별도 확인 전에는 하지 않고, 자기 계정 게시나 오프라인 질문의 타깃 언어로만 쓴다. | `posting_copy.md` A 변형, `?src=travel_market` |
 
 ## 24시간 실행 루프
 
@@ -48,4 +49,5 @@ Primary Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Konest 커뮤니티 한국여행/맛집 게시판 예시: https://comm.konest.com/topic/558065
 - Threads 한국 구매품/참기름 게시 신호: https://www.threads.com/@kankoku.gohan/post/DIqy_2dyVwy
 - 현재 외부 신호 업데이트: `../research/03_live_signal_update_20260627.md`
+- 공개 발견/벤치마크 업데이트: `../research/04_public_discovery_and_benchmark_20260627.md`
 - 채널 규칙/권한 게이트: `channel_rules_and_permission_gate.md`

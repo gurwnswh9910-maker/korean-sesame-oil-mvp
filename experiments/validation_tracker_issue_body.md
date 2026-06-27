@@ -14,6 +14,7 @@
 - 1차 리서치: 조건부 진행
 - 2차 핵심가설: 한국 여행/방앗간/식당에서 기억한 향을 일본 집밥에 재현하려는 K-food 홈쿡러가 첫 wedge
 - 현재 웹 신호 업데이트: `research/03_live_signal_update_20260627.md`; 한국 여행/신오쿠보 향 기억 가설은 보강, 신오쿠보/한국식품점 대체재 인지 가설은 추가
+- 공개 발견/벤치마크 업데이트: `research/04_public_discovery_and_benchmark_20260627.md`; exact MVP URL/hashtag search found 0 direct responses, while Korea travel and Osaka Korea Town content strengthen travel-memory and substitute-awareness tests
 - MVP: GitHub Pages live
 - Primary CTA: Notion Form live, anonymous/open/no-permission submission setting applied
 - Notion Form question shape: current tool-created form exposes `Submission` as a single 1-line answer; landing page provides a copyable answer template to capture source, aroma experience, recent purchase, dishes, price acceptance, and comments.
