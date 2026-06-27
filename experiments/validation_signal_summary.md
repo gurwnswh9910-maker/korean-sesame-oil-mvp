@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-27T21:04:39+09:00
+Generated at: 2026-06-27T21:24:06+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -22,8 +22,12 @@ Verdict: `insufficient_external_evidence`
 | Notion + GitHub responses | 0 |
 | Public social responses | 0 |
 | Aroma memory positive | 0 |
+| 100ml price-bearing responses | 0 |
 | 100ml price positive or conditional | 0 |
+| 100ml price positive share | n/a |
+| 3-bottle price-bearing responses | 0 |
 | 3-bottle price positive or conditional | 0 |
+| 3-bottle price positive share | n/a |
 | Channel rows tracked | 7 |
 | Posted/public rows | 2 |
 | Ready or pending rows | 2 |
@@ -44,4 +48,10 @@ Verdict: `insufficient_external_evidence`
 ## Interpretation
 
 - External response threshold has not been met.
+
+## Go/Pivot/Stop Recommendation
+
+`collect_more_evidence`
+
+- Do not make a Go/Pivot/Stop decision before at least one completion threshold is met.
 - Keep the goal active until real external responses or interviews meet one completion threshold.

@@ -1,8 +1,12 @@
 {
-  "generated_at": "2026-06-27T21:04:39+09:00",
+  "generated_at": "2026-06-27T21:24:06+09:00",
   "verdict": "insufficient_external_evidence",
   "reasons": [
     "External response threshold has not been met."
+  ],
+  "recommendation": "collect_more_evidence",
+  "recommendation_reasons": [
+    "Do not make a Go/Pivot/Stop decision before at least one completion threshold is met."
   ],
   "metrics": {
     "total_respondents": 0,
@@ -14,7 +18,9 @@
     "offline_recent_purchase": 0,
     "sample_or_purchase_requests": 0,
     "aroma_memory_positive": 0,
+    "single_price_responses": 0,
     "single_price_positive": 0,
+    "bundle_price_responses": 0,
     "bundle_price_positive": 0
   },
   "channel_status": {

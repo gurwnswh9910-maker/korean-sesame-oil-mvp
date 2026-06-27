@@ -36,7 +36,9 @@ class Respondent:
     source: str
     recent_purchase: bool
     aroma_memory: bool
+    single_price_mentioned: bool
     single_price_positive: bool
+    bundle_price_mentioned: bool
     bundle_price_positive: bool
     sample_or_purchase_signal: bool
 
@@ -76,6 +78,10 @@ def positive(text: str) -> bool:
     if contains_any(text, NO_WORDS) and not contains_any(text, YES_WORDS + MAYBE_WORDS):
         return False
     return contains_any(text, YES_WORDS + MAYBE_WORDS)
+
+
+def mentioned(text: str) -> bool:
+    return bool(normalize(text))
 
 
 def has_recent_purchase(text: str) -> bool:
@@ -142,7 +148,9 @@ def notion_respondents() -> list[Respondent]:
                 source=source,
                 recent_purchase=has_recent_purchase(recent),
                 aroma_memory=positive(aroma),
+                single_price_mentioned=mentioned(single),
                 single_price_positive=positive(single),
+                bundle_price_mentioned=mentioned(bundle),
                 bundle_price_positive=positive(bundle),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
             )
@@ -163,7 +171,9 @@ def github_respondents() -> list[Respondent]:
                 source=source,
                 recent_purchase=has_recent_purchase(row.get("recent_purchase", "")),
                 aroma_memory=positive(row.get("experience", "")),
+                single_price_mentioned=mentioned(row.get("single_price", "")),
                 single_price_positive=positive(row.get("single_price", "")),
+                bundle_price_mentioned=mentioned(row.get("bundle_price", "")),
                 bundle_price_positive=positive(row.get("bundle_price", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
             )
@@ -189,7 +199,9 @@ def field_respondents() -> list[Respondent]:
                 source=row.get("source") or "offline_untracked",
                 recent_purchase=has_recent_purchase(row.get("recent_purchase", "")),
                 aroma_memory=positive(row.get("aroma_memory", "")),
+                single_price_mentioned=mentioned(row.get("single_price_reaction", "")),
                 single_price_positive=positive(row.get("single_price_reaction", "")),
+                bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "")),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
             )
@@ -213,7 +225,9 @@ def public_social_respondents() -> list[Respondent]:
                 source=source,
                 recent_purchase=has_recent_purchase(row.get("recent_purchase", "") or text),
                 aroma_memory=positive(row.get("aroma_memory", "") or text),
+                single_price_mentioned=mentioned(row.get("single_price_reaction", "") or text),
                 single_price_positive=positive(row.get("single_price_reaction", "") or text),
+                bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "") or text),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "") or text),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
             )
@@ -250,7 +264,50 @@ def decision(metrics: dict[str, int]) -> tuple[str, list[str]]:
     return "insufficient_external_evidence", ["External response threshold has not been met."]
 
 
-def render_summary(respondents: list[Respondent], metrics: dict[str, int], status: dict[str, int], verdict: str, reasons: list[str]) -> str:
+def percent(numerator: int, denominator: int) -> str:
+    if denominator <= 0:
+        return "n/a"
+    return f"{numerator / denominator:.0%}"
+
+
+def recommendation(metrics: dict[str, int], verdict: str) -> tuple[str, list[str]]:
+    if verdict == "insufficient_external_evidence":
+        return "collect_more_evidence", [
+            "Do not make a Go/Pivot/Stop decision before at least one completion threshold is met.",
+        ]
+
+    single_price_rate = (
+        metrics["single_price_positive"] / metrics["single_price_responses"]
+        if metrics["single_price_responses"]
+        else 0
+    )
+    purchase_or_sample = metrics["purchase_conversation_signals"] + metrics["sample_or_purchase_requests"]
+    support: list[str] = []
+
+    if single_price_rate >= 0.30 and purchase_or_sample >= 10:
+        support.append("Price-positive share is at least 30% and purchase-context signals are 10+.")
+        if metrics["aroma_memory_positive"] >= 5:
+            support.append("Aroma-memory signal is present in 5+ responses.")
+        return "candidate_go_small_batch", support
+
+    if metrics["single_price_responses"] >= 10 and single_price_rate < 0.30:
+        return "candidate_pivot_price_or_bundle", [
+            "100ml price-positive share is below 30% among 10+ price-bearing responses.",
+            "Test smaller trial size, bundle/gift framing, or lower landed-cost path before sourcing inventory.",
+        ]
+
+    if metrics["online_public_responses"] >= 30 and purchase_or_sample < 5:
+        return "candidate_stop_or_resegment", [
+            "Online response volume is 30+ but purchase/sample signals are below 5.",
+            "Re-segment toward existing Shin-Okubo/Korean-grocery buyers or stop this wedge.",
+        ]
+
+    return "manual_review_needed", [
+        "A threshold was met, but the current signal mix is not decisive enough for automatic Go/Pivot/Stop.",
+    ]
+
+
+def render_summary(respondents: list[Respondent], metrics: dict[str, int], status: dict[str, int], verdict: str, reasons: list[str], rec: str, rec_reasons: list[str]) -> str:
     generated_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     source_counts = Counter(respondent.source or "untracked" for respondent in respondents)
     channel_counts = Counter(respondent.channel for respondent in respondents)
@@ -280,8 +337,12 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         f"| Notion + GitHub responses | {metrics['form_or_github_responses']} |",
         f"| Public social responses | {metrics['public_social_responses']} |",
         f"| Aroma memory positive | {metrics['aroma_memory_positive']} |",
+        f"| 100ml price-bearing responses | {metrics['single_price_responses']} |",
         f"| 100ml price positive or conditional | {metrics['single_price_positive']} |",
+        f"| 100ml price positive share | {percent(metrics['single_price_positive'], metrics['single_price_responses'])} |",
+        f"| 3-bottle price-bearing responses | {metrics['bundle_price_responses']} |",
         f"| 3-bottle price positive or conditional | {metrics['bundle_price_positive']} |",
+        f"| 3-bottle price positive share | {percent(metrics['bundle_price_positive'], metrics['bundle_price_responses'])} |",
         f"| Channel rows tracked | {status['rows']} |",
         f"| Posted/public rows | {status['posted_yes']} |",
         f"| Ready or pending rows | {status['ready_or_pending']} |",
@@ -308,6 +369,9 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
     lines.extend(["", "## Interpretation", ""])
     for reason in reasons:
         lines.append(f"- {reason}")
+    lines.extend(["", "## Go/Pivot/Stop Recommendation", "", f"`{rec}`", ""])
+    for reason in rec_reasons:
+        lines.append(f"- {reason}")
     if verdict == "insufficient_external_evidence":
         lines.append("- Keep the goal active until real external responses or interviews meet one completion threshold.")
     else:
@@ -329,20 +393,25 @@ def main() -> int:
         "offline_recent_purchase": sum(1 for respondent in respondents if respondent.channel == "offline" and respondent.recent_purchase),
         "sample_or_purchase_requests": count_true(respondents, "sample_or_purchase_signal"),
         "aroma_memory_positive": count_true(respondents, "aroma_memory"),
+        "single_price_responses": count_true(respondents, "single_price_mentioned"),
         "single_price_positive": count_true(respondents, "single_price_positive"),
+        "bundle_price_responses": count_true(respondents, "bundle_price_mentioned"),
         "bundle_price_positive": count_true(respondents, "bundle_price_positive"),
     }
     status = channel_status()
     verdict, reasons = decision(metrics)
+    rec, rec_reasons = recommendation(metrics, verdict)
     payload = {
         "generated_at": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
         "verdict": verdict,
         "reasons": reasons,
+        "recommendation": rec,
+        "recommendation_reasons": rec_reasons,
         "metrics": metrics,
         "channel_status": status,
     }
     SUMMARY_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    SUMMARY_MD.write_text(render_summary(respondents, metrics, status, verdict, reasons), encoding="utf-8")
+    SUMMARY_MD.write_text(render_summary(respondents, metrics, status, verdict, reasons, rec, rec_reasons), encoding="utf-8")
     print(f"Wrote {SUMMARY_MD} and {SUMMARY_JSON}. Verdict: {verdict}.")
     return 0
 
