@@ -17,6 +17,7 @@
 - Notion Form question shape: current tool-created form exposes `Submission` as a single 1-line answer; landing page provides a copyable answer template to capture source, aroma experience, recent purchase, dishes, price acceptance, and comments.
 - GitHub waitlist issues: 0
 - Notion response count: Notion UI/export로 확인 필요; MCP SQL query는 Business plan 요구로 차단됨
+- Regulatory/unit economics gate: 수요 검증 후 결제 전 `research/02_import_label_unit_economics_gate.md`와 `experiments/unit_economics_template.csv`를 통과해야 함
 
 ## 성공 기준
 
@@ -30,6 +31,7 @@
 - 300명 이상 노출 후 CTA 클릭률 1% 미만
 - 가격 제시 후 대부분 이탈
 - 수입/라벨/배송 단가 때문에 100ml 소비자가가 2,000엔 이상으로 상승
+- 수입신고, 일본어 표시, 알레르겐/보존/기한, 수입자/표시책임자 경로가 불명확함
 
 ## 일일 기록 형식
 

@@ -1,0 +1,6 @@
+scenario,bottle_ml,retail_price_jpy,bottles_per_order,product_cost_jpy_per_bottle,bottle_packaging_jpy_per_bottle,korea_to_japan_freight_jpy_per_bottle,import_broker_or_fixed_fee_jpy_per_bottle,label_and_insert_jpy_per_bottle,japan_fulfillment_jpy_per_order,payment_fee_pct,platform_fee_pct,total_variable_cost_jpy,contribution_jpy,contribution_margin_pct,decision,notes
+base_100ml,100,1480,1,350,90,180,120,40,250,0.036,0.000,1083,397,0.268,pivot_or_raise,"Example only. Need real supplier/freight/importer quotes."
+good_100ml,100,1480,1,260,70,120,80,30,220,0.036,0.000,833,647,0.437,go_if_demand_exists,"Target: keep total variable cost below about 1000 JPY."
+bad_100ml,100,1480,1,600,120,280,220,70,300,0.036,0.000,1643,-163,-0.110,stop_or_bundle_only,"If this is close to real quotes, 100ml single bottle cannot work."
+bundle_3x100ml,100,3980,3,350,90,150,80,35,350,0.036,0.000,2608,1372,0.345,conditional_go,"Bundle can absorb fulfillment and fixed import/broker costs better."
+premium_3x100ml,100,4480,3,420,110,180,100,45,350,0.036,0.000,3076,1404,0.313,conditional_go,"Use only if interviews accept premium aroma/manufacture-date story."

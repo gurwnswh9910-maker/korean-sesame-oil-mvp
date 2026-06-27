@@ -9,6 +9,7 @@
 ## 핵심 산출물
 
 - `research/01_research_brief.md`: 1차 리서치와 2차 핵심가설
+- `research/02_import_label_unit_economics_gate.md`: 일본 수입·표시·원가 gate
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
@@ -19,7 +20,9 @@
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
 - Notion Form: 로그인 마찰을 낮춘 1차 입하 안내/검증 폼
 - `experiments/channel_posting_log.csv`: 채널별 게시 URL과 반응 기록판
+- `experiments/field_interview_log.csv`: 오프라인 10명 인터뷰 기록표
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
+- `experiments/unit_economics_template.csv`: 100ml/3병 세트 단가 gate 템플릿
 - `experiments/notion_form_status.md`: Notion Form 공개 설정과 한계
 - `experiments/validation_tracker_issue_body.md`: 공개 GitHub 검증 트래커 본문
 - `experiments/waitlist_responses.csv`: GitHub Issue Form 응답 자동 집계 CSV
