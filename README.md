@@ -34,6 +34,10 @@
 - `experiments/validation_tracker_issue_body.md`: 공개 GitHub 검증 트래커 본문
 - `experiments/waitlist_responses.csv`: GitHub Issue Form 응답 자동 집계 CSV
 - `experiments/waitlist_summary.md`: 응답 요약 자동 집계
+- `experiments/notion_submissions_export_template.csv`: Notion 1줄 응답 export용 템플릿
+- `experiments/validation_signal_summary.md`: Notion/GitHub/오프라인 신호 통합 판정 요약
+- `experiments/validation_signal_summary.json`: 통합 판정 요약의 기계 판독용 JSON
+- `scripts/summarize_validation_signals.py`: 검증 신호 통합 집계 스크립트
 
 ## 공개 MVP
 
@@ -49,7 +53,7 @@
 Notion Form은 일반 소비자용 1차 CTA다. 현재 도구로 만든 폼은 1줄 응답 방식이며, 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
 GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 fallback으로 유지한다.
 
-응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽어 자동 갱신한다.
+응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽고, `scripts/summarize_validation_signals.py`로 Notion export, GitHub fallback, 오프라인 인터뷰를 합쳐 자동 갱신한다.
 채널별 게시에는 `?src=x_threads_travel`처럼 source 파라미터를 붙인다. 랜딩은 Notion Form URL에 source를 넘기고, GitHub fallback은 Issue 제목의 `[src:...]`에 넣어 집계한다.
 
 ## 실행 원칙

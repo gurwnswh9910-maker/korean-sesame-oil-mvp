@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-27T19:15:15+09:00",
+  "verdict": "insufficient_external_evidence",
+  "reasons": [
+    "External response threshold has not been met."
+  ],
+  "metrics": {
+    "total_respondents": 0,
+    "form_or_github_responses": 0,
+    "purchase_conversation_signals": 0,
+    "offline_interviews": 0,
+    "offline_recent_purchase": 0,
+    "sample_or_purchase_requests": 0,
+    "aroma_memory_positive": 0,
+    "single_price_positive": 0,
+    "bundle_price_positive": 0
+  },
+  "channel_status": {
+    "rows": 6,
+    "posted_yes": 1,
+    "ready_or_pending": 3,
+    "held_or_excluded": 3
+  }
+}

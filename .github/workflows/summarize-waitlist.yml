@@ -25,15 +25,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python scripts/summarize_waitlist.py
+      - name: Build validation signal summary
+        run: python scripts/summarize_validation_signals.py
       - name: Commit summary
         run: |
-          if [[ -n "$(git status --porcelain experiments/waitlist_responses.csv experiments/waitlist_summary.md)" ]]; then
+          if [[ -n "$(git status --porcelain experiments/waitlist_responses.csv experiments/waitlist_summary.md experiments/validation_signal_summary.md experiments/validation_signal_summary.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add experiments/waitlist_responses.csv experiments/waitlist_summary.md
-            git commit -m "Update waitlist response summary"
+            git add experiments/waitlist_responses.csv experiments/waitlist_summary.md experiments/validation_signal_summary.md experiments/validation_signal_summary.json
+            git commit -m "Update validation response summary"
             git push
           else
-            echo "No waitlist summary changes."
+            echo "No validation summary changes."
           fi
-
