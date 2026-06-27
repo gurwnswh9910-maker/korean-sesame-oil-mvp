@@ -6,7 +6,7 @@
 
 - Landing: `https://korean-sesame-oil-mvp.vercel.app/`
 - Share note: `https://korean-sesame-oil-mvp.vercel.app/share`
-- Short note/mobile answer link: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
+- Mobile note answer hub: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
 - Public article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Field QR page: `https://korean-sesame-oil-mvp.vercel.app/field`
 - Printable flyer: `https://korean-sesame-oil-mvp.vercel.app/field-flyer`
@@ -29,6 +29,8 @@ https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 ```
 
 2026-06-27T22:10+09:00에 모바일 CTA도 수정했다. note 본문은 QR이 아니라 `/answer-note` 탭 링크, `/share?src=note_kfood` 응답 메모, note 댓글 템플릿을 사용한다.
+
+2026-06-27T22:40+09:00에는 `/answer-note`를 Notion direct redirect에서 모바일 응답 허브로 바꿨다. 사용자는 같은 링크 안에서 note 댓글, Notion 폼, 복사용 메모, 상세 설명을 선택할 수 있다.
 
 ### 2. X/Threads 짧은 게시 1개
 

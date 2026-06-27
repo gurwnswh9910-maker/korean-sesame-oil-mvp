@@ -12,11 +12,6 @@
       "source": "/answer",
       "destination": "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98",
       "permanent": false
-    },
-    {
-      "source": "/answer-note",
-      "destination": "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=note_kfood",
-      "permanent": false
     }
   ]
 }

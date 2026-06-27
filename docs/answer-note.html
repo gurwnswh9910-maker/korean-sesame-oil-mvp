@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30秒回答 | 韓国式しぼりたてごま油</title>
+  <meta name="description" content="noteから来た方向けの30秒回答ページです。コメント、フォーム、コピー用メモのどれでも回答できます。">
+  <meta property="og:title" content="30秒回答 | 韓国式しぼりたてごま油">
+  <meta property="og:description" content="QRではなくスマホでそのまま回答できます。個人情報は不要です。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://korean-sesame-oil-mvp.vercel.app/assets/hero-sesame-oil.png">
+  <meta property="og:url" content="https://korean-sesame-oil-mvp.vercel.app/answer-note">
+  <style>
+    :root {
+      --ink: #221f1b;
+      --muted: #665f57;
+      --line: #ded2c1;
+      --paper: #fffaf2;
+      --white: #ffffff;
+      --green: #26715c;
+      --gold: #d79a35;
+      --red: #b5352f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.7;
+    }
+    header {
+      padding: 28px 18px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    main {
+      padding: 22px 18px 52px;
+    }
+    .wrap {
+      width: min(760px, 100%);
+      margin: 0 auto;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 8vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .lead {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .choices {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .choice {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      color: inherit;
+      background: var(--white);
+      text-decoration: none;
+    }
+    .choice strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+      font-size: 1.08rem;
+    }
+    .choice.primary {
+      border-color: var(--green);
+      background: #f0faf5;
+    }
+    .memo {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: var(--white);
+    }
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px;
+      color: var(--ink);
+      background: #fffdf8;
+      font: inherit;
+      line-height: 1.6;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--ink);
+      background: #ffe0a3;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .button.secondary {
+      color: var(--green);
+      background: transparent;
+      border-color: var(--green);
+    }
+    .fine {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .status {
+      min-height: 1.6em;
+      color: var(--red);
+      font-size: 0.95rem;
+    }
+    footer {
+      padding: 22px 18px 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--white);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 620px) {
+      .actions {
+        grid-template-columns: 1fr;
+      }
+      .choice {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">noteから来た方向け</p>
+      <h1>スマホのまま、30秒だけ教えてください。</h1>
+      <p class="lead">QRを読む必要はありません。フォームが面倒なら、このnoteのコメントでも大丈夫です。</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="choices" aria-label="回答方法">
+      <a class="choice primary" id="note-comment-link" href="https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9">
+        <strong>noteのコメントで答える</strong>
+        いちばん短い方法です。下のメモをコピーして、noteのコメント欄に貼れます。
+      </a>
+      <a class="choice" id="form-link" href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=note_kfood">
+        <strong>匿名フォームで答える</strong>
+        noteにコメントを残したくない場合はこちら。住所、電話番号、メールアドレスは不要です。
+      </a>
+      <a class="choice" id="detail-link" href="/share?src=note_kfood">
+        <strong>先に詳しく見る</strong>
+        価格仮説、使い方、注意点を見てから答えたい方向けです。
+      </a>
+    </div>
+
+    <section class="memo">
+      <strong>コピー用メモ</strong>
+      <textarea id="response-template" readonly>香り経験: ある・ない・覚えていない
+最近買ったごま油:
+使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他
+100ml 1,480円: はい・迷う・いいえ
+3本 3,980円: はい・迷う・いいえ
+コメント:</textarea>
+      <div class="actions">
+        <button class="button" id="copy-template" type="button">メモをコピー</button>
+        <a class="button secondary" id="x-answer-link" href="#">Xで公開回答</a>
+      </div>
+      <div class="status" id="copy-status" aria-live="polite"></div>
+      <p class="fine">公開回答やnoteコメントでは個人情報を書かないでください。これは正式販売前の需要検証で、決済や配送先は受け付けていません。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Korean market sesame oil MVP. Mobile answer hub for note readers.</div>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var source = (params.get("src") || "note_kfood").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+      var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
+      var noteUrl = "https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9";
+      var currentUrl = window.location.origin + "/answer-note?src=" + encodeURIComponent(source);
+      var formLink = document.getElementById("form-link");
+      var detailLink = document.getElementById("detail-link");
+      var noteCommentLink = document.getElementById("note-comment-link");
+      var xAnswerLink = document.getElementById("x-answer-link");
+      var template = document.getElementById("response-template");
+      var copyButton = document.getElementById("copy-template");
+      var copyStatus = document.getElementById("copy-status");
+      if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
+      if (detailLink) detailLink.href = "/share?src=" + encodeURIComponent(source);
+      if (noteCommentLink) noteCommentLink.href = noteUrl;
+      if (template) template.value = "流入元: " + source + "\n" + template.value;
+      if (xAnswerLink) {
+        var socialText = "#韓国ごま油検証\n" + (template ? template.value : "流入元: " + source);
+        xAnswerLink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(socialText) + "&url=" + encodeURIComponent(currentUrl);
+      }
+      if (copyButton && template && copyStatus) {
+        copyButton.addEventListener("click", function () {
+          template.select();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(template.value).then(function () {
+              copyStatus.textContent = "コピーしました。noteコメントかフォームに貼り付けてください。";
+            }).catch(function () {
+              document.execCommand("copy");
+              copyStatus.textContent = "選択しました。コピーして貼り付けてください。";
+            });
+          } else {
+            document.execCommand("copy");
+            copyStatus.textContent = "選択しました。コピーして貼り付けてください。";
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

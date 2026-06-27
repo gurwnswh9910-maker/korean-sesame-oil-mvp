@@ -10,10 +10,12 @@
 4. `검증/응답_데이터_상태.md`
 5. `experiments/validation_signal_summary.md`
 
+최근 적대적 검증 루프는 `검증/적대적_검증_루프_20260627.md`와 `검증/내용_적대적_검증_20260627.md`에 있다. 기존 작업자는 이어가기 전에 이 파일들의 결론, `/answer-note` live/로컬 불일치, stale checklist 지적을 먼저 확인한다.
+
 ## 현재 운영 기준
 
 - 소비자에게 공유할 기본 URL은 Vercel clean URL이다: `https://korean-sesame-oil-mvp.vercel.app/`
-- note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
+- note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 로컬 작업트리에는 모바일 응답 허브 전환 변경이 있지만, live 배포 반영 여부를 확인하기 전에는 direct Notion redirect일 수 있다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.
 - note 계정은 이 프로젝트에 한해 Codex가 자유롭게 게시/수정할 수 있다고 사용자가 허용했다. 단, note 외부 채널인 X, Threads, Konest 등은 별도 명시 허용 전 게시하지 않는다.
 - 식품 결제, 예약금, 배송지, 전화번호, 이메일 등 개인정보 수집은 수입/표시/단가 gate 통과 전 하지 않는다.
