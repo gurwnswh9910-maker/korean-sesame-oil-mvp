@@ -18,6 +18,8 @@
 - GitHub waitlist issues: 0
 - Notion response count: Notion UI/export로 확인 필요; MCP SQL query는 Business plan 요구로 차단됨
 - Regulatory/unit economics gate: 수요 검증 후 결제 전 `research/02_import_label_unit_economics_gate.md`와 `experiments/unit_economics_template.csv`를 통과해야 함
+- Completion audit: `experiments/completion_audit.md`
+- First traffic runbook: `mvp/runbook_first_traffic.md`
 
 ## 성공 기준
 

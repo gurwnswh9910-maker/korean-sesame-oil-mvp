@@ -15,12 +15,14 @@
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
 - `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
 - `mvp/field_interview_script.md`: 오프라인 10명 인터뷰 스크립트
+- `mvp/runbook_first_traffic.md`: 첫 외부 트래픽 실행 런북
 - `output/pdf/field_interview_flyer.pdf`: 인쇄용 A4 QR 플라이어
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
 - Notion Form: 로그인 마찰을 낮춘 1차 입하 안내/검증 폼
 - `experiments/channel_posting_log.csv`: 채널별 게시 URL과 반응 기록판
+- `experiments/completion_audit.md`: goal 완료 조건별 증거 감사
 - `experiments/field_interview_log.csv`: 오프라인 10명 인터뷰 기록표
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
 - `experiments/unit_economics_template.csv`: 100ml/3병 세트 단가 gate 템플릿
