@@ -19,6 +19,7 @@
 - 소비자에게 공유할 기본 URL은 Vercel clean URL이다: `https://korean-sesame-oil-mvp.vercel.app/`
 - 제품 외 콘텐츠형 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
+- 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
 - note 게시물은 2개다. 1차 제품/입하 안내형은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, 2차 제품 외 콘텐츠형은 `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.
 - note 계정은 이 프로젝트에 한해 Codex가 자유롭게 게시/수정할 수 있다고 사용자가 허용했다. 단, note 외부 채널인 X, Threads, Konest 등은 별도 명시 허용 전 게시하지 않는다.

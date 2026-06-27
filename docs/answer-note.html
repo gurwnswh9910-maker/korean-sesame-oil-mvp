@@ -166,7 +166,11 @@
 
   <main class="wrap">
     <div class="choices" aria-label="回答方法">
-      <a class="choice primary" id="note-comment-link" href="https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9">
+      <a class="choice primary" id="builder-link" href="/quick-answer?src=note_kfood">
+        <strong>質問に沿って30秒で作る</strong>
+        最後に買った場所、料理、香りの残り方を選ぶと、貼り付け用の1行メモになります。
+      </a>
+      <a class="choice" id="note-comment-link" href="https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9">
         <strong>noteのコメントで答える</strong>
         いちばん短い方法です。下のメモをコピーして、noteのコメント欄に貼れます。
       </a>
@@ -215,10 +219,12 @@
       var formLink = document.getElementById("form-link");
       var detailLink = document.getElementById("detail-link");
       var noteCommentLink = document.getElementById("note-comment-link");
+      var builderLink = document.getElementById("builder-link");
       var xAnswerLink = document.getElementById("x-answer-link");
       var template = document.getElementById("response-template");
       var copyButton = document.getElementById("copy-template");
       var copyStatus = document.getElementById("copy-status");
+      if (builderLink) builderLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
       if (detailLink) detailLink.href = "/korea-trip-goma?src=" + encodeURIComponent(source);
       if (noteCommentLink) noteCommentLink.href = noteUrl;

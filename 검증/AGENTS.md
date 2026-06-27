@@ -20,6 +20,7 @@
 - 소비자-facing 링크는 기본적으로 Vercel clean URL을 사용한다.
 - 제품 외 콘텐츠로 타겟을 검증할 때는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`를 사용하고, `content_travel`, `content_shinokubo`, `content_homecook` source를 분리한다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
+- 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시를 허용했다. X, Threads, Konest, 다른 커뮤니티는 별도 허용 전 게시하지 않는다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
@@ -32,6 +33,7 @@
 - Vercel article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Vercel answer memo: `https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood`
 - Vercel note/mobile answer entry: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
+- Vercel structured quick answer: `https://korean-sesame-oil-mvp.vercel.app/quick-answer`
 - Vercel offline page: `https://korean-sesame-oil-mvp.vercel.app/field`
 - note post 1: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`
 - note post 2 content: `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`

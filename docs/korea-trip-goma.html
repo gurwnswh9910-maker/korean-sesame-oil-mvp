@@ -191,7 +191,7 @@
         <div class="actions">
           <button class="button" id="copy-template" type="button">メモをコピー</button>
           <a class="button secondary is-hidden" id="note-comment-link" href="https://note.com/dreamy_viola8978/n/n3f3af286cf6d">noteコメントで答える</a>
-          <a class="button secondary" id="answer-link" href="/answer-note?src=content_travel">30秒で回答する</a>
+          <a class="button secondary" id="answer-link" href="/quick-answer?src=content_travel">質問に沿ってメモを作る</a>
           <a class="button secondary" id="form-link" href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=content_travel">フォームを開く</a>
         </div>
         <p class="notice" id="copy-status">コピーして、回答ページまたはフォームに貼り付けてください。</p>
@@ -215,7 +215,7 @@
       var answerLink = document.getElementById("answer-link");
       var formLink = document.getElementById("form-link");
       var noteCommentLink = document.getElementById("note-comment-link");
-      if (answerLink) answerLink.href = "/answer-note?src=" + encodeURIComponent(source);
+      if (answerLink) answerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
       if (noteCommentLink && source.indexOf("note_content") === 0) {
         noteCommentLink.href = "https://note.com/dreamy_viola8978/n/n3f3af286cf6d";

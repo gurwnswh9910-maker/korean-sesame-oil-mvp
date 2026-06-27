@@ -239,6 +239,7 @@
         <textarea id="response-template" readonly>流入元: direct / 最後に買った場所: 韓国旅行・新大久保・韓国スーパー・ネット・日本のスーパー・その他 / ブランドや店名:  / 容量と価格:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 香りは最後まで残ったか: はい・途中で弱くなった・覚えていない / 日本で買い直すなら決め手: 製造日・強い香り・少量・価格・買いやすさ・その他 / 100ml 1,480円: はい・迷う・いいえ / コメント:</textarea>
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
+          <a class="button secondary" data-builder-link href="/quick-answer?src=share">質問に沿って作る</a>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
           <a class="button secondary" data-social-answer-link href="#">Xで公開回答</a>
           <a class="button secondary" data-landing-link href="/korea-trip-goma">旅行・新大久保メモを見る</a>
@@ -271,6 +272,9 @@
       });
       document.querySelectorAll("[data-landing-link]").forEach(function (link) {
         link.href = "/korea-trip-goma?src=" + encodeURIComponent(source + "_detail");
+      });
+      document.querySelectorAll("[data-builder-link]").forEach(function (link) {
+        link.href = "/quick-answer?src=" + encodeURIComponent(source);
       });
       var pageUrl = window.location.origin + "/share?src=" + encodeURIComponent(source);
       var socialText = "#韓国ごま油検証\n流入元: " + source + "\n最後に買った場所: \nブランドや店名: \n香りは最後まで残ったか: \n日本で買い直す条件: \nコメント:";

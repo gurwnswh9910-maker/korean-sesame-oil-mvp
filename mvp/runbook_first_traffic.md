@@ -8,6 +8,7 @@
 - Content MVP: `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`
 - Share note: `https://korean-sesame-oil-mvp.vercel.app/share`
 - Mobile note answer hub: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
+- Structured quick answer: `https://korean-sesame-oil-mvp.vercel.app/quick-answer`
 - Public article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Field QR page: `https://korean-sesame-oil-mvp.vercel.app/field`
 - Printable flyer: `https://korean-sesame-oil-mvp.vercel.app/field-flyer`
@@ -34,6 +35,8 @@ https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 2026-06-27T22:10+09:00에 모바일 CTA도 수정했다. note 본문은 QR이 아니라 `/answer-note` 탭 링크, `/share?src=note_kfood` 응답 메모, note 댓글 템플릿을 사용한다.
 
 2026-06-27T22:40+09:00에는 `/answer-note`를 Notion direct redirect에서 모바일 응답 허브로 바꿨다. 사용자는 같은 링크 안에서 note 댓글, Notion 폼, 복사용 메모, 상세 설명을 선택할 수 있다.
+
+2026-06-28T00:08+09:00에는 `/quick-answer`를 추가했다. 사용자는 마지막 구매처, 브랜드/店名, 사용 요리, 향 보존, 일본에서 다시 살 조건을 고른 뒤 Notion 1줄 `Submission`에 붙일 메모를 자동 생성할 수 있다.
 
 두 번째 note는 2026-06-27T23:38+09:00에 게시 완료했다.
 
@@ -105,7 +108,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - 24시간 안에 댓글/폼/오프라인 대화 합산 5건 이상이면 같은 메시지를 더 넓힌다.
 - note 24시간 전체뷰가 30 미만이면 메시지 판단보다 유입 부족으로 본다.
 - 10명 중 3명 이상이 최근 구매 행동을 말하면 H2 첫 고객 세그먼트를 유지한다.
-- 콘텐츠형 검증에서 강한 응답은 최근 구매처, 브랜드/매장, 용량/가격, 바꿀 조건 또는 불만 중 3개 이상을 포함해야 한다.
+- 콘텐츠형 검증에서 강한 응답은 최근 구매처, 브랜드/매장, 용량/가격, 사용 요리, 향 보존 경험, 바꿀 조건 또는 불만, 100ml 가격 반응 중 4개 이상을 포함해야 한다.
 - 신오쿠보/한국식품점에서 이미 대체재를 본 사람이 많으면 `한국산` 대신 `제조일/향 보존/소량/재구매 편의` 비교로 메시지를 바꾼다.
 - 신오쿠보나 한국식품점에서 이미 한국식 참기름을 사는 사람은 부정 신호가 아니라 전환 이유 검증 대상이다. 기존 구매처, 제조일 인지, 향 보존, 100ml 소량 선호를 따로 기록한다.
 - 가격 반응이 약하면 100ml 단품보다 3병 세트/선물용 또는 生使い 요리 완성도 메시지로 피벗한다.
