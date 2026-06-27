@@ -39,6 +39,7 @@
 100ml 1,480円前後なら試したいか、30秒だけ教えてください。正式販売前なので個人情報は不要です。
 
 https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
+#韓国ごま油検証
 ```
 
 대안 게시 source: `x_threads_homecook`
