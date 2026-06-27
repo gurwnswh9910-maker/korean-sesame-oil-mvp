@@ -5,7 +5,7 @@
 ## 공개 URL
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
-- Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb
+- Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -14,6 +14,7 @@
 - 2차 핵심가설: 한국 여행/방앗간/식당에서 기억한 향을 일본 집밥에 재현하려는 K-food 홈쿡러가 첫 wedge
 - MVP: GitHub Pages live
 - Primary CTA: Notion Form live, anonymous/open/no-permission submission setting applied
+- Notion Form question shape: current tool-created form exposes `Submission` as a single 1-line answer; landing page provides a copyable answer template to capture source, aroma experience, recent purchase, dishes, price acceptance, and comments.
 - GitHub waitlist issues: 0
 - Notion response count: Notion UI/export로 확인 필요; MCP SQL query는 Business plan 요구로 차단됨
 

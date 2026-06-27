@@ -24,11 +24,11 @@
 ## 공개 MVP
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
-- Primary validation form: https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb
+- Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
 
-Notion Form은 일반 소비자용 1차 CTA다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
+Notion Form은 일반 소비자용 1차 CTA다. 현재 도구로 만든 폼은 1줄 응답 방식이며, 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
 GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 fallback으로 유지한다.
 
 응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽어 자동 갱신한다.

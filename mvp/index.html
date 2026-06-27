@@ -200,6 +200,45 @@
       font-size: 0.95rem;
     }
 
+    .quick-response {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .quick-response textarea {
+      width: 100%;
+      min-height: 118px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--ink);
+      background: #fffdf8;
+      font: inherit;
+      line-height: 1.6;
+    }
+
+    .quick-response .button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .quick-response .button.secondary {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .quick-response small {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     .source-note {
       display: none;
       margin-top: 14px;
@@ -249,7 +288,7 @@
         <h1>韓国市場の<br>しぼりたてごま油を、<br>日本の食卓へ。</h1>
         <p class="hero-copy">ふたを開けた瞬間に広がる、あの香ばしさ。ビビンバ、ナムル、卵かけご飯、ラーメンの仕上げに使うための少量ボトルを検証中です。</p>
         <div class="hero-actions">
-          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb">入荷案内フォームに回答</a>
+          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">入荷案内フォームに回答</a>
           <a class="button secondary" href="#price">価格を見る</a>
         </div>
         <p class="source-note" id="source-note"></p>
@@ -300,10 +339,25 @@
       <div class="section-inner">
         <h2>入荷案内までの流れ</h2>
         <div class="steps">
-          <div class="step">公開フォームに回答</div>
+          <div class="step">1行メモをコピー</div>
+          <div class="step">公開フォームに貼り付け</div>
           <div class="step">容量と価格の希望を回答</div>
-          <div class="step">輸入・表示条件を確認</div>
           <div class="step">少量入荷できる場合だけ案内</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2>30秒で残せる回答メモ</h2>
+        <p class="lead">Notionフォームは1行入力だけなので、下のメモをコピーしてフォームに貼り付けてください。</p>
+        <div class="quick-response">
+          <textarea id="response-template" readonly>流入元: direct / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
+          <div class="hero-actions">
+            <button class="button" id="copy-template" type="button">回答メモをコピー</button>
+            <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
+          </div>
+          <small id="copy-status">個人情報は書かず、使いたい料理や価格感だけ残してください。</small>
         </div>
       </div>
     </section>
@@ -313,7 +367,7 @@
         <h2>まだ買わなくて大丈夫です。</h2>
         <p class="lead">今知りたいのは、韓国の市場や食堂で覚えたごま油の香りを、日本の家でも使いたい人がいるかどうかです。</p>
         <div class="hero-actions">
-          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb">入荷案内フォームに回答</a>
+          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">入荷案内フォームに回答</a>
           <a class="button secondary" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">GitHubで公開回答</a>
         </div>
         <p class="notice">注意: 食品として販売する場合は、日本の食品衛生法に基づく輸入手続き、食品表示、アレルゲン表示、賞味期限、保存方法などの確認が必要です。このページは正式販売前の需要検証です。フォームでは住所・電話番号・メールアドレスなどの個人情報は集めません。GitHubで公開回答する場合も個人情報は書かないでください。</p>
@@ -326,7 +380,7 @@
   </footer>
   <script>
     (function () {
-      var notionFormBase = "https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb";
+      var notionFormBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
       var issueBase = "https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new";
       var params = new URLSearchParams(window.location.search);
       var source = params.get("src") || "";
@@ -346,6 +400,31 @@
       document.querySelectorAll("[data-form-link]").forEach(function (link) {
         link.href = source ? notionFormBase + "?src=" + encodeURIComponent(source) : notionFormBase;
       });
+      var responseTemplate = document.getElementById("response-template");
+      if (responseTemplate && source) {
+        responseTemplate.value = responseTemplate.value.replace("流入元: direct", "流入元: " + source);
+      }
+      var copyButton = document.getElementById("copy-template");
+      var copyStatus = document.getElementById("copy-status");
+      if (copyButton && responseTemplate && copyStatus) {
+        copyButton.addEventListener("click", function () {
+          responseTemplate.select();
+          var copied = false;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(responseTemplate.value).then(function () {
+              copyStatus.textContent = "コピーしました。フォームを開いて貼り付けてください。";
+            }).catch(function () {
+              document.execCommand("copy");
+              copyStatus.textContent = "選択しました。コピーしてフォームに貼り付けてください。";
+            });
+            copied = true;
+          }
+          if (!copied) {
+            document.execCommand("copy");
+            copyStatus.textContent = "選択しました。コピーしてフォームに貼り付けてください。";
+          }
+        });
+      }
       var issueParams = new URLSearchParams();
       issueParams.set("template", "waitlist.yml");
       issueParams.set("title", source ? "[入荷案内][src:" + source + "] " : "[入荷案内] ");

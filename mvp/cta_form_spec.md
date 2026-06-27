@@ -9,11 +9,12 @@
 현재 공개 MVP는 GitHub Pages + Notion Form으로 게시한다. GitHub Issue Form은 로그인 가능한 사용자의 공개 fallback으로만 남긴다.
 
 - Landing: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/`
-- Primary Form: `https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb`
+- Primary Form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
 - GitHub fallback: `https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml`
 - 개인정보 보호: 이메일, 주소, 전화번호를 받지 않는다.
 - 검증 신호: 과거 구매 행동, 가격 수용, 사용 요리, 댓글/후속 대화
 - Notion 데이터베이스: `韓国式しぼりたてごま油 MVP 検証`
+- 도구 한계: Notion MCP로 생성한 공개 Form은 현재 `Submission` 1줄 입력만 노출된다. 랜딩에서 복붙용 1줄 응답 포맷을 제공해 행동 신호를 받는다.
 
 ## 대체 권장 도구
 
@@ -31,6 +32,12 @@
 正式販売前の需要検証フォームです。食品として販売する場合は、日本の輸入・食品表示条件を確認したうえで、少量入荷できる場合のみご案内します。
 
 ## 질문
+
+| 필수 | 필드 | 형식 |
+|---|---|---|
+| 예 | Submission | 1-line text: `流入元 / 香り経験 / 最近買ったごま油 / 使いたい料理 / 100ml価格 / 3本価格 / コメント` |
+
+## 이상적인 다문항 폼으로 전환할 때의 질문
 
 | 필수 | 필드 | 형식 |
 |---|---|---|
