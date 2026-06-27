@@ -12,6 +12,8 @@
 
 CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=travel_market
 
+설명형 링크: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=travel_market_note
+
 ## 게시문 B: K-food 홈쿡
 
 家でビビンバ、キンパ、ナムルを作る人向けに、韓国式の香りが強いごま油を少量で届けられるか試しています。
@@ -21,6 +23,8 @@ CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=travel_mark
 100ml 1,480円前後なら試したいか、率直に教えてください。
 
 CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=homecook_kfood
+
+설명형 링크: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=homecook_kfood_note
 
 ## 게시문 C: 生使い/향미 오일
 
@@ -32,13 +36,27 @@ CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=homecook_kf
 
 CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=nama_tsukai
 
+설명형 링크: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=nama_tsukai_note
+
 ## 채널별 링크
 
 - X/Threads 여행/구매품: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
 - X/Threads 홈쿡: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homecook
-- note 한국요리: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=note_kfood
-- Konest 커뮤니티: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=konest
+- note 한국요리: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=note_kfood
+- Konest 커뮤니티: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=konest
 - Tunagate/오프라인 인터뷰: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=tunagate
+
+## note/커뮤니티용 긴 설명
+
+韓国旅行や新大久保で、ふたを開けた瞬間に「香りが違う」と感じたごま油はありますか。
+
+日本にもおいしいごま油はたくさんありますが、韓国の市場や食堂で記憶に残る、仕上げに一滴たらしたときの香りを少量で再現したい人がいるかを調べています。
+
+正式販売ではなく、入荷前の需要検証です。仮に100ml 1,480円、3本 3,980円くらいならどう感じるかを知りたいです。
+
+個人情報は不要です。最後に買ったごま油、使いたい料理、価格感だけ30秒で教えてください。
+
+詳しい説明と回答メモ: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=note_kfood
 
 ## DM/댓글 응답
 

@@ -11,10 +11,12 @@
 - `research/01_research_brief.md`: 1차 리서치와 2차 핵심가설
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
+- `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
 - Notion Form: 로그인 마찰을 낮춘 1차 입하 안내/검증 폼
+- `experiments/channel_posting_log.csv`: 채널별 게시 URL과 반응 기록판
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
 - `experiments/notion_form_status.md`: Notion Form 공개 설정과 한계
 - `experiments/validation_tracker_issue_body.md`: 공개 GitHub 검증 트래커 본문
@@ -24,6 +26,7 @@
 ## 공개 MVP
 
 - Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+- Share note: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html
 - Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
