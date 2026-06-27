@@ -10,6 +10,7 @@
 
 - `research/01_research_brief.md`: 1차 리서치와 2차 핵심가설
 - `research/02_import_label_unit_economics_gate.md`: 일본 수입·표시·원가 gate
+- `research/03_live_signal_update_20260627.md`: 현재 웹 신호와 가설 보정
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지

@@ -12,6 +12,7 @@
 
 - 1차 리서치: 조건부 진행
 - 2차 핵심가설: 한국 여행/방앗간/식당에서 기억한 향을 일본 집밥에 재현하려는 K-food 홈쿡러가 첫 wedge
+- 현재 웹 신호 업데이트: `research/03_live_signal_update_20260627.md`; 한국 여행/신오쿠보 향 기억 가설은 보강, 신오쿠보/한국식품점 대체재 인지 가설은 추가
 - MVP: GitHub Pages live
 - Primary CTA: Notion Form live, anonymous/open/no-permission submission setting applied
 - Notion Form question shape: current tool-created form exposes `Submission` as a single 1-line answer; landing page provides a copyable answer template to capture source, aroma experience, recent purchase, dishes, price acceptance, and comments.
@@ -20,6 +21,7 @@
 - Regulatory/unit economics gate: 수요 검증 후 결제 전 `research/02_import_label_unit_economics_gate.md`와 `experiments/unit_economics_template.csv`를 통과해야 함
 - Completion audit: `experiments/completion_audit.md`
 - First traffic runbook: `mvp/runbook_first_traffic.md`
+- Field interview update: 신오쿠보/한국식품점에서 이미 한국식 참기름을 봤거나 산 적이 있는지 묻고, 있으면 제조일/향 보존/소량/재구매 편의가 전환 이유인지 확인
 
 ## 성공 기준
 

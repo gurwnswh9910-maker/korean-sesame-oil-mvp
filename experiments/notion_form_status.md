@@ -27,6 +27,8 @@
 - form marker 있음
 - database fetch 기준 새 form view도 `questions=[Submission]`만 노출
 - Notion data source SQL query는 Business plan/Notion AI 요구로 차단됨
+- 2026-06-27T18:27+09:00 구조화 DB `韓国市場ごま油 MVP responses 2026-06-27`와 form view `view://38c5da6e-a39c-816a-8c69-000cf3facda9`를 추가로 생성했지만, fetch 기준 해당 form도 질문이 `Submission` 1개만 노출됨
+- 새 구조화 form 후보 URL `https://www.notion.so/forms/38c5da6ea39c816a8c69000cf3facda9`는 HTTP 200이나, 질문 구성 확인이 약해 랜딩 CTA로 채택하지 않음
 
 ## 운영 메모
 
@@ -34,3 +36,4 @@
 - GitHub Issue Form은 로그인 가능한 사용자용 공개 fallback이다.
 - Notion 응답 수는 Notion UI 또는 export로 확인한다.
 - 채널별 `?src=`는 랜딩의 1줄 응답 메모에 반영된다.
+- 다문항 폼이 꼭 필요해지면 Notion MCP가 아니라 Google Forms/Tally 등 실제 다문항 공개 폼으로 전환한다.
