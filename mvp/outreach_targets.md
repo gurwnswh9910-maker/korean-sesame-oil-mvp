@@ -18,19 +18,20 @@ Primary Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 
 | 순위 | 채널 | 이유 | 게시 문안 |
 |---:|---|---|---|
-| 1 | X/Threads 해시태그 `#韓国料理`, `#韓国旅行`, `#新大久保`, `#韓国購入品`, `#ごま油`, `#おうち韓国` | 한국여행/신오쿠보/홈쿡 맥락을 가장 빠르게 수동 테스트할 수 있다. Threads에는 한국 구매품/참기름 관련 일본어 게시 신호가 있다. | `posting_copy.md` A 또는 B, `?src=x_threads_travel` / `?src=x_threads_homecook` |
-| 2 | note `#韓国料理` 태그 | 레시피/여행/홈쿡 맥락의 장문 독자가 있고, 테스트 취지를 설명하기 좋다. | `posting_copy.md` B, `?src=note_kfood` |
-| 3 | Tunagate 한국요리/신오쿠보 모임 | 한국요리 오프라인 관심자가 모여 있어 첫 10명 인터뷰 후보를 찾기 좋다. 게시보다 운영자/참여자에게 수동 대화 우선. | 짧은 인터뷰 요청, `?src=tunagate` |
-| 4 | Konest 커뮤니티 | 한국여행 정보 탐색자가 있어 "한국에서 먹은 향을 일본에서 다시 사고 싶은가"를 묻기 좋다. | `posting_copy.md` A, `?src=konest` |
+| 1 | note `#韓国料理` 태그 | 자기 글 발행으로 검증 취지를 설명하기 좋고, 게시 후 조회/댓글/스키를 확인할 수 있다. 계정 리스크가 가장 낮다. | `note_article_draft.md`, `?src=note_kfood` |
+| 2 | X/Threads 해시태그 `#韓国料理`, `#韓国旅行`, `#新大久保`, `#韓国購入品`, `#ごま油`, `#おうち韓国` | 한국여행/신오쿠보/홈쿡 맥락을 가장 빠르게 수동 테스트할 수 있다. 반복 게시 없이 1~2개만 수동 게시한다. | `posting_copy.md` A 또는 B, `?src=x_threads_travel` / `?src=x_threads_homecook` |
+| 3 | Konest 커뮤니티 | 한국여행 정보 탐색자가 있어 "한국에서 먹은 향을 일본에서 다시 사고 싶은가"를 묻기 좋다. 다만 규칙 확인/운영자 문의 전에는 보류한다. | `posting_copy.md` A, `?src=konest` |
+| 4 | Tunagate 한국요리/신오쿠보 모임 | 이용규약상 영업, 권유, 선전 목적 이용과 외부 서비스 유도가 금지되어 플랫폼 내 게시에는 맞지 않는다. | 게시 제외. 오프라인에서 자연스럽게 대화가 생긴 경우에만 질문 |
 | 5 | 신오쿠보 식재료점/한국식품점 수동 인터뷰 | 구매 직전/직후 고객에게 현재 대체재, 가격 저항, 제조일/향 보존 신뢰를 물을 수 있다. 온라인보다 샘플 판매 단가 검증에 강하다. | 인터뷰 질문 7개, `?src=offline_shinokubo` |
 
 ## 24시간 실행 루프
 
-1. 하루에 2개 채널만 게시한다.
+1. 첫날에는 note 1개만 게시한다. 24시간 반응이 0이면 X/Threads 1개를 추가한다.
 2. 게시 URL을 `experiments/channel_posting_log.csv`에 기록한다.
 3. 댓글/DM은 바로 판매하지 말고 최근 구매 행동을 묻는다.
 4. 긍정 댓글은 Notion Form으로 이동시키고, 1줄 응답 메모를 붙여넣도록 안내한다. 더 긴 대화는 댓글/DM에서 최근 구매 행동을 묻는다.
 5. Notion Form 제출이 막히거나 source 추적이 약하면 Google Forms/Tally로 CTA를 교체한다.
+6. 외부 계정 게시 전에는 `channel_rules_and_permission_gate.md`의 권한 확인을 통과한다.
 
 ## 주의
 
@@ -46,3 +47,4 @@ Primary Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Konest 커뮤니티 한국여행/맛집 게시판 예시: https://comm.konest.com/topic/558065
 - Threads 한국 구매품/참기름 게시 신호: https://www.threads.com/@kankoku.gohan/post/DIqy_2dyVwy
 - 현재 외부 신호 업데이트: `../research/03_live_signal_update_20260627.md`
+- 채널 규칙/권한 게이트: `channel_rules_and_permission_gate.md`

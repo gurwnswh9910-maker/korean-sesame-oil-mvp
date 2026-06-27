@@ -17,6 +17,8 @@
 - `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
 - `mvp/field_interview_script.md`: 오프라인 10명 인터뷰 스크립트
 - `mvp/runbook_first_traffic.md`: 첫 외부 트래픽 실행 런북
+- `mvp/channel_rules_and_permission_gate.md`: 외부 게시 채널 규칙과 계정 권한 게이트
+- `mvp/note_article_draft.md`: note 첫 게시용 일본어 원고
 - `output/pdf/field_interview_flyer.pdf`: 인쇄용 A4 QR 플라이어
 - `mvp/posting_copy.md`: 일본어 게시/아웃리치 문안
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널

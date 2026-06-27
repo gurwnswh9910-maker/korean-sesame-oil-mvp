@@ -44,7 +44,9 @@ CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=nama_tsukai
 - X/Threads 홈쿡: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homecook
 - note 한국요리: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=note_kfood
 - Konest 커뮤니티: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=konest
-- Tunagate/오프라인 인터뷰: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=tunagate
+- 오프라인 인터뷰: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html
+
+Tunagate에는 플랫폼 내 홍보/외부 유도 게시를 하지 않는다. 자연스러운 오프라인 대화가 생긴 경우에만 개인 정보 없이 인터뷰 질문을 사용한다.
 
 ## note/커뮤니티용 긴 설명
 

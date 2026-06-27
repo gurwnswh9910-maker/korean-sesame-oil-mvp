@@ -22,6 +22,8 @@
 - Completion audit: `experiments/completion_audit.md`
 - First traffic runbook: `mvp/runbook_first_traffic.md`
 - Field interview update: 신오쿠보/한국식품점에서 이미 한국식 참기름을 봤거나 산 적이 있는지 묻고, 있으면 제조일/향 보존/소량/재구매 편의가 전환 이유인지 확인
+- Channel rules gate: `mvp/channel_rules_and_permission_gate.md`; first account-side post should be note, X/Threads only one manual follow-up post, Konest held for rule check, Tunagate excluded for platform posting
+- First note draft: `mvp/note_article_draft.md`
 
 ## 성공 기준
 
