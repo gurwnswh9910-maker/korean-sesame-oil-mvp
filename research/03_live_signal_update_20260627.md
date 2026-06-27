@@ -12,8 +12,10 @@
 |---|---|---|
 | 한국 참기름 수출 증가 | 연합뉴스 영문 기사는 2026년 1~4월 한국 참기름 수출액이 614만 달러로 전년 동기 대비 37% 증가했고, 중량은 657톤으로 47.6% 증가했다고 보도했다. | 한국 참기름이 해외에서 커지는 흐름은 확인된다. 다만 일본 단독 수요 증명은 아니므로 MVP 응답으로 검증해야 한다. |
 | 일본 관광객/주부 반응 | Record China는 2026년 6월 한국 갓 짠 참기름이 일본 관광객과 주부 사이에서 화제가 되고, SNS 언급과 한국 방앗간 방문 수요가 있다는 취지로 보도했다. | H1의 `한국 여행에서 맡은 향 재현` 메시지를 더 우선해도 된다. |
+| FOODEX 2026 B2B 신호 | FOODEX JAPAN 2026 웹가이드에는 한국산 참기름/들기름 관련 출품사가 확인된다. | 일본 시장을 보는 공급자/B2B 관심은 있다. 하지만 소비자 수요와 차별성은 별도로 검증해야 한다. |
 | 신오쿠보 경쟁/벤치마크 | 웹 검색 결과상 신오쿠보의 한국식 참기름 관련 매장/계정 신호가 보인다. 일부 SNS/Instagram 출처는 직접 열람 제한이 있어 독립 검증이 필요하다. | 일본에 대체재가 없다는 식으로 말하면 안 된다. 오프라인 인터뷰에서는 이미 신오쿠보나 한국식품점에서 본 적이 있는지 묻는다. |
-| Notion 구조화 폼 시도 | 새 Notion DB와 Form view를 만들었지만, MCP fetch 기준 공개 폼 질문은 여전히 `Submission` 1개만 노출됐다. | 랜딩 CTA는 기존 1줄 템플릿 방식을 유지한다. 다문항 폼이 필요하면 Google Forms/Tally 같은 별도 폼 도구로 전환한다. |
+| Notion 구조화 폼 재시도 | 새 Notion DB와 Form view, 추가 다문항 테스트 view를 만들었지만, MCP fetch 기준 공개 폼 질문은 여전히 `Submission` 1개만 노출됐다. | 랜딩 CTA는 기존 1줄 템플릿 방식을 유지한다. 다문항 폼이 필요하면 Google Forms/Tally 같은 별도 폼 도구로 전환한다. |
+| note 계정 게시 상태 | 브라우저에서 `https://note.com/notes/new` 접근 시 note 로그인 페이지로 리다이렉트됐다. | 계정 게시는 아직 실행하지 않는다. 현재 외부 공유 표면은 GitHub Pages article이다. |
 
 ## 가설 조정
 
@@ -35,7 +37,7 @@
 
 ### H4 추가: 대체재 인지 가설
 
-신오쿠보나 한국식품점에서 이미 유사 참기름을 봤거나 살 수 있는 고객은 단순 입하 알림보다 `제조일`, `향 보존`, `소량`, `가격`, `재구매 편의`를 비교한다.
+신오쿠보나 한국식품점에서 이미 유사 참기름을 봤거나 살 수 있는 고객은 단순 입하 알림보다 `제조일`, `향 보존`, `소량`, `가격`, `재구매 편의`를 비교한다. MVP 메시지는 "일본에 없다"가 아니라 "이미 살 수 있는 제품과 비교해도 바꿀 이유가 있는가"를 묻는 쪽으로 좁힌다.
 
 검증 질문:
 
@@ -48,9 +50,11 @@
 - `mvp/field_interview_script.md`에 신오쿠보/한국식품점 대체재 질문을 추가한다.
 - `mvp/outreach_targets.md`에는 신오쿠보를 단순 유입 채널이 아니라 경쟁/벤치마크 확인 채널로 표시한다.
 - `mvp/runbook_first_traffic.md`는 첫 게시 후 실제 계정 URL과 반응 수가 기록되기 전까지 `검증 완료`로 보지 않는다.
+- `mvp/index.html`, `mvp/share_note.html`, `mvp/note_article.html`에는 기존 신오쿠보/한국식품점 대체재 대비 전환 이유 질문을 명시한다.
 
 ## 참고 소스
 
 - Yonhap, S. Korea's sesame oil exports jump 37 pct in Jan-April: https://en.yna.co.kr/view/AEN20260602002900320
 - Record China, Korean freshly pressed sesame oil topic among Japanese tourists/consumers: https://www.recordchina.co.jp/b978218-s39-c30-d0195.html
+- FOODEX JAPAN 2026 web guide, Korean sesame oil exhibitor signal: https://www.jma-tradeshow.com/foodex/webguide_jp/company.php?no=2201
 - OILLO Japan Instagram search-result signal, direct fetch throttled: https://www.instagram.com/oillo_japan/

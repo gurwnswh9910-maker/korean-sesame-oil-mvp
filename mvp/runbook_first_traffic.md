@@ -21,7 +21,7 @@
 
 게시 source: `note_kfood`
 
-`mvp/note_article_draft.md`를 사용한다. 현재 브라우저는 note에 로그인되어 있지 않으므로, 실제 note 계정 게시 전에는 로그인/게시 권한 확인이 필요하다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
+`mvp/note_article_draft.md`를 사용한다. 2026-06-27T19:22+09:00 브라우저 확인 기준 `https://note.com/notes/new`는 `https://note.com/login?redirectPath=/notes/new`로 리다이렉트된다. 실제 note 계정 게시 전에는 로그인/게시 권한 확인이 필요하다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
 
 ### 2. X/Threads 짧은 게시 1개
 
@@ -81,4 +81,5 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - note 24시간 전체뷰가 30 미만이면 메시지 판단보다 유입 부족으로 본다.
 - 10명 중 3명 이상이 최근 구매 행동을 말하면 H2 첫 고객 세그먼트를 유지한다.
 - 신오쿠보/한국식품점에서 이미 대체재를 본 사람이 많으면 `한국산` 대신 `제조일/향 보존/소량/재구매 편의` 비교로 메시지를 바꾼다.
+- 신오쿠보나 한국식품점에서 이미 한국식 참기름을 사는 사람은 부정 신호가 아니라 전환 이유 검증 대상이다. 기존 구매처, 제조일 인지, 향 보존, 100ml 소량 선호를 따로 기록한다.
 - 가격 반응이 약하면 100ml 단품보다 3병 세트/선물용 또는 生使い 요리 완성도 메시지로 피벗한다.
