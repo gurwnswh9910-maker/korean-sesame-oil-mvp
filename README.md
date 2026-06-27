@@ -15,6 +15,8 @@
 - `mvp/outreach_targets.md`: 1차 수동 게시 채널
 - `mvp/validation_plan.md`: 2주 검증 계획과 KPI
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
+- `experiments/waitlist_responses.csv`: GitHub Issue Form 응답 자동 집계 CSV
+- `experiments/waitlist_summary.md`: 응답 요약 자동 집계
 
 ## 공개 MVP
 
@@ -24,6 +26,8 @@
 
 GitHub Issue Form은 공개 검증 신호만 받는다. 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
 GitHub 로그인이 필요한 경로이므로, 일반 소비자 대상 게시에서는 Google Forms 또는 Tally로 마찰을 낮추는 후속 개선이 필요하다.
+
+응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽어 자동 갱신한다.
 
 ## 실행 원칙
 

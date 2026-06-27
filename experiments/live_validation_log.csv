@@ -2,4 +2,5 @@ checked_at,artifact,check,result,evidence,next_action
 2026-06-27T16:40:00+09:00,GitHub Pages,landing HTTP check,pass,"200 OK; title=韓国市場のしぼりたてごま油; CTA present; hero asset present; no FORM_URL placeholder","Drive real traffic from posting_copy.md"
 2026-06-27T16:40:00+09:00,GitHub Issue Form,waitlist form availability,partial,"Issue template exists; unauthenticated users are redirected to GitHub login","Use as public GitHub-native signal; switch to Google Form/Tally for lower-friction consumer traffic"
 2026-06-27T16:40:00+09:00,GitHub Issue,validation tracker,pass,"Issue #1 open with mvp-validation label","Record daily channel metrics and customer replies"
-
+2026-06-27T17:05:00+09:00,Notion Form,public form availability,fail,"Form view created internally; public notion.so/forms URL returns page-not-found/permission error","Do not use Notion Form CTA until public sharing can be enabled"
+2026-06-27T17:10:00+09:00,GitHub Action,waitlist aggregation path,pass,"scripts/summarize_waitlist.py creates response CSV and summary from waitlist issues","Push workflow and run after first external response"

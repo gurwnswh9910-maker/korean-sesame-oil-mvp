@@ -1,0 +1,39 @@
+name: Summarize waitlist responses
+
+on:
+  issues:
+    types: [opened, edited, labeled, reopened]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 1 * * *"
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'issues' || contains(github.event.issue.labels.*.name, 'waitlist')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build waitlist summary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/summarize_waitlist.py
+      - name: Commit summary
+        run: |
+          if [[ -n "$(git status --porcelain experiments/waitlist_responses.csv experiments/waitlist_summary.md)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add experiments/waitlist_responses.csv experiments/waitlist_summary.md
+            git commit -m "Update waitlist response summary"
+            git push
+          else
+            echo "No waitlist summary changes."
+          fi
+
