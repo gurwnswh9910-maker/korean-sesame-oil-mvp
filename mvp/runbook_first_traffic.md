@@ -21,11 +21,13 @@
 
 게시 source: `note_kfood`
 
-`mvp/note_article_draft.md`를 사용한다. 2026-06-27T19:22+09:00 브라우저 확인 기준 `https://note.com/notes/new`는 `https://note.com/login?redirectPath=/notes/new`로 리다이렉트된다. 실제 note 계정 게시 전에는 로그인/게시 권한 확인이 필요하다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
+`mvp/note_article_draft.md`를 사용한다. 2026-06-27T21:03+09:00 Edge CDP 확인 기준 note 로그인은 되었지만 `https://editor.note.com/new`에서 `POST /api/v1/text_notes`가 `422 email_activation`을 반환한다. note 홈 하단에는 `メールを再送信` 버튼이 보인다.
+
+실제 note 계정 게시 전에는 사용자가 직접 `メールを再送信`을 누르고, 등록 메일함에서 최신 인증 링크를 열어야 한다. 인증 후에는 `mvp/note_posting_packet.md` 절차를 따른다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
 
 ### 2. X/Threads 짧은 게시 1개
 
-note 게시 후 24시간 반응이 0일 때만 추가한다. 동일 문안 반복, 댓글 대량 발송, DM 발송은 하지 않는다.
+기본 순서는 note 게시 후 24시간 반응이 0일 때만 추가한다. 단, note 이메일 인증이 지연되고 사용자가 X/Threads 단일 게시를 명시 허용하면 이 경로를 먼저 써도 된다. 동일 문안 반복, 댓글 대량 발송, DM 발송은 하지 않는다.
 
 게시 A source: `x_threads_travel`
 
