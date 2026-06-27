@@ -75,18 +75,52 @@
       border-radius: 8px;
       background: var(--cream);
     }
+    .quick-response {
+      display: grid;
+      gap: 14px;
+      margin: 28px 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+    .quick-response textarea {
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--ink);
+      background: #fffdf8;
+      font: inherit;
+      line-height: 1.6;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      margin-top: 12px;
       padding: 12px 18px;
+      border: 1px solid transparent;
       border-radius: 8px;
       color: var(--ink);
       background: #ffe0a3;
       font-weight: 800;
       text-decoration: none;
+      cursor: pointer;
+      font: inherit;
+    }
+    .button.secondary {
+      color: var(--green);
+      background: transparent;
+      border-color: var(--green);
     }
     .facts {
       display: grid;
@@ -165,11 +199,95 @@
       <div class="cta">
         <strong>30秒だけ、回答メモを残してください。</strong>
         <p>住所、電話番号、メールアドレスは不要です。最後に買ったごま油、使いたい料理、価格感だけ教えてください。</p>
-        <a class="button" href="share_note.html?src=article_github">回答メモを残す</a>
+        <div class="actions">
+          <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
+          <a class="button secondary" data-detail-link href="share_note.html?src=article_github">回答メモページへ</a>
+        </div>
+      </div>
+
+      <div class="quick-response">
+        <strong>コピーしてフォームに貼り付ける回答メモ</strong>
+        <textarea id="response-template" readonly>流入元: article_github / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
+        <div class="actions">
+          <button class="button" id="copy-template" type="button">回答メモをコピー</button>
+          <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
+        </div>
+        <small id="copy-status">個人情報は書かず、使いたい料理や価格感だけ残してください。</small>
+      </div>
+
+      <div class="cta">
+        <strong>この検証を共有する</strong>
+        <p>韓国料理や新大久保の買い物が好きな人に聞ける場合は、このページを共有してください。</p>
+        <div class="actions">
+          <a class="button" id="share-x" href="#">Xで共有</a>
+          <a class="button secondary" id="share-line" href="#">LINEで共有</a>
+          <button class="button secondary" id="copy-url" type="button">URLをコピー</button>
+        </div>
+        <small id="share-status">共有は任意です。繰り返し投稿や迷惑になる送信はしないでください。</small>
       </div>
 
       <p class="notice">個人情報は書かないでください。正式な輸入・表示確認前のため、支払い、予約金、配送先情報は受け付けません。</p>
     </article>
   </main>
+  <script>
+    (function () {
+      var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
+      var params = new URLSearchParams(window.location.search);
+      var source = (params.get("src") || "article_github").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+      var pageUrl = "https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html?src=" + encodeURIComponent(source);
+      document.querySelectorAll("[data-form-link]").forEach(function (link) {
+        link.href = formBase + "?src=" + encodeURIComponent(source);
+      });
+      document.querySelectorAll("[data-detail-link]").forEach(function (link) {
+        link.href = "share_note.html?src=" + encodeURIComponent(source);
+      });
+      var template = document.getElementById("response-template");
+      if (template) {
+        template.value = template.value.replace("流入元: article_github", "流入元: " + source);
+      }
+      var copyButton = document.getElementById("copy-template");
+      var copyStatus = document.getElementById("copy-status");
+      if (copyButton && template && copyStatus) {
+        copyButton.addEventListener("click", function () {
+          template.select();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(template.value).then(function () {
+              copyStatus.textContent = "コピーしました。フォームを開いて貼り付けてください。";
+            }).catch(function () {
+              document.execCommand("copy");
+              copyStatus.textContent = "選択しました。コピーしてフォームに貼り付けてください。";
+            });
+          } else {
+            document.execCommand("copy");
+            copyStatus.textContent = "選択しました。コピーしてフォームに貼り付けてください。";
+          }
+        });
+      }
+      var shareText = "韓国旅行で覚えたしぼりたてごま油の香り、日本の家でも使いたいですか？正式販売前の30秒アンケートです。";
+      var x = document.getElementById("share-x");
+      var line = document.getElementById("share-line");
+      if (x) {
+        x.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
+      }
+      if (line) {
+        line.href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(pageUrl);
+      }
+      var copyUrl = document.getElementById("copy-url");
+      var shareStatus = document.getElementById("share-status");
+      if (copyUrl && shareStatus) {
+        copyUrl.addEventListener("click", function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(pageUrl).then(function () {
+              shareStatus.textContent = "URLをコピーしました。";
+            }).catch(function () {
+              shareStatus.textContent = pageUrl;
+            });
+          } else {
+            shareStatus.textContent = pageUrl;
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

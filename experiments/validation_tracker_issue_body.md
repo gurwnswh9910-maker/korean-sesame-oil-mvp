@@ -26,6 +26,7 @@
 - Channel rules gate: `mvp/channel_rules_and_permission_gate.md`; first account-side post should be note, X/Threads only one manual follow-up post, Konest held for rule check, Tunagate excluded for platform posting
 - First note draft: `mvp/note_article_draft.md`
 - GitHub Pages article: `mvp/note_article.html` / `docs/note_article.html`; source `article_github`
+- Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
 
 ## 성공 기준
 
