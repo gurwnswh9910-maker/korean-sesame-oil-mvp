@@ -1,0 +1,2 @@
+captured_at,platform,source,response_url,response_text,recent_purchase,aroma_memory,single_price_reaction,bundle_price_reaction,sample_or_purchase_signal,notes
+2026-06-27T00:00:00+09:00,X,example,example,"流入元: x_public_answer / 香り経験: ある / 最近買ったごま油: 新大久保で購入 / 使いたい料理: ビビンバ / 100ml 1,480円: 迷う / 3本 3,980円: はい / コメント: 少量なら試したい",新大久保で購入,ある,迷う,はい,サンプルなら試したい,replace this row with real public response URL

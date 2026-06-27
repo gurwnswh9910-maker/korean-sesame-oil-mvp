@@ -212,8 +212,9 @@
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
+          <a class="button secondary" data-social-answer-link href="#">Xで公開回答</a>
         </div>
-        <small id="copy-status">個人情報は書かず、使いたい料理や価格感だけ残してください。</small>
+        <small id="copy-status">個人情報は書かず、使いたい料理や価格感だけ残してください。Xで回答する場合は公開投稿になります。</small>
       </div>
 
       <div class="cta">
@@ -265,8 +266,12 @@
         });
       }
       var shareText = "韓国旅行で覚えたしぼりたてごま油の香り、日本の家でも使いたいですか？正式販売前の30秒アンケートです。";
+      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n香り経験: \n最近買ったごま油: \n100ml 1,480円: \nコメント:";
       var x = document.getElementById("share-x");
       var line = document.getElementById("share-line");
+      document.querySelectorAll("[data-social-answer-link]").forEach(function (link) {
+        link.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(socialText) + "&url=" + encodeURIComponent(pageUrl);
+      });
       if (x) {
         x.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
       }

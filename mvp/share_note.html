@@ -240,9 +240,10 @@
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
+          <a class="button secondary" data-social-answer-link href="#">Xで公開回答</a>
           <a class="button secondary" data-landing-link href="./">詳しいページを見る</a>
         </div>
-        <p class="notice" id="copy-status">コピーしてフォームの1行入力欄に貼り付けてください。</p>
+        <p class="notice" id="copy-status">コピーしてフォームの1行入力欄に貼り付けてください。Xで回答する場合は公開投稿になります。</p>
       </div>
     </section>
 
@@ -270,6 +271,11 @@
       });
       document.querySelectorAll("[data-landing-link]").forEach(function (link) {
         link.href = "./?src=" + encodeURIComponent(source + "_detail");
+      });
+      var pageUrl = "https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=" + encodeURIComponent(source);
+      var socialText = "#韓国ごま油検証\n流入元: " + source + "\n香り経験: \n最近買ったごま油: \n100ml 1,480円: \nコメント:";
+      document.querySelectorAll("[data-social-answer-link]").forEach(function (link) {
+        link.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(socialText) + "&url=" + encodeURIComponent(pageUrl);
       });
       var button = document.getElementById("copy-template");
       var status = document.getElementById("copy-status");

@@ -17,6 +17,7 @@ EXP_DIR = Path("experiments")
 WAITLIST_CSV = EXP_DIR / "waitlist_responses.csv"
 NOTION_EXPORT_CSV = EXP_DIR / "notion_submissions_export.csv"
 FIELD_INTERVIEW_CSV = EXP_DIR / "field_interview_log.csv"
+PUBLIC_SOCIAL_CSV = EXP_DIR / "public_social_responses.csv"
 CHANNEL_LOG_CSV = EXP_DIR / "channel_posting_log.csv"
 SUMMARY_MD = EXP_DIR / "validation_signal_summary.md"
 SUMMARY_JSON = EXP_DIR / "validation_signal_summary.json"
@@ -196,6 +197,30 @@ def field_respondents() -> list[Respondent]:
     return respondents
 
 
+def public_social_respondents() -> list[Respondent]:
+    respondents: list[Respondent] = []
+    for row in read_csv(PUBLIC_SOCIAL_CSV):
+        joined = " ".join(row.values())
+        if not joined.strip():
+            continue
+        if row.get("response_url", "").lower() == "example":
+            continue
+        text = row.get("response_text", "")
+        source = row.get("source") or row.get("platform") or "social_untracked"
+        respondents.append(
+            Respondent(
+                channel="social",
+                source=source,
+                recent_purchase=has_recent_purchase(row.get("recent_purchase", "") or text),
+                aroma_memory=positive(row.get("aroma_memory", "") or text),
+                single_price_positive=positive(row.get("single_price_reaction", "") or text),
+                bundle_price_positive=positive(row.get("bundle_price_reaction", "") or text),
+                sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+            )
+        )
+    return respondents
+
+
 def channel_status() -> dict[str, int]:
     rows = read_csv(CHANNEL_LOG_CSV)
     return {
@@ -212,8 +237,8 @@ def count_true(respondents: list[Respondent], attr: str) -> int:
 
 def decision(metrics: dict[str, int]) -> tuple[str, list[str]]:
     reasons: list[str] = []
-    if metrics["form_or_github_responses"] >= 30:
-        reasons.append("Notion/GitHub responses reached 30+.")
+    if metrics["online_public_responses"] >= 30:
+        reasons.append("Online public responses reached 30+.")
     if metrics["purchase_conversation_signals"] >= 10:
         reasons.append("Purchase-context signals reached 10+.")
     if metrics["offline_interviews"] >= 10 and metrics["offline_recent_purchase"] >= 3:
@@ -241,7 +266,7 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         "",
         "| Metric | Current | Threshold |",
         "|---|---:|---:|",
-        f"| Notion + GitHub responses | {metrics['form_or_github_responses']} | 30 |",
+        f"| Online public responses | {metrics['online_public_responses']} | 30 |",
         f"| Purchase-context signals | {metrics['purchase_conversation_signals']} | 10 |",
         f"| Offline interviews | {metrics['offline_interviews']} | 10 |",
         f"| Offline recent purchase/search signals | {metrics['offline_recent_purchase']} | 3 |",
@@ -252,6 +277,8 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         "| Metric | Value |",
         "|---|---:|",
         f"| Total respondents | {metrics['total_respondents']} |",
+        f"| Notion + GitHub responses | {metrics['form_or_github_responses']} |",
+        f"| Public social responses | {metrics['public_social_responses']} |",
         f"| Aroma memory positive | {metrics['aroma_memory_positive']} |",
         f"| 100ml price positive or conditional | {metrics['single_price_positive']} |",
         f"| 3-bottle price positive or conditional | {metrics['bundle_price_positive']} |",
@@ -291,10 +318,12 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
 
 def main() -> int:
     EXP_DIR.mkdir(parents=True, exist_ok=True)
-    respondents = notion_respondents() + github_respondents() + field_respondents()
+    respondents = notion_respondents() + github_respondents() + public_social_respondents() + field_respondents()
     metrics = {
         "total_respondents": len(respondents),
         "form_or_github_responses": sum(1 for respondent in respondents if respondent.channel in {"notion", "github"}),
+        "public_social_responses": sum(1 for respondent in respondents if respondent.channel == "social"),
+        "online_public_responses": sum(1 for respondent in respondents if respondent.channel in {"notion", "github", "social"}),
         "purchase_conversation_signals": sum(1 for respondent in respondents if respondent.recent_purchase or respondent.sample_or_purchase_signal),
         "offline_interviews": sum(1 for respondent in respondents if respondent.channel == "offline"),
         "offline_recent_purchase": sum(1 for respondent in respondents if respondent.channel == "offline" and respondent.recent_purchase),

@@ -71,9 +71,11 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - 온라인 게시 후 `experiments/channel_posting_log.csv`의 `posted`, `post_url`, `visits`, `form_submits`, `replies`를 업데이트한다.
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
 - GitHub Pages article은 `article_github` source로 Notion/GitHub 응답을 기록한다.
+- X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다.
 - 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.
 - Notion 응답은 Notion UI/export로 확인한다.
 - GitHub fallback 응답은 `experiments/waitlist_summary.md` 또는 GitHub Issues에서 확인한다.
+- 공개 X 응답은 검색/수동 확인 후 `experiments/public_social_responses.csv`로 옮긴다.
 
 ## 1차 판정
 
