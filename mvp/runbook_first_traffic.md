@@ -4,11 +4,12 @@
 
 ## 준비물
 
-- Landing: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/`
-- Share note: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html`
-- Public article: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html`
-- Field QR page: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html`
-- Printable flyer: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview_flyer.pdf`
+- Landing: `https://korean-sesame-oil-mvp.vercel.app/`
+- Share note: `https://korean-sesame-oil-mvp.vercel.app/share`
+- Short note/mobile answer link: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
+- Public article: `https://korean-sesame-oil-mvp.vercel.app/note`
+- Field QR page: `https://korean-sesame-oil-mvp.vercel.app/field`
+- Printable flyer: `https://korean-sesame-oil-mvp.vercel.app/field-flyer`
 - Primary form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
 - Channel rules gate: `mvp/channel_rules_and_permission_gate.md`
 - First note draft: `mvp/note_article_draft.md`
@@ -21,9 +22,13 @@
 
 게시 source: `note_kfood`
 
-`mvp/note_article_draft.md`를 사용한다. 2026-06-27T21:03+09:00 Edge CDP 확인 기준 note 로그인은 되었지만 `https://editor.note.com/new`에서 `POST /api/v1/text_notes`가 `422 email_activation`을 반환한다. note 홈 하단에는 `メールを再送信` 버튼이 보인다.
+note는 2026-06-27T21:46+09:00에 게시 완료했다.
 
-실제 note 계정 게시 전에는 사용자가 직접 `メールを再送信`을 누르고, 등록 메일함에서 최신 인증 링크를 열어야 한다. 인증 후에는 `mvp/note_posting_packet.md` 절차를 따른다. 계정 게시 전까지는 GitHub Pages의 `note_article.html?src=article_github`를 공개 설명형 URL로 사용한다.
+```text
+https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
+```
+
+2026-06-27T22:10+09:00에 모바일 CTA도 수정했다. note 본문은 QR이 아니라 `/answer-note` 탭 링크, `/share?src=note_kfood` 응답 메모, note 댓글 템플릿을 사용한다.
 
 ### 2. X/Threads 짧은 게시 1개
 
@@ -38,7 +43,7 @@
 
 100ml 1,480円前後なら試したいか、30秒だけ教えてください。正式販売前なので個人情報は不要です。
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
+https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_travel
 #韓国ごま油検証
 ```
 
@@ -51,7 +56,7 @@ https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
 
 100ml 1,480円前後なら試したいか、率直に教えてください。
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homecook
+https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_homecook
 ```
 
 ### 3. Konest 보류
@@ -60,7 +65,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 
 ### 4. 오프라인 3명만 묻기
 
-사용 링크: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html`
+사용 링크: `https://korean-sesame-oil-mvp.vercel.app/field`
 
 질문:
 
@@ -73,7 +78,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 
 - 온라인 게시 후 `experiments/channel_posting_log.csv`의 `posted`, `post_url`, `visits`, `form_submits`, `replies`를 업데이트한다.
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
-- GitHub Pages article은 `article_github` source로 Notion/GitHub 응답을 기록한다.
+- Vercel article은 `article` source로 Notion 응답을 기록한다. GitHub fallback은 내부용으로만 본다.
 - X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다.
 - 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.
 - Notion 응답은 Notion UI/export로 확인한다.

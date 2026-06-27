@@ -15,7 +15,7 @@
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/share_note.html`: 일본어 커뮤니티/노트 공유용 설명 페이지
-- `mvp/note_article.html`: GitHub Pages에 직접 배포하는 note형 공개 설명 기사
+- `mvp/note_article.html`: note/Vercel용 공개 설명 기사
 - `mvp/field_interview.html`: 오프라인 QR 인터뷰용 페이지
 - `mvp/field_interview_script.md`: 오프라인 10명 인터뷰 스크립트
 - `mvp/runbook_first_traffic.md`: 첫 외부 트래픽 실행 런북
@@ -46,17 +46,19 @@
 
 ## 공개 MVP
 
-- Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
-- Share note: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html
-- Public article: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
-- Field interview QR: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html
-- Printable flyer PDF: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview_flyer.pdf
+- Landing: https://korean-sesame-oil-mvp.vercel.app/
+- Share note: https://korean-sesame-oil-mvp.vercel.app/share
+- Short answer link for note/mobile: https://korean-sesame-oil-mvp.vercel.app/answer-note
+- Public article: https://korean-sesame-oil-mvp.vercel.app/note
+- Field interview QR: https://korean-sesame-oil-mvp.vercel.app/field
+- Printable flyer PDF: https://korean-sesame-oil-mvp.vercel.app/field-flyer
+- note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 - Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1
 
 Notion Form은 일반 소비자용 1차 CTA다. 현재 도구로 만든 폼은 1줄 응답 방식이며, 이메일, 주소, 전화번호 같은 개인정보는 받지 않는다.
-GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 fallback으로 유지한다.
+GitHub Issue Form은 로그인 가능한 사용자의 공개 검증 신호만 받는 내부 fallback으로 유지한다. 소비자에게 공유하는 기본 URL은 Vercel clean URL이다.
 
 응답 집계는 `.github/workflows/summarize-waitlist.yml`가 `waitlist` 이슈를 읽고, `scripts/summarize_validation_signals.py`로 Notion export, GitHub fallback, X 공개 응답 URL 수동 수집, 오프라인 인터뷰를 합쳐 자동 갱신한다. 워크플로는 매일 실행되고, 응답 입력 CSV나 채널 로그가 push될 때도 다시 실행된다. 통합 요약은 임계값 충족 여부와 함께 `collect_more_evidence`, `candidate_go_small_batch`, `candidate_pivot_price_or_bundle`, `candidate_stop_or_resegment` 같은 Go/Pivot/Stop 추천을 낸다.
 채널별 게시에는 `?src=x_threads_travel`처럼 source 파라미터를 붙인다. 랜딩은 Notion Form URL에 source를 넘기고, GitHub fallback은 Issue 제목의 `[src:...]`에 넣어 집계한다.

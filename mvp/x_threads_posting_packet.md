@@ -1,11 +1,11 @@
 # X/Threads 단일 게시 패킷
 
 작성일: 2026-06-27
-상태: 계정 게시 권한 대기
+상태: note 24시간 반응 확인 후, 별도 계정 게시 권한 대기
 
 ## 사용 조건
 
-note 이메일 인증이 지연되고, 사용자가 X 또는 Threads 계정으로 단일 게시를 명시 허용할 때만 사용한다. 반복 게시, 대량 댓글, DM 발송, URL shortener 사용은 하지 않는다.
+note 게시 후 24시간 반응이 0이고, 사용자가 X 또는 Threads 계정으로 단일 게시를 명시 허용할 때만 사용한다. 반복 게시, 대량 댓글, DM 발송은 하지 않는다.
 
 ## 1순위 게시문
 
@@ -20,7 +20,7 @@ source: `x_threads_travel`
 
 100ml 1,480円前後なら試したいか、30秒だけ教えてください。正式販売前なので個人情報は不要です。
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
+https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_travel
 #韓国ごま油検証
 ```
 
@@ -37,7 +37,7 @@ source: `x_threads_homecook`
 
 100ml 1,480円前後なら試したいか、率直に教えてください。
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homecook
+https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_homecook
 ```
 
 ## 게시 직전 확인 문구
@@ -70,5 +70,5 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_publ
 ## 공개 응답 검색어
 
 - `#韓国ごま油検証`
-- `gurwnswh9910-maker.github.io/korean-sesame-oil-mvp`
+- `korean-sesame-oil-mvp.vercel.app`
 - `x_threads_travel`

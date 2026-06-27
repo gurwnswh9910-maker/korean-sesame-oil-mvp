@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/note", "destination": "/note_article.html" },
+    { "source": "/share", "destination": "/share_note.html" },
+    { "source": "/field", "destination": "/field_interview.html" },
+    { "source": "/field-flyer", "destination": "/field_interview_flyer.pdf" }
+  ],
+  "redirects": [
+    {
+      "source": "/answer",
+      "destination": "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98",
+      "permanent": false
+    },
+    {
+      "source": "/answer-note",
+      "destination": "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=note_kfood",
+      "permanent": false
+    }
+  ]
+}

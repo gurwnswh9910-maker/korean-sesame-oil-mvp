@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/sitemap.xml
+Sitemap: https://korean-sesame-oil-mvp.vercel.app/sitemap.xml

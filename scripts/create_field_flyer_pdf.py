@@ -13,8 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "field_interview_flyer.pdf"
 QR_IMAGE = ROOT / "mvp" / "assets" / "qr_offline_shinokubo.png"
 TARGET_URL = (
-    "https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/"
-    "share_note.html?src=offline_shinokubo"
+    "https://korean-sesame-oil-mvp.vercel.app/"
+    "share?src=offline_shinokubo"
 )
 
 

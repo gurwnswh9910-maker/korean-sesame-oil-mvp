@@ -6,9 +6,10 @@
 
 ## 현재 게시용 도구
 
-현재 공개 MVP는 GitHub Pages + Notion Form으로 게시한다. GitHub Issue Form은 로그인 가능한 사용자의 공개 fallback으로만 남긴다.
+현재 공개 MVP는 Vercel + Notion Form으로 게시한다. GitHub Pages와 GitHub Issue Form은 로그인 가능한 사용자의 내부 fallback으로만 남긴다.
 
-- Landing: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/`
+- Landing: `https://korean-sesame-oil-mvp.vercel.app/`
+- note/mobile short answer: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
 - Primary Form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
 - GitHub fallback: `https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml`
 - 개인정보 보호: 이메일, 주소, 전화번호를 받지 않는다.

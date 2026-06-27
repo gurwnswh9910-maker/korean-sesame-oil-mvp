@@ -19,13 +19,16 @@
 - 使い方: ビビンバ、ナムル、キンパ、卵かけご飯、ラーメン、冷奴、焼肉の仕上げ
 - 目的: 炒め油ではなく、最後に香りを足すための少量ボトル
 
-30秒だけ、下のページから回答メモを残してもらえるとうれしいです。住所、電話番号、メールアドレスは不要です。
+スマホで読んでいる方は、QRではなくこのままリンクをタップしてください。30秒だけ、回答メモを残してもらえるとうれしいです。住所、電話番号、メールアドレスは不要です。
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=note_kfood
+回答フォーム:
+https://korean-sesame-oil-mvp.vercel.app/answer-note
 
-ログイン前に共有する場合はこちらの説明ページも使えます。
+フォームに貼り付ける回答メモ:
+https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood
 
-https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
+詳しい説明:
+https://korean-sesame-oil-mvp.vercel.app/note
 
 特に知りたいのはこの3つです。
 
@@ -35,7 +38,13 @@ https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html
 
 新大久保や韓国食材店ですでに韓国式のごま油を買っている方は、どこで買っているか、何が決め手かも教えてください。既に買える商品があるなら、製造日、香りの強さ、少量で使い切れること、再購入しやすさのどれが替える理由になるのかを知りたいです。
 
-コメントでも大丈夫です。個人情報は書かず、最後に買ったごま油、使いたい料理、価格感だけ教えてください。
+フォームが面倒な場合は、このnoteのコメントでも大丈夫です。個人情報は書かず、下の形で最後に買ったごま油、使いたい料理、価格感だけ教えてください。
+
+香り経験:
+最近買ったごま油:
+使いたい料理:
+100ml 1,480円:
+コメント:
 
 ## 게시 후 기록
 

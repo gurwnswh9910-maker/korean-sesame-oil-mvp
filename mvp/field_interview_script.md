@@ -20,9 +20,9 @@
 
 もしよければ、このQRから30秒メモだけ残してください。住所、電話番号、メールアドレスは不要です。
 
-QR 페이지: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/field_interview.html`
+QR 페이지: `https://korean-sesame-oil-mvp.vercel.app/field`
 
-응답 페이지: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/share_note.html?src=offline_shinokubo`
+응답 페이지: `https://korean-sesame-oil-mvp.vercel.app/share?src=offline_shinokubo`
 
 ## 판정 기준
 

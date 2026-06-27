@@ -8,8 +8,8 @@
   <meta property="og:title" content="韓国旅行で覚えたしぼりたてごま油の香り">
   <meta property="og:description" content="正式販売前の需要検証です。100ml 1,480円前後なら試したいか、30秒で教えてください。">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/assets/hero-sesame-oil.png">
-  <meta property="og:url" content="https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html">
+  <meta property="og:image" content="https://korean-sesame-oil-mvp.vercel.app/assets/hero-sesame-oil.png">
+  <meta property="og:url" content="https://korean-sesame-oil-mvp.vercel.app/note">
   <style>
     :root {
       color-scheme: light;
@@ -202,13 +202,13 @@
         <p>住所、電話番号、メールアドレスは不要です。最後に買ったごま油、使いたい料理、価格感だけ教えてください。</p>
         <div class="actions">
           <a class="button" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
-          <a class="button secondary" data-detail-link href="share_note.html?src=article_github">回答メモページへ</a>
+          <a class="button secondary" data-detail-link href="/share?src=article">回答メモページへ</a>
         </div>
       </div>
 
       <div class="quick-response">
         <strong>コピーしてフォームに貼り付ける回答メモ</strong>
-        <textarea id="response-template" readonly>流入元: article_github / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
+        <textarea id="response-template" readonly>流入元: article / 香り経験: ある・ない・覚えていない / 最近買ったごま油:  / 使いたい料理: ビビンバ・ナムル・キンパ・卵かけご飯・ラーメン・冷奴・焼肉・その他 / 100ml 1,480円: はい・迷う・いいえ / 3本 3,980円: はい・迷う・いいえ / コメント:</textarea>
         <div class="actions">
           <button class="button" id="copy-template" type="button">回答メモをコピー</button>
           <a class="button secondary" data-form-link href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98">フォームを開く</a>
@@ -235,17 +235,17 @@
     (function () {
       var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
       var params = new URLSearchParams(window.location.search);
-      var source = (params.get("src") || "article_github").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
-      var pageUrl = "https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html?src=" + encodeURIComponent(source);
+      var source = (params.get("src") || "article").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+      var pageUrl = window.location.origin + "/note?src=" + encodeURIComponent(source);
       document.querySelectorAll("[data-form-link]").forEach(function (link) {
         link.href = formBase + "?src=" + encodeURIComponent(source);
       });
       document.querySelectorAll("[data-detail-link]").forEach(function (link) {
-        link.href = "share_note.html?src=" + encodeURIComponent(source);
+        link.href = "/share?src=" + encodeURIComponent(source);
       });
       var template = document.getElementById("response-template");
       if (template) {
-        template.value = template.value.replace("流入元: article_github", "流入元: " + source);
+        template.value = template.value.replace("流入元: article", "流入元: " + source);
       }
       var copyButton = document.getElementById("copy-template");
       var copyStatus = document.getElementById("copy-status");
