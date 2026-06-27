@@ -1,7 +1,7 @@
 # Goal Completion Audit
 
 작성일: 2026-06-27
-최근 확인: 2026-06-27T18:43:00+09:00
+최근 확인: 2026-06-27T18:35:00+09:00
 
 ## 원래 목표
 
@@ -16,7 +16,7 @@
 | MVP 제작 | 완료 | `mvp/index.html`, `mvp/share_note.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
 | MVP 게시 | 완료 | GitHub Pages live: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/` | 충족 |
 | 검증 경로 구축 | 완료 | Notion 1줄 응답 form, GitHub Issue fallback, source tracking, QR flyer, `experiments/channel_posting_log.csv`, `experiments/field_interview_log.csv` | 충족 |
-| 실제 외부 반응 검증 | 미완료 | 2026-06-27T18:43+09:00 기준 GitHub waitlist issue list = `[]`; Notion response count는 UI/export 확인 필요; 공개 응답 증거 없음 | 미충족 |
+| 실제 외부 반응 검증 | 미완료 | 2026-06-27T18:35+09:00 기준 GitHub waitlist issue list = `[]`; Notion response count는 UI/export 확인 필요; 공개 응답 증거 없음 | 미충족 |
 | 사업 관련 GitHub skill/plugin 활용 | 완료 | GitHub startup pressure-test skill을 검토하고 behavior-over-compliments 기준으로 수요 행동 신호 중심 설계 반영 | 충족 |
 | 판매 전 규제/비용 gate | 완료 | `research/02_import_label_unit_economics_gate.md`, `experiments/unit_economics_template.csv` | 충족 |
 
