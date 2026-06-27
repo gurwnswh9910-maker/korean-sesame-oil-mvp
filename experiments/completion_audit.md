@@ -1,7 +1,7 @@
 # Goal Completion Audit
 
 작성일: 2026-06-27
-최근 확인: 2026-06-27T21:03:00+09:00
+최근 확인: 2026-06-27T21:40:00+09:00
 
 ## 원래 목표
 
@@ -16,7 +16,7 @@
 | MVP 제작 | 완료 | `mvp/index.html`, `mvp/share_note.html`, `mvp/note_article.html`, `mvp/field_interview.html`, `output/pdf/field_interview_flyer.pdf` | 충족 |
 | MVP 게시 | 완료 | GitHub Pages live: `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/` | 충족 |
 | 검증 경로 구축 | 완료 | Notion 1줄 응답 form, X 공개 응답 intent, GitHub Issue fallback, source tracking, article direct form/share controls, QR flyer, `experiments/channel_posting_log.csv`, `experiments/field_interview_log.csv` | 충족 |
-| 실제 외부 반응 검증 | 미완료 | 2026-06-27T21:03+09:00 기준 note 홈 하단에 `メールを再送信` 버튼은 보이지만 아직 인증 전이라 note 계정 게시는 `422 email_activation`으로 보류; GitHub waitlist issue list = `[]`; `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0; exact MVP URL/hashtag discovery search도 직접 응답 0건 | 미충족 |
+| 실제 외부 반응 검증 | 미완료 | 2026-06-27T21:40+09:00 기준 note 이메일 인증은 완료되었고 draft `n77fa3f5a7fe9`는 제목/본문/태그/무료/댓글 설정까지 끝났지만, 공개 `投稿する`는 사용자 최종 확인 전이라 아직 누르지 않음; GitHub waitlist issue list = `[]`; `experiments/validation_signal_summary.md` verdict = `insufficient_external_evidence`, total respondents = 0, online public responses = 0 | 미충족 |
 | 사업 관련 GitHub skill/plugin 활용 | 완료 | GitHub startup pressure-test skill을 검토하고 behavior-over-compliments 기준으로 수요 행동 신호 중심 설계 반영 | 충족 |
 | 판매 전 규제/비용 gate | 완료 | `research/02_import_label_unit_economics_gate.md`, `experiments/unit_economics_template.csv` | 충족 |
 
@@ -36,9 +36,9 @@
 ## 다음 실행 순서
 
 1. `mvp/channel_rules_and_permission_gate.md` 기준으로 외부 계정 게시 권한을 확인한다
-2. note는 2026-06-27T21:03+09:00 Edge CDP 확인 기준 로그인은 되었고 note 홈 하단에 `メールを再送信` 버튼은 보이지만, `POST /api/v1/text_notes`가 `422 email_activation`을 반환하므로 등록 이메일 인증 전에는 게시하지 않는다
-3. 사용자가 `メールを再送信`을 직접 누르고 최신 인증 메일 링크를 열면, `mvp/note_posting_packet.md` 절차대로 `mvp/note_article_draft.md`를 넣고 공개 게시 버튼 클릭 직전 최종 확인을 받는다
-4. note 계정 게시 전까지는 `https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/note_article.html`를 공개 설명형 URL로 공유한다
+2. note는 2026-06-27T21:40+09:00 Edge CDP 확인 기준 이메일 인증, 초안 입력, 태그, 무료/댓글 설정이 끝났고 final `投稿する` 버튼만 남아 있다
+3. 사용자가 `게시해`처럼 명시적으로 공개 게시를 허용하면 `投稿する`를 누르고 게시 URL을 기록한다
+4. 게시 후 `experiments/channel_posting_log.csv`의 note 행을 `posted=yes`, `status=public_pending_traffic`, `post_url=<note-url>`로 업데이트한다
 5. note 반응이 0이면 X/Threads에 `x_threads_travel` 짧은 글 1개만 게시한다
 6. 신오쿠보/한국식품점/한국요리 모임에서는 `field_interview_flyer.pdf`를 인쇄하거나 `field_interview.html` QR을 보여주고, 이미 한국식 참기름 대체재를 본 적이 있는지 묻는다
 7. 오사카 코리아타운/서울 중부시장/한국여행 구매 경험도 대체재/여행 기억 질문에 포함한다

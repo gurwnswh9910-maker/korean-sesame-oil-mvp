@@ -61,6 +61,12 @@ https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homeco
 4. 공개 답글 중 실제 수요 답변만 `experiments/public_social_responses.csv`에 넣는다. 단순 좋아요, 조회, 공유는 응답으로 세지 않는다.
 5. 입력 CSV를 push하면 GitHub Actions가 `experiments/validation_signal_summary.md/json`을 갱신한다.
 
+공개 답글 URL 기록 명령:
+
+```powershell
+$env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_public_social_response.py --platform X --source x_threads_travel --url "https://x.com/{user}/status/{id}" --text "{公開返信の要約}" --recent-purchase "{最近買ったごま油}" --aroma-memory "{香り経験}" --single-price "{100ml 1,480円の反応}" --sample-signal "{少量/購入/入荷案内の希望}"
+```
+
 ## 공개 응답 검색어
 
 - `#韓国ごま油検証`
