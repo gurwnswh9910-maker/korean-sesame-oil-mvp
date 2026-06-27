@@ -21,6 +21,7 @@ CSV_PATH = OUT_DIR / "waitlist_responses.csv"
 SUMMARY_PATH = OUT_DIR / "waitlist_summary.md"
 
 FIELDS = {
+    "このページをどこで知りましたか": "source_self_reported",
     "韓国旅行や韓国料理店で、印象に残ったごま油の香りはありますか": "experience",
     "最近6か月以内に買ったごま油のブランド/購入場所": "recent_purchase",
     "主に使いたい料理": "dishes",
@@ -28,6 +29,11 @@ FIELDS = {
     "3本 3,980円なら誰かと分けたいですか": "bundle_price",
     "価格・容量・香りについてのコメント": "comment",
 }
+
+
+def parse_source_from_title(title: str) -> str:
+    match = re.search(r"\[src:([a-z0-9_-]{1,40})\]", title.lower())
+    return match.group(1) if match else ""
 
 
 def request_json(url: str) -> object:
@@ -93,6 +99,10 @@ def summarize(rows: list[dict[str, str]]) -> str:
     has_experience = sum(1 for row in rows if row["experience"] == "ある")
     latest = max((row["created_at"] for row in rows), default="")
     generated_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    source_counts: dict[str, int] = {}
+    for row in rows:
+        source = row.get("source_title") or row.get("source_self_reported") or "untracked"
+        source_counts[source] = source_counts.get(source, 0) + 1
 
     def pct(count: int) -> str:
         return "n/a" if total == 0 else f"{count / total:.0%}"
@@ -111,9 +121,21 @@ def summarize(rows: list[dict[str, str]]) -> str:
         f"| 3本 3,980円 = はい | {yes_bundle} ({pct(yes_bundle)}) |",
         f"| Latest response | {latest or 'n/a'} |",
         "",
+        "## Source Breakdown",
+        "",
+        "| Source | Responses |",
+        "|---|---:|",
+    ]
+    if source_counts:
+        for source, count in sorted(source_counts.items(), key=lambda item: (-item[1], item[0])):
+            lines.append(f"| {source} | {count} |")
+    else:
+        lines.append("| n/a | 0 |")
+    lines.extend([
+        "",
         "## Interpretation",
         "",
-    ]
+    ])
     if total == 0:
         lines.append("No external validation responses have been collected yet.")
     else:
@@ -134,6 +156,7 @@ def main() -> int:
         row = {
             "number": str(issue["number"]),
             "title": issue.get("title") or "",
+            "source_title": parse_source_from_title(issue.get("title") or ""),
             "state": issue.get("state") or "",
             "created_at": issue.get("created_at") or "",
             "updated_at": issue.get("updated_at") or "",
@@ -146,10 +169,12 @@ def main() -> int:
     fieldnames = [
         "number",
         "title",
+        "source_title",
         "state",
         "created_at",
         "updated_at",
         "url",
+        "source_self_reported",
         "experience",
         "recent_purchase",
         "dishes",
@@ -168,4 +193,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

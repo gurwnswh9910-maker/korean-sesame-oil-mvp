@@ -200,6 +200,13 @@
       font-size: 0.95rem;
     }
 
+    .source-note {
+      display: none;
+      margin-top: 14px;
+      color: #ffe7bb;
+      font-size: 0.9rem;
+    }
+
     footer {
       padding: 30px 20px 48px;
       color: var(--muted);
@@ -242,9 +249,10 @@
         <h1>韓国市場の<br>しぼりたてごま油を、<br>日本の食卓へ。</h1>
         <p class="hero-copy">ふたを開けた瞬間に広がる、あの香ばしさ。ビビンバ、ナムル、卵かけご飯、ラーメンの仕上げに使うための少量ボトルを検証中です。</p>
         <div class="hero-actions">
-          <a class="button" href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+          <a class="button" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
           <a class="button secondary" href="#price">価格を見る</a>
         </div>
+        <p class="source-note" id="source-note"></p>
       </div>
     </section>
 
@@ -305,7 +313,7 @@
         <h2>まだ買わなくて大丈夫です。</h2>
         <p class="lead">今知りたいのは、韓国の市場や食堂で覚えたごま油の香りを、日本の家でも使いたい人がいるかどうかです。</p>
         <div class="hero-actions">
-          <a class="button" href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
+          <a class="button" data-waitlist-link href="https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml">入荷案内をGitHubで残す</a>
         </div>
         <p class="notice">注意: 食品として販売する場合は、日本の食品衛生法に基づく輸入手続き、食品表示、アレルゲン表示、賞味期限、保存方法などの確認が必要です。このページは正式販売前の需要検証です。GitHub Issueは公開されるため、住所・電話番号・メールアドレスなどの個人情報は書かないでください。</p>
       </div>
@@ -315,5 +323,36 @@
   <footer>
     <div class="section-inner">Korean market sesame oil MVP. Demand validation is collected through public GitHub Issues.</div>
   </footer>
+  <script>
+    (function () {
+      var issueBase = "https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new";
+      var params = new URLSearchParams(window.location.search);
+      var source = params.get("src") || "";
+      if (!source) {
+        try {
+          source = window.sessionStorage.getItem("mvp_source") || "";
+        } catch (error) {
+          source = "";
+        }
+      }
+      source = source.toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+      if (source) {
+        try {
+          window.sessionStorage.setItem("mvp_source", source);
+        } catch (error) {}
+      }
+      var issueParams = new URLSearchParams();
+      issueParams.set("template", "waitlist.yml");
+      issueParams.set("title", source ? "[入荷案内][src:" + source + "] " : "[入荷案内] ");
+      document.querySelectorAll("[data-waitlist-link]").forEach(function (link) {
+        link.href = issueBase + "?" + issueParams.toString();
+      });
+      var sourceNote = document.getElementById("source-note");
+      if (sourceNote && source) {
+        sourceNote.textContent = "検証用ソース: " + source;
+        sourceNote.style.display = "block";
+      }
+    })();
+  </script>
 </body>
 </html>

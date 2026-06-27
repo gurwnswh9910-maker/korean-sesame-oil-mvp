@@ -4,3 +4,4 @@ checked_at,artifact,check,result,evidence,next_action
 2026-06-27T16:40:00+09:00,GitHub Issue,validation tracker,pass,"Issue #1 open with mvp-validation label","Record daily channel metrics and customer replies"
 2026-06-27T17:05:00+09:00,Notion Form,public form availability,fail,"Form view created internally; public notion.so/forms URL returns page-not-found/permission error","Do not use Notion Form CTA until public sharing can be enabled"
 2026-06-27T17:10:00+09:00,GitHub Action,waitlist aggregation path,pass,"scripts/summarize_waitlist.py creates response CSV and summary from waitlist issues","Push workflow and run after first external response"
+2026-06-27T17:25:00+09:00,Landing source tracking,channel CTA source propagation,pass,"Local /?src=x_threads_travel updates CTA href with title=[入荷案内][src:x_threads_travel] and shows source note","Use channel-specific links from mvp/posting_copy.md"

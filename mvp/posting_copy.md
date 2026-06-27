@@ -10,7 +10,7 @@
 
 入荷案内だけ受け取りたい方、下のフォームから教えてください。まだ正式販売前なので、価格と配送条件も一緒に検証中です。
 
-CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=travel_market
 
 ## 게시문 B: K-food 홈쿡
 
@@ -20,7 +20,7 @@ CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 
 100ml 1,480円前後なら試したいか、率直に教えてください。
 
-CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=homecook_kfood
 
 ## 게시문 C: 生使い/향미 오일
 
@@ -30,7 +30,15 @@ CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
 
 少量・製造日表示・香り重視で、入荷案内を希望する方だけ募集しています。
 
-CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+CTA: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=nama_tsukai
+
+## 채널별 링크
+
+- X/Threads 여행/구매품: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_travel
+- X/Threads 홈쿡: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=x_threads_homecook
+- note 한국요리: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=note_kfood
+- Konest 커뮤니티: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=konest
+- Tunagate/오프라인 인터뷰: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/?src=tunagate
 
 ## DM/댓글 응답
 

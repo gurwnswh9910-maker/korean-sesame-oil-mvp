@@ -10,6 +10,13 @@ body:
       value: |
         これは正式販売前の需要検証フォームです。
         公開Issueとして投稿されるため、メールアドレス、住所、電話番号などの個人情報は書かないでください。
+  - type: input
+    id: source
+    attributes:
+      label: このページをどこで知りましたか
+      placeholder: 例：X / Threads / note / Konest / 友人 / 検索など
+    validations:
+      required: false
   - type: dropdown
     id: experience
     attributes:
@@ -69,4 +76,3 @@ body:
       placeholder: 個人情報は書かず、使いたい料理や価格感だけ教えてください。
     validations:
       required: false
-
