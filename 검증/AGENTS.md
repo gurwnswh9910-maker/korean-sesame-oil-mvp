@@ -20,6 +20,8 @@
 - 소비자-facing 링크는 기본적으로 Vercel clean URL을 사용한다.
 - 제품 외 콘텐츠로 타겟을 검증할 때는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`를 사용하고, `content_travel`, `content_shinokubo`, `content_homecook` source를 분리한다.
 - 신오쿠보/한국식품점 대체재 전환 검증은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`를 사용한다. 이 검증은 `신오쿠보를 좋아한다`가 아니라 구매처, 브랜드/店名, 용량·가격, 향 보존 불만, 제조일/강한 향/100ml小瓶/구입 편의 전환 조건이 있는 응답을 강한 신호로 센다.
+- 집밥 한국요리/마지막 향 검증은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`를 사용한다. 이 검증은 `韓国料理が好き`가 아니라 최근 만든 요리, 현재 참기름 구매처/브랜드, 용량·가격, 마지막 향 부족 또는 충분한 이유, 바꿀 조건이 있는 응답을 강한 신호로 센다.
+- 밥친구/한국김/TKG 같은 `밥 한 그릇 5분 완성` 축은 홈쿡 검증의 하위 문제로 본다. 강한 신호는 반복 사용 빈도, 현재 참기름 단품 구매처, 소량/향 보존/가격 전환 조건이 함께 있을 때만 센다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
@@ -32,6 +34,7 @@
 - Vercel landing: `https://korean-sesame-oil-mvp.vercel.app/`
 - Vercel content MVP: `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`
 - Vercel Shin-Okubo content MVP: `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`
+- Vercel home-cooking content MVP: `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`
 - Vercel article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Vercel answer memo: `https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood`
 - Vercel note/mobile answer entry: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
@@ -40,6 +43,7 @@
 - note post 1: `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`
 - note post 2 content: `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`
 - note post 3 Shin-Okubo: `https://note.com/dreamy_viola8978/n/n700b325ba824`
+- note post 4 home-cooking: `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`
 - Primary form: `https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98`
 
 ## 갱신할 파일

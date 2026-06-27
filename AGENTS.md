@@ -12,20 +12,21 @@
 
 최근 적대적 검증 루프는 `검증/적대적_검증_루프_20260627.md`와 `검증/내용_적대적_검증_20260627.md`에 있다. 기존 작업자는 이어가기 전에 이 파일들의 결론과 stale checklist 지적을 먼저 확인한다. `/answer-note`는 2026-06-27T22:56+09:00 기준 Vercel production 200 확인 완료 상태다.
 
-제품 외 콘텐츠와 타겟 심리 검증은 `검증/제품외_콘텐츠_타겟밀집_검증법_20260627.md`와 `검증/욕구_문제_가설_20260627.md`를 함께 본다. 현재 방향은 `참기름을 살 사람`을 직접 찾기보다, 한국여행/신오쿠보/집밥 K-food 맥락에서 최근 구매처, 향 불만, 대체재 전환 조건을 먼저 캐는 것이다.
+제품 외 콘텐츠와 타겟 심리 검증은 `검증/제품외_콘텐츠_타겟밀집_검증법_20260627.md`와 `검증/욕구_문제_가설_20260627.md`를 함께 본다. 현재 방향은 `참기름을 살 사람`을 직접 찾기보다, 한국여행/신오쿠보/집밥 K-food/밥 한 그릇 맥락에서 최근 구매처, 향 불만, 대체재 전환 조건을 먼저 캐는 것이다.
 
 ## 현재 운영 기준
 
 - 소비자에게 공유할 기본 URL은 Vercel clean URL이다: `https://korean-sesame-oil-mvp.vercel.app/`
 - 제품 외 콘텐츠형 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`다.
 - 신오쿠보/한국식품점 대체재 전환 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`다.
+- 집밥 한국요리/마지막 향 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
-- note 게시물은 3개다. 1차 제품/입하 안내형은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, 2차 여행/사용 콘텐츠형은 `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, 3차 신오쿠보/한국식품점 대체재 체크형은 `https://note.com/dreamy_viola8978/n/n700b325ba824`다.
+- note 게시물은 4개다. 1차 제품/입하 안내형은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, 2차 여행/사용 콘텐츠형은 `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, 3차 신오쿠보/한국식품점 대체재 체크형은 `https://note.com/dreamy_viola8978/n/n700b325ba824`, 4차 홈쿡/마지막 향 체크형은 `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.
 - note 계정은 이 프로젝트에 한해 Codex가 자유롭게 게시/수정할 수 있다고 사용자가 허용했다. 단, note 외부 채널인 X, Threads, Konest 등은 별도 명시 허용 전 게시하지 않는다.
 - 식품 결제, 예약금, 배송지, 전화번호, 이메일 등 개인정보 수집은 수입/표시/단가 gate 통과 전 하지 않는다.
-- 검증 완료는 실제 응답 데이터로만 판단한다. 조회수, 스키, 좋아요, 공유는 보조 신호이며 응답 수로 세지 않는다. 신오쿠보 검증에서는 `신오쿠보를 좋아한다`가 아니라 실제 구매처/브랜드/용량·가격/불만/전환 조건이 있는 응답만 강한 신호로 본다.
+- 검증 완료는 실제 응답 데이터로만 판단한다. 조회수, 스키, 좋아요, 공유는 보조 신호이며 응답 수로 세지 않는다. 신오쿠보 검증에서는 `신오쿠보를 좋아한다`가 아니라 실제 구매처/브랜드/용량·가격/불만/전환 조건이 있는 응답만 강한 신호로 본다. 홈쿡 검증에서는 `韓国料理が好き`가 아니라 최근 만든 요리, 현재 참기름, 향 불만 또는 충분한 이유, 바꿀 조건이 있는 응답만 강한 신호로 본다. 밥친구/한국김/TKG 축은 `맛있어 보임`이 아니라 반복 사용 빈도와 참기름 단품 구매/재구매 조건이 있어야 강한 신호로 본다.
 
 ## 기록 규칙
 

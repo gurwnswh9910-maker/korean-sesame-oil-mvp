@@ -9,11 +9,13 @@
 - Structured quick answer: https://korean-sesame-oil-mvp.vercel.app/quick-answer
 - Product-external content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
 - Shin-Okubo substitute-check content MVP: https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma
+- Home-cooking last-aroma content MVP: https://korean-sesame-oil-mvp.vercel.app/homecook-goma
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
 - note content post: https://note.com/dreamy_viola8978/n/n3f3af286cf6d
 - note Shin-Okubo post: https://note.com/dreamy_viola8978/n/n700b325ba824
+- note home-cooking post: https://note.com/dreamy_viola8978/n/n08bad3dce2a9
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 
 ## 현재 상태
@@ -40,12 +42,14 @@
 - `/quick-answer` structured answer composer: added to turn multi-question choices into a single Notion-compatible `Submission`, reducing friction from the 1-line Notion form while preserving purchase-context fields
 - Product-external content MVP: `/korea-trip-goma` added to test target density through Korea travel/Shin-Okubo/home-cooking content before asking direct purchase intent
 - Shin-Okubo substitute-check MVP: `/shinokubo-goma` added to test whether people who already buy or browse Korean sesame oil in Shin-Okubo/Korean supermarkets have a switching reason around store/brand, volume/price, aroma retention, manufacturing date, 100ml small bottle, or repurchase convenience
+- Home-cooking last-aroma MVP: `/homecook-goma` added to test whether people making bibimbap/namul/kimbap/TKG/ramen/cold tofu/Korean seaweed rice have a last-aroma or aroma-retention problem strong enough to switch sesame oil
 - Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, usage dish, aroma-retention experience, and a switching condition or complaint
 - `/answer-note` deployment check: first rewrite-only deploy returned 404, fixed by adding `docs/answer-note.html`; final production uses file-based clean URL without the underscore duplicate/rewrite, returns 200 with title `30秒回答 | 韓国式しぼりたてごま油`, no redirect, and mobile/desktop Playwright overflow count 0
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
 - X public answer path: MVP pages include `Xで公開回答` intent links with hashtag `#韓国ごま油検証`; only real answer URLs recorded in `experiments/public_social_responses.csv` count as responses
 - note account-side posting: live and mobile-first; public note has no GitHub Pages links, auto translation off, AI training compensation off, comments on, and tags `#韓国旅行 #韓国料理 #新大久保 #ごま油 #おうち韓国`
 - note Shin-Okubo posting: published 2026-06-28T01:04:46+09:00 at `https://note.com/dreamy_viola8978/n/n700b325ba824`; source `note_content_shinokubo`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#韓国料理 #新大久保 #ごま油 #韓国食品 #おうち韓国`
+- note home-cooking posting: published 2026-06-28T01:49:44+09:00 at `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`; source `note_content_homecook`; free, comments on, auto translation disabled, AI learning reward excluded, tags `#韓国料理 #ビビンバ #ナムル #ごま油 #おうち韓国`
 - note dashboard precheck: 2026-06-27T22:30+09:00 dashboard shows 0 views / 0 comments / 0 スキ, but latest aggregation is 2026-06-27 21:45, before the 21:46 publish time, so this is not counted as post-publish zero response
 - current response check: GitHub waitlist label issues `[]`, local public/social and field files have no real rows, Notion export absent, Notion data-source search found no response rows, and exact `/answer-note` URL web search found no public response/share
 - 24h follow-up automation: Codex heartbeat `note-24h` scheduled for 2026-06-28T21:50+09:00
@@ -54,6 +58,7 @@
 - Latest deploy: 2026-06-28T00:08+09:00 added `/quick-answer`; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/ASmFY1pCzn4aNWcheknGJiEBkPvz`; browser mobile390 verified source propagation, note route mapping, memo generation, overflow count 0
 - 2026-06-28T00:32+09:00 update: `/korea-trip-goma?src=note_content_travel` now has a first-screen `/quick-answer` CTA; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/FojaxfiyMfUzn9YorE2KJxJMajsR`; latest response recheck still found 0 real responses
 - 2026-06-28T01:05+09:00 update: `/shinokubo-goma` deployed and note Shin-Okubo post published at `https://note.com/dreamy_viola8978/n/n700b325ba824`; public HTTP/API checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
+- 2026-06-28T01:55+09:00 update: `/homecook-goma` deployed/refined with Korean seaweed rice/TKG sub-wedge and note home-cooking post published at `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`; public HTTP/API/browser checks passed; real response count remains 0 until Notion rows, note comments, public answer URLs, GitHub issues, or field interviews appear
 
 ## 성공 기준
 
