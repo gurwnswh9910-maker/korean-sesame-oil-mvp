@@ -17,6 +17,7 @@
 - Notion Form: 로그인 마찰을 낮춘 1차 입하 안내/검증 폼
 - `experiments/measurement_sheet_template.csv`: 실험 기록 템플릿
 - `experiments/notion_form_status.md`: Notion Form 공개 설정과 한계
+- `experiments/validation_tracker_issue_body.md`: 공개 GitHub 검증 트래커 본문
 - `experiments/waitlist_responses.csv`: GitHub Issue Form 응답 자동 집계 CSV
 - `experiments/waitlist_summary.md`: 응답 요약 자동 집계
 

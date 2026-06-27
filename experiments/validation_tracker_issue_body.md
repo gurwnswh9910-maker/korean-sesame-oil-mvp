@@ -1,0 +1,41 @@
+## 목적
+
+일본 한국식 방앗간 참기름 MVP 공개 검증을 2주간 추적한다.
+
+## 공개 URL
+
+- Landing: https://gurwnswh9910-maker.github.io/korean-sesame-oil-mvp/
+- Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c81bb879b000c55b872eb
+- Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
+
+## 현재 상태
+
+- 1차 리서치: 조건부 진행
+- 2차 핵심가설: 한국 여행/방앗간/식당에서 기억한 향을 일본 집밥에 재현하려는 K-food 홈쿡러가 첫 wedge
+- MVP: GitHub Pages live
+- Primary CTA: Notion Form live, anonymous/open/no-permission submission setting applied
+- GitHub waitlist issues: 0
+- Notion response count: Notion UI/export로 확인 필요; MCP SQL query는 Business plan 요구로 차단됨
+
+## 성공 기준
+
+- 방문자 300명 이상에서 CTA 클릭률 3% 이상
+- 2주 내 관심 신호 30건 또는 구매 전제 대화 10건
+- 가격 포함 회신 중 30% 이상이 긍정
+- 인터뷰/댓글 중 최근 한국식 참기름 구매 또는 탐색 경험 30% 이상
+
+## 중단/피벗 기준
+
+- 300명 이상 노출 후 CTA 클릭률 1% 미만
+- 가격 제시 후 대부분 이탈
+- 수입/라벨/배송 단가 때문에 100ml 소비자가가 2,000엔 이상으로 상승
+
+## 일일 기록 형식
+
+```csv
+date,channel,post_url,message_variant,visits,cta_clicks,form_submits,reply_count,interviews_done,price_accepted_count,sample_purchase_requests,notes
+```
+
+## 운영 메모
+
+Notion Form과 GitHub fallback 모두 주소, 전화번호, 이메일을 받지 않는다. 정식 수입/표시 확인 전 결제는 받지 않는다.
