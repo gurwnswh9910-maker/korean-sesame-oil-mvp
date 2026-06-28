@@ -134,8 +134,19 @@ def notion_respondents() -> list[Respondent]:
             or fields.get("流入元")
             or "notion_untracked"
         )
-        recent = first_present(row, ("Recent sesame oil purchase", "recent_purchase", "最近買ったごま油")) or fields.get("最近買ったごま油", "")
-        aroma = first_present(row, ("Aroma memory", "experience", "香り経験")) or fields.get("香り経験", "")
+        recent = (
+            first_present(row, ("Recent sesame oil purchase", "recent_purchase", "最近買ったごま油"))
+            or fields.get("最近買ったごま油", "")
+            or fields.get("最後に買った場所", "")
+            or fields.get("最後に買ったまたは見た場所", "")
+            or fields.get("いま見ている場所", "")
+        )
+        aroma = (
+            first_present(row, ("Aroma memory", "experience", "香り経験"))
+            or fields.get("香り経験", "")
+            or fields.get("香りは最後まで残ったか", "")
+            or fields.get("残りが少ない時の香り", "")
+        )
         single = first_present(row, ("100ml 1,480円", "single_price", "Price reaction")) or fields.get("100ml 1,480円", "")
         bundle = first_present(row, ("3本 3,980円", "bundle_price")) or fields.get("3本 3,980円", "")
         comment = first_present(row, ("Comment", "comment", "Notes", "コメント")) or fields.get("コメント", "")

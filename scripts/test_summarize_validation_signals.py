@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from summarize_validation_signals import recommendation
+from summarize_validation_signals import has_recent_purchase, recommendation, split_submission
 
 
 def base_metrics() -> dict[str, int]:
@@ -62,11 +62,21 @@ def test_candidate_stop_or_resegment() -> None:
     assert any("below 5" in reason for reason in reasons)
 
 
+def test_shelfcheck_submission_fields_parse() -> None:
+    fields = split_submission(
+        "流入元: content_shelfcheck / 最後に買ったまたは見た場所: 棚で見ている / "
+        "候補のブランドや店名: 韓国スーパーの棚 / 残りが少ない時の香り: 途中で弱くなる"
+    )
+    assert fields["最後に買ったまたは見た場所"] == "棚で見ている"
+    assert has_recent_purchase(fields["最後に買ったまたは見た場所"])
+
+
 def main() -> int:
     test_collect_more_evidence()
     test_candidate_go_small_batch()
     test_candidate_pivot_price()
     test_candidate_stop_or_resegment()
+    test_shelfcheck_submission_fields_parse()
     print("summarize_validation_signals recommendation tests passed")
     return 0
 

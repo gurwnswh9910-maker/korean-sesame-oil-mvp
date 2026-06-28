@@ -21,12 +21,14 @@
 - 신오쿠보/한국식품점 대체재 전환 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`다.
 - 집밥 한국요리/마지막 향 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`다.
 - 개봉 후 향 손실/큰 병 부담 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`다.
+- 매대 앞 선택 피로/신선도 증거 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`이고, 짧은 공유 경로는 `https://korean-sesame-oil-mvp.vercel.app/shelf`다. `content_shelfcheck` 응답은 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존 같은 전환 증거가 있어야 강한 신호로 센다.
 - 향 손실/큰 병 부담 오프라인 인터뷰 QR 페이지는 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`다. QR 타겟은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`이며, 실제 인터뷰 원본이 생기기 전에는 응답 데이터로 세지 않는다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
-- 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
+- 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처 또는 현재 보고 있는 후보/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
 - `/answer-note`와 `/quick-answer`의 note 댓글 버튼은 source별 게시물로 라우팅한다. `note_content_travel`은 note 2차, `note_content_shinokubo`는 note 3차, `note_content_homecook`은 note 4차, `note_content_homecook_ricebowl`은 note 5차로 보내야 한다.
 - note 게시물은 5개다. 1차 제품/입하 안내형은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, 2차 여행/사용 콘텐츠형은 `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, 3차 신오쿠보/한국식품점 대체재 체크형은 `https://note.com/dreamy_viola8978/n/n700b325ba824`, 4차 홈쿡/마지막 향 체크형은 `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`, 5차 한국김/TKG 밥 한 그릇 체크형은 `https://note.com/dreamy_viola8978/n/nbb21605544ca`다.
 - 6차 후보인 개봉 후 향 손실/큰 병 부담 note 원고는 `mvp/note_aromaloss_posting_packet.md`에 `ready_not_published`로 준비돼 있다. 24h 재확인 전에는 live note 게시하지 않는다.
+- 매대 앞 선택 피로/신선도 증거 보강은 `research/06_shelf_choice_freshness_proof_20260628.md`를 본다. 이 축은 소량병 자체보다 제조일, 압착, 차광/보관, 마지막 향 보존, 재구매 편의가 실제 전환 이유인지 묻는다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.
 - note 계정은 이 프로젝트에 한해 Codex가 자유롭게 게시/수정할 수 있다고 사용자가 허용했다. 단, note 외부 채널인 X, Threads, Konest 등은 별도 명시 허용 전 게시하지 않는다.
 - 식품 결제, 예약금, 배송지, 전화번호, 이메일 등 개인정보 수집은 수입/표시/단가 gate 통과 전 하지 않는다.

@@ -251,8 +251,9 @@
     <div class="tool">
       <form class="questions" id="answer-form">
         <fieldset>
-          <legend>最後に買った場所</legend>
+          <legend>最後に買った、または見た場所</legend>
           <div class="choices three">
+            <label class="option"><input type="radio" name="place" value="棚で見ている">棚で見ている</label>
             <label class="option"><input type="radio" name="place" value="韓国旅行">韓国旅行</label>
             <label class="option"><input type="radio" name="place" value="新大久保">新大久保</label>
             <label class="option"><input type="radio" name="place" value="韓国スーパー">韓国スーパー</label>
@@ -266,7 +267,7 @@
           <legend>覚えている商品情報</legend>
           <div class="inline">
             <label>ブランドや店名
-              <input type="text" name="brand" autocomplete="off" placeholder="例: 市場の店名、新大久保の店、メーカー名">
+              <input type="text" name="brand" autocomplete="off" placeholder="例: いま見ている候補、店名、メーカー名">
             </label>
             <label>容量と価格
               <input type="text" name="volume" autocomplete="off" placeholder="例: 100mlくらい / 300g / 1,000円前後">
@@ -392,7 +393,7 @@
       function buildSubmission() {
         return [
           "流入元: " + source,
-          "最後に買った場所: " + one("place"),
+          "最後に買ったまたは見た場所: " + one("place"),
           "ブランドや店名: " + text("brand"),
           "容量と価格: " + text("volume"),
           "開封後どのくらい: " + text("opened"),

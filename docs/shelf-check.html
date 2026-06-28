@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韓国ごま油、棚の前で迷ったときの30秒メモ</title>
+  <meta name="description" content="新大久保や韓国食品スーパーで韓国ごま油を見た人向けに、いま見ている商品、価格、容量、香り、製造日の見え方を30秒で確認するメモです。">
+  <meta property="og:title" content="韓国ごま油、棚の前で迷ったときの30秒メモ">
+  <meta property="og:description" content="販売ページではなく、いま買える候補から替える理由があるかを確認する需要検証メモです。">
+  <meta property="og:image" content="https://korean-sesame-oil-mvp.vercel.app/assets/hero-sesame-oil.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://korean-sesame-oil-mvp.vercel.app/shelf-check">
+  <style>
+    :root {
+      --ink: #201e1b;
+      --muted: #635f58;
+      --line: #d7cbbd;
+      --paper: #fffaf2;
+      --white: #ffffff;
+      --green: #246b59;
+      --red: #b33a32;
+      --gold: #d39a35;
+      --charcoal: #171512;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.68;
+    }
+    header {
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(13, 12, 10, 0.88), rgba(37, 78, 66, 0.68)),
+        url("assets/hero-sesame-oil.png") center / cover no-repeat;
+    }
+    .wrap {
+      width: min(940px, 100%);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .hero {
+      min-height: 56vh;
+      display: grid;
+      align-items: end;
+      padding-top: 48px;
+      padding-bottom: 42px;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #ffe2a6;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: #fff3dc;
+      font-size: clamp(1rem, 2.3vw, 1.18rem);
+    }
+    .hero-actions,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 12px 18px;
+      color: var(--ink);
+      background: #ffe0a3;
+      font: inherit;
+      font-weight: 850;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button.secondary {
+      color: var(--green);
+      background: transparent;
+      border-color: var(--green);
+    }
+    header .button.secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.72);
+    }
+    main { padding: 0 18px 62px; }
+    section { padding-top: 50px; }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.32rem, 4vw, 2rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 16px; }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf8;
+      padding: 18px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--red);
+    }
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      min-height: 60px;
+      border-left: 4px solid var(--green);
+      background: #fffdf8;
+      padding: 12px 14px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 184px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--ink);
+      background: #fffdf8;
+      font: inherit;
+      line-height: 1.6;
+    }
+    .notice {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    footer {
+      padding: 24px 18px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--white);
+      font-size: 0.92rem;
+    }
+    @media (max-width: 760px) {
+      .hero { min-height: 54vh; }
+      .grid,
+      .list { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">新大久保・韓国食品スーパーの棚前メモ</p>
+        <h1>韓国ごま油、棚の前で迷ったら何を見ますか？</h1>
+        <p class="lead">すでに買える韓国ごま油や日本の強い香りのごま油があります。ここでは、そこから替える理由が本当にあるかだけを確認しています。</p>
+        <div class="hero-actions">
+          <a class="button" id="hero-answer-link" href="/quick-answer?src=content_shelfcheck">30秒で買い物メモを残す</a>
+          <a class="button secondary" href="/shinokubo-goma?src=content_shelfcheck_shinokubo">買っている人向けメモ</a>
+          <a class="button secondary" href="/aroma-loss-goma?src=content_shelfcheck_aromaloss">大きい瓶の香りメモ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <h2>欲しいのは、雰囲気ではなく替える理由です。</h2>
+      <div class="panel">
+        <p>「韓国料理に合う」だけなら、今の棚にも候補があります。小さい韓国ごま油、日本メーカーの濃い香りのごま油、圧搾製法を売りにした高級ごま油もあります。</p>
+        <p>だから知りたいのは、目の前の商品と比べて、製造日、しぼり方、香りの残り方、瓶の大きさ、買い直しやすさのどれが見えれば違う一本を選ぶのかです。</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <strong>見ている候補</strong>
+          店名、メーカー名、韓国製か日本製か、棚で見た価格。
+        </div>
+        <div class="card">
+          <strong>買わない理由</strong>
+          大きい、香りが読めない、製造日が分からない、使い切れるか不安。
+        </div>
+        <div class="card">
+          <strong>替える証拠</strong>
+          いつ搾ったか、どんな香りか、100mlで使い切れるか、次も買えるか。
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>強い回答として見る項目</h2>
+      <p class="notice">好き嫌いより、実際に見た商品や買った商品の記憶があるほど検証として強くなります。</p>
+      <ul class="list">
+        <li>いま見ている店名、サイト名、または棚の場所</li>
+        <li>候補商品のブランド、容量、価格</li>
+        <li>その場で買わない理由</li>
+        <li>開封後どのくらいで使い切れそうか</li>
+        <li>製造日やしぼりたて表示が必要か</li>
+        <li>100ml 1,480円なら試す条件</li>
+      </ul>
+    </section>
+
+    <section class="wrap">
+      <h2>30秒で残せる棚前メモ</h2>
+      <p class="notice">住所、電話番号、メールアドレスは不要です。正式販売前の検証であり、決済や配送先は受け付けていません。</p>
+      <div class="panel">
+        <textarea id="response-template" readonly>流入元: content_shelfcheck / いま見ている場所: 新大久保・韓国スーパー・通販・日本のスーパー・その他 / 候補のブランドや店名:  / 容量と価格:  / 買うか迷う理由: 大きい・香りが読めない・製造日が分からない・使い切れない・価格・特になし / 開封後どのくらいで使い切れそうか:  / 替える証拠: 製造日・しぼりたて・強い香り・最後まで残る香り・100ml小瓶・買い直しやすさ・その他 / 100ml 1,480円: はい・迷う・いいえ / コメント:</textarea>
+        <div class="actions">
+          <button class="button" id="copy-template" type="button">メモをコピー</button>
+          <a class="button secondary" id="answer-link" href="/quick-answer?src=content_shelfcheck">質問に沿ってメモを作る</a>
+          <a class="button secondary" id="form-link" href="https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98?src=content_shelfcheck">フォームを開く</a>
+        </div>
+        <p class="notice" id="copy-status">コピーして、回答ページまたはフォームに貼り付けてください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Demand validation memo for Korean-style sesame oil. No payment, delivery address, phone number, or email collection.</div>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var source = (params.get("src") || "content_shelfcheck").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+      var formBase = "https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98";
+      var template = document.getElementById("response-template");
+      var answerLink = document.getElementById("answer-link");
+      var heroAnswerLink = document.getElementById("hero-answer-link");
+      var formLink = document.getElementById("form-link");
+      if (template) template.value = template.value.replace("流入元: content_shelfcheck", "流入元: " + source);
+      if (answerLink) answerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
+      if (heroAnswerLink) heroAnswerLink.href = "/quick-answer?src=" + encodeURIComponent(source);
+      if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
+      var copyButton = document.getElementById("copy-template");
+      var copyStatus = document.getElementById("copy-status");
+      if (copyButton && template && copyStatus) {
+        copyButton.addEventListener("click", function () {
+          template.select();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(template.value).then(function () {
+              copyStatus.textContent = "コピーしました。回答ページかフォームに貼り付けてください。";
+            }).catch(function () {
+              document.execCommand("copy");
+              copyStatus.textContent = "選択しました。コピーして貼り付けてください。";
+            });
+          } else {
+            document.execCommand("copy");
+            copyStatus.textContent = "選択しました。コピーして貼り付けてください。";
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

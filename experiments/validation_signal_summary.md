@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T01:44:31+00:00
+Generated at: 2026-06-28T11:12:02+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -28,9 +28,9 @@ Verdict: `insufficient_external_evidence`
 | 3-bottle price-bearing responses | 0 |
 | 3-bottle price positive or conditional | 0 |
 | 3-bottle price positive share | n/a |
-| Channel rows tracked | 17 |
-| Posted/public rows | 13 |
-| Ready or pending rows | 13 |
+| Channel rows tracked | 18 |
+| Posted/public rows | 14 |
+| Ready or pending rows | 14 |
 | Held or excluded rows | 3 |
 
 ## Source Breakdown
