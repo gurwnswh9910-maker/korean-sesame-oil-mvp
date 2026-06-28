@@ -16,6 +16,8 @@
 - `research/06_shelf_choice_freshness_proof_20260628.md`: 매대 앞 선택 피로/신선도 증거 검증
 - `research/07_existing_substitute_price_map_20260628.md`: Kadoya/Kuki/Ottogi/Kim-san 기존 대체재와 가격 기준 지도
 - `검증/참기름_팔기_욕구_세분화_20260628.md`: `참기름 팔기`를 사용량-향 보존, 대체재 선택 피로, 搾りたて 체험, 재구매 불편 등으로 세분화한 최신 KB
+- `검증/고의도_채널_KPI_및_다음실험_20260628.md`: note 무응답 이후 유통 실패/문제 언어 실패를 분리하는 KPI 설계
+- `mvp/post_24h_action_packet_20260628.md`: 24h note 체크 이후 실행 게이트
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/korea-trip-goma.html`: 제품 외 콘텐츠형 타겟 밀집 검증 페이지

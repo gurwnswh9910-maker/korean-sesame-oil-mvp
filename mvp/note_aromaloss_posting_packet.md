@@ -2,7 +2,7 @@
 
 상태: ready_not_published
 작성 시각: 2026-06-28T02:52+09:00
-최근 갱신: 2026-06-28T11:45+09:00
+최근 갱신: 2026-06-28T12:05+09:00
 게시 권한: note 계정은 이 프로젝트에 한해 Codex 자유 게시 허용. 다만 5개 note 직후 연속 게시로 보일 수 있어 24h 집계 재확인 뒤 게시 여부를 결정한다.
 
 ## 게시 목적
@@ -87,6 +87,7 @@ https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_aromaloss
 ## 게시 전 확인
 
 - 24h note 집계에서 1~5차 반응을 재확인한다.
+- `mvp/post_24h_action_packet_20260628.md`의 조회수 게이트를 적용한다. note 1~5 합산 views가 30 미만이면 유통 실패로 보고 이 글도 보류한다.
 - `/aroma-loss-goma?src=note_content_aromaloss`가 production 200인지 확인한다.
 - `/quick-answer?src=note_content_aromaloss`가 source, `1本を使い切る期間`, `今の候補で十分か` 필드를 유지하는지 확인한다.
 - 게시 후에는 source별 note 댓글 라우팅에 6차 note URL을 추가한다.
