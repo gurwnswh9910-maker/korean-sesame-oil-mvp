@@ -49,7 +49,7 @@
 - `experiments/validation_signal_summary.md`: Notion/GitHub/오프라인 신호 통합 판정 요약
 - `experiments/validation_signal_summary.json`: 통합 판정 요약의 기계 판독용 JSON
 - `scripts/record_public_social_response.py`: X/Threads 공개 응답 URL을 중복 없이 CSV에 기록하는 helper
-- `scripts/summarize_validation_signals.py`: 검증 신호 통합 집계 스크립트
+- `scripts/summarize_validation_signals.py`: 검증 신호 통합 집계 스크립트. `Strong problem-fit responses`와 `Highest problem-fit score`로 구매 맥락 있는 강한 응답을 자동 판정한다.
 
 ## 공개 MVP
 

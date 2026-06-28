@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T12:08:20+09:00
+Generated at: 2026-06-28T12:15:00+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -9,6 +9,7 @@ Verdict: `insufficient_external_evidence`
 | Metric | Current | Threshold |
 |---|---:|---:|
 | Online public responses | 0 | 30 |
+| Strong problem-fit responses | 0 | 5 |
 | Purchase-context signals | 0 | 10 |
 | Offline interviews | 0 | 10 |
 | Offline recent purchase/search signals | 0 | 3 |
@@ -24,6 +25,8 @@ Verdict: `insufficient_external_evidence`
 | Aroma memory positive | 0 |
 | Use-up or aroma-retention burden signals | 0 |
 | Existing-substitute gap signals | 0 |
+| Strong problem-fit responses | 0 |
+| Highest problem-fit score | 0 / 8 |
 | 100ml price-bearing responses | 0 |
 | 100ml price positive or conditional | 0 |
 | 100ml price positive share | n/a |

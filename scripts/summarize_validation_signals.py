@@ -30,6 +30,61 @@ NEGATIVE_PURCHASE_WORDS = ("買っていない", "覚えていない", "なし",
 SAMPLE_WORDS = ("サンプル", "試食", "少量", "買いたい", "購入", "入荷", "知らせて")
 USE_UP_BURDEN_WORDS = ("使い切れない", "半年", "3〜4か月", "3～4か月", "3か月", "4か月", "弱くなる", "油っぽくなる")
 SUBSTITUTE_GAP_WORDS = ("不安", "使い切れない", "分からない", "比べたい", "弱くなる", "足りない")
+BRAND_OR_STORE_WORDS = (
+    "かどや",
+    "カドヤ",
+    "kadoya",
+    "九鬼",
+    "kuki",
+    "オットゥギ",
+    "ottogi",
+    "キムさん",
+    "kim-san",
+    "韓国広場",
+    "ソウル市場",
+    "新大久保",
+    "韓国スーパー",
+    "韓国食品",
+    "楽天",
+    "yahoo",
+    "amazon",
+    "通販",
+    "店",
+    "市場",
+    "ブランド",
+)
+SUBSTITUTE_WORDS = (
+    "かどや",
+    "カドヤ",
+    "kadoya",
+    "九鬼",
+    "kuki",
+    "オットゥギ",
+    "ottogi",
+    "キムさん",
+    "kim-san",
+    "新大久保",
+    "しぼりたて",
+    "搾りたて",
+    "候補",
+    "十分",
+)
+EVIDENCE_WORDS = (
+    "製造日",
+    "搾った日",
+    "搾りたて",
+    "しぼりたて",
+    "試食",
+    "遮光",
+    "鮮度",
+    "圧搾",
+    "1〜2か月",
+    "1～2か月",
+    "1-2か月",
+    "買い直し",
+    "再購入",
+    "使い切れる",
+)
 
 
 @dataclass
@@ -45,6 +100,8 @@ class Respondent:
     sample_or_purchase_signal: bool
     use_up_burden_signal: bool = False
     substitute_gap_signal: bool = False
+    strong_problem_fit: bool = False
+    problem_fit_score: int = 0
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -108,6 +165,61 @@ def substitute_gap(text: str) -> bool:
     return contains_any(text, SUBSTITUTE_GAP_WORDS)
 
 
+def brand_or_store_signal(text: str) -> bool:
+    return contains_any(normalize(text), BRAND_OR_STORE_WORDS)
+
+
+def volume_or_price_signal(text: str) -> bool:
+    text = normalize(text)
+    if not text:
+        return False
+    return bool(re.search(r"(\d+|[０-９]+)\s?(ml|mL|g|グラム|円|本)", text))
+
+
+def aroma_problem_signal(text: str) -> bool:
+    text = normalize(text)
+    if not text:
+        return False
+    return ("香り" in text or "匂い" in text) and contains_any(
+        text,
+        ("弱", "足りない", "残らない", "不安", "変わる", "落ちる", "最後", "開封後"),
+    )
+
+
+def substitute_comparison_signal(text: str) -> bool:
+    return contains_any(normalize(text), SUBSTITUTE_WORDS)
+
+
+def evidence_needed_signal(text: str) -> bool:
+    return contains_any(normalize(text), EVIDENCE_WORDS)
+
+
+def problem_fit_score(
+    *,
+    purchase: str,
+    brand_or_store: str,
+    volume_or_price: str,
+    useup: str,
+    aroma: str,
+    substitute: str,
+    evidence: str,
+    price_reaction: str,
+    joined: str,
+) -> int:
+    """Score the 8 strong-response criteria from the KPI gate."""
+    criteria = [
+        has_recent_purchase(purchase),
+        brand_or_store_signal(" ".join([brand_or_store, purchase, joined])),
+        volume_or_price_signal(" ".join([volume_or_price, joined])),
+        mentioned(useup) or use_up_burden(joined),
+        aroma_problem_signal(" ".join([aroma, joined])) or use_up_burden(joined),
+        substitute_comparison_signal(" ".join([substitute, joined])),
+        evidence_needed_signal(" ".join([evidence, substitute, joined])),
+        mentioned(price_reaction),
+    ]
+    return sum(1 for criterion in criteria if criterion)
+
+
 def parse_source_from_title(title: str) -> str:
     match = re.search(r"\[src:([a-z0-9_-]{1,40})\]", title.lower())
     return match.group(1) if match else ""
@@ -169,12 +281,41 @@ def notion_respondents() -> list[Respondent]:
             or fields.get("開封後どのくらいで使い切れそうか", "")
         )
         substitute = fields.get("今の候補で十分か", "")
+        brand = (
+            fields.get("候補のブランドや店名", "")
+            or fields.get("ブランドや店名", "")
+            or fields.get("ブランド", "")
+            or fields.get("店名", "")
+        )
+        volume = (
+            fields.get("候補の容量や価格", "")
+            or fields.get("容量や価格", "")
+            or fields.get("容量", "")
+            or fields.get("価格", "")
+        )
+        evidence = (
+            fields.get("買い直す条件", "")
+            or fields.get("日本でまた買う条件", "")
+            or fields.get("安心できる条件", "")
+            or fields.get("切り替える条件", "")
+        )
         single = first_present(row, ("100ml 1,480円", "single_price", "Price reaction")) or fields.get("100ml 1,480円", "")
         bundle = first_present(row, ("3本 3,980円", "bundle_price")) or fields.get("3本 3,980円", "")
         comment = first_present(row, ("Comment", "comment", "Notes", "コメント")) or fields.get("コメント", "")
         joined = " ".join([raw, comment, recent, aroma, useup, substitute, single, bundle])
         if not joined.strip():
             continue
+        score = problem_fit_score(
+            purchase=recent,
+            brand_or_store=brand,
+            volume_or_price=volume,
+            useup=useup,
+            aroma=aroma,
+            substitute=substitute,
+            evidence=evidence,
+            price_reaction=single,
+            joined=joined,
+        )
         respondents.append(
             Respondent(
                 channel="notion",
@@ -188,6 +329,8 @@ def notion_respondents() -> list[Respondent]:
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
                 use_up_burden_signal=use_up_burden(" ".join([useup, aroma, comment])),
                 substitute_gap_signal=substitute_gap(" ".join([substitute, comment])),
+                strong_problem_fit=score >= 5,
+                problem_fit_score=score,
             )
         )
     return respondents
@@ -200,6 +343,17 @@ def github_respondents() -> list[Respondent]:
         joined = " ".join(row.values())
         if not joined.strip():
             continue
+        score = problem_fit_score(
+            purchase=row.get("recent_purchase", ""),
+            brand_or_store=joined,
+            volume_or_price=joined,
+            useup=joined,
+            aroma=row.get("experience", "") or joined,
+            substitute=joined,
+            evidence=joined,
+            price_reaction=row.get("single_price", ""),
+            joined=joined,
+        )
         respondents.append(
             Respondent(
                 channel="github",
@@ -213,6 +367,8 @@ def github_respondents() -> list[Respondent]:
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
+                strong_problem_fit=score >= 5,
+                problem_fit_score=score,
             )
         )
     return respondents
@@ -230,6 +386,17 @@ def field_respondents() -> list[Respondent]:
             continue
         if not joined.strip():
             continue
+        score = problem_fit_score(
+            purchase=row.get("recent_purchase", ""),
+            brand_or_store=joined,
+            volume_or_price=joined,
+            useup=joined,
+            aroma=row.get("aroma_memory", "") or joined,
+            substitute=joined,
+            evidence=joined,
+            price_reaction=row.get("single_price_reaction", ""),
+            joined=joined,
+        )
         respondents.append(
             Respondent(
                 channel="offline",
@@ -243,6 +410,8 @@ def field_respondents() -> list[Respondent]:
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
+                strong_problem_fit=score >= 5,
+                problem_fit_score=score,
             )
         )
     return respondents
@@ -258,6 +427,17 @@ def public_social_respondents() -> list[Respondent]:
             continue
         text = row.get("response_text", "")
         source = row.get("source") or row.get("platform") or "social_untracked"
+        score = problem_fit_score(
+            purchase=row.get("recent_purchase", "") or text,
+            brand_or_store=joined,
+            volume_or_price=joined,
+            useup=joined,
+            aroma=row.get("aroma_memory", "") or text,
+            substitute=joined,
+            evidence=joined,
+            price_reaction=row.get("single_price_reaction", "") or text,
+            joined=joined,
+        )
         respondents.append(
             Respondent(
                 channel="social",
@@ -271,6 +451,8 @@ def public_social_respondents() -> list[Respondent]:
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
+                strong_problem_fit=score >= 5,
+                problem_fit_score=score,
             )
         )
     return respondents
@@ -294,6 +476,8 @@ def decision(metrics: dict[str, int]) -> tuple[str, list[str]]:
     reasons: list[str] = []
     if metrics["online_public_responses"] >= 30:
         reasons.append("Online public responses reached 30+.")
+    if metrics["strong_problem_fit_responses"] >= 5:
+        reasons.append("Strong problem-fit responses reached 5+.")
     if metrics["purchase_conversation_signals"] >= 10:
         reasons.append("Purchase-context signals reached 10+.")
     if metrics["offline_interviews"] >= 10 and metrics["offline_recent_purchase"] >= 3:
@@ -365,6 +549,7 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         "| Metric | Current | Threshold |",
         "|---|---:|---:|",
         f"| Online public responses | {metrics['online_public_responses']} | 30 |",
+        f"| Strong problem-fit responses | {metrics['strong_problem_fit_responses']} | 5 |",
         f"| Purchase-context signals | {metrics['purchase_conversation_signals']} | 10 |",
         f"| Offline interviews | {metrics['offline_interviews']} | 10 |",
         f"| Offline recent purchase/search signals | {metrics['offline_recent_purchase']} | 3 |",
@@ -380,6 +565,8 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         f"| Aroma memory positive | {metrics['aroma_memory_positive']} |",
         f"| Use-up or aroma-retention burden signals | {metrics['use_up_burden_signals']} |",
         f"| Existing-substitute gap signals | {metrics['substitute_gap_signals']} |",
+        f"| Strong problem-fit responses | {metrics['strong_problem_fit_responses']} |",
+        f"| Highest problem-fit score | {metrics['max_problem_fit_score']} / 8 |",
         f"| 100ml price-bearing responses | {metrics['single_price_responses']} |",
         f"| 100ml price positive or conditional | {metrics['single_price_positive']} |",
         f"| 100ml price positive share | {percent(metrics['single_price_positive'], metrics['single_price_responses'])} |",
@@ -438,6 +625,8 @@ def main() -> int:
         "aroma_memory_positive": count_true(respondents, "aroma_memory"),
         "use_up_burden_signals": count_true(respondents, "use_up_burden_signal"),
         "substitute_gap_signals": count_true(respondents, "substitute_gap_signal"),
+        "strong_problem_fit_responses": count_true(respondents, "strong_problem_fit"),
+        "max_problem_fit_score": max((respondent.problem_fit_score for respondent in respondents), default=0),
         "single_price_responses": count_true(respondents, "single_price_mentioned"),
         "single_price_positive": count_true(respondents, "single_price_positive"),
         "bundle_price_responses": count_true(respondents, "bundle_price_mentioned"),

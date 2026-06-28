@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T12:08:20+09:00",
+  "generated_at": "2026-06-28T12:15:00+09:00",
   "verdict": "insufficient_external_evidence",
   "reasons": [
     "External response threshold has not been met."
@@ -20,6 +20,8 @@
     "aroma_memory_positive": 0,
     "use_up_burden_signals": 0,
     "substitute_gap_signals": 0,
+    "strong_problem_fit_responses": 0,
+    "max_problem_fit_score": 0,
     "single_price_responses": 0,
     "single_price_positive": 0,
     "bundle_price_responses": 0,

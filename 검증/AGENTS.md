@@ -32,6 +32,7 @@
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - 2026-06-28T11:38+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `今の候補で十分か`를 묻는다. 집계 요약은 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
+- 2026-06-28T12:13+09:00 기준 집계 요약은 `Strong problem-fit responses`와 `Highest problem-fit score`도 표시한다. 강한 응답은 8개 기준 중 5개 이상을 포함해야 하며, 기준은 `scripts/summarize_validation_signals.py`와 `검증/고의도_채널_KPI_및_다음실험_20260628.md`를 본다.
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시를 허용했다. X, Threads, Konest, 다른 커뮤니티는 별도 허용 전 게시하지 않는다.

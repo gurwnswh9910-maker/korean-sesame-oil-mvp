@@ -3,7 +3,14 @@
 
 from __future__ import annotations
 
-from summarize_validation_signals import has_recent_purchase, recommendation, split_submission, substitute_gap, use_up_burden
+from summarize_validation_signals import (
+    has_recent_purchase,
+    problem_fit_score,
+    recommendation,
+    split_submission,
+    substitute_gap,
+    use_up_burden,
+)
 
 
 def base_metrics() -> dict[str, int]:
@@ -75,12 +82,51 @@ def test_shelfcheck_submission_fields_parse() -> None:
     assert has_recent_purchase(fields["最後に買ったまたは見た場所"])
 
 
+def test_problem_fit_score_strong_response() -> None:
+    joined = (
+        "流入元: content_shelfcheck / 最後に買ったまたは見た場所: 新大久保の韓国スーパー / "
+        "候補のブランドや店名: オットゥギ 110ml / 候補の容量や価格: 110ml 518円 / "
+        "1本を使い切る期間: 半年以上 / 残りが少ない時の香り: 香りが弱くなる / "
+        "今の候補で十分か: かどやや九鬼より韓国料理の最後の香りが足りない / "
+        "買い直す条件: 製造日と搾った日、遮光瓶が見えるなら / 100ml 1,480円: 迷うが条件次第"
+    )
+    score = problem_fit_score(
+        purchase="新大久保の韓国スーパー",
+        brand_or_store="オットゥギ",
+        volume_or_price="110ml 518円",
+        useup="半年以上",
+        aroma="香りが弱くなる",
+        substitute="かどやや九鬼より韓国料理の最後の香りが足りない",
+        evidence="製造日と搾った日、遮光瓶",
+        price_reaction="迷うが条件次第",
+        joined=joined,
+    )
+    assert score >= 5
+
+
+def test_problem_fit_score_weak_interest() -> None:
+    score = problem_fit_score(
+        purchase="",
+        brand_or_store="",
+        volume_or_price="",
+        useup="",
+        aroma="韓国料理が好き",
+        substitute="",
+        evidence="",
+        price_reaction="",
+        joined="小瓶がかわいい。韓国式なら良さそう。",
+    )
+    assert score < 5
+
+
 def main() -> int:
     test_collect_more_evidence()
     test_candidate_go_small_batch()
     test_candidate_pivot_price()
     test_candidate_stop_or_resegment()
     test_shelfcheck_submission_fields_parse()
+    test_problem_fit_score_strong_response()
+    test_problem_fit_score_weak_interest()
     print("summarize_validation_signals recommendation tests passed")
     return 0
 

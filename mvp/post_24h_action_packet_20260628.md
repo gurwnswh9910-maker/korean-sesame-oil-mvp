@@ -1,6 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
+최근 갱신: 2026-06-28T12:13+09:00
 
 ## 목적
 
@@ -67,3 +68,5 @@ note는 대시보드와 API를 함께 본다.
 6. 기존 대체재와 비교
 7. 필요한 증거
 8. 100ml 1,480円 반응
+
+이 기준은 `scripts/summarize_validation_signals.py`가 `Strong problem-fit responses`와 `Highest problem-fit score`로 자동 집계한다. 24h 체크 후에는 먼저 `experiments/validation_signal_summary.md`의 두 지표를 확인한다.
