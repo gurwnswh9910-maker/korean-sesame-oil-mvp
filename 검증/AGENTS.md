@@ -24,6 +24,7 @@
 - 밥친구/한국김/TKG 같은 `밥 한 그릇 5분 완성` 축은 홈쿡 검증의 하위 문제로 본다. 강한 신호는 반복 사용 빈도, 현재 참기름 단품 구매처, 소량/향 보존/가격 전환 조건이 함께 있을 때만 센다.
 - note/콘텐츠 무응답이 이어질 때는 게시 수를 늘리기보다 `개봉 후 향 손실/큰 병 부담`, `기존 대체재 선택 피로`, `밥 한 그릇 5분 향미`를 비교한다. 최신 정리는 `검증/무응답_학습_및_다음검증_20260628.md`를 본다.
 - 고의도 채널 KPI와 24h 이후 실행 게이트는 `검증/고의도_채널_KPI_및_다음실험_20260628.md`와 `mvp/post_24h_action_packet_20260628.md`를 본다. note 1~5 합산 views가 30 미만이고 응답 0이면 유통 실패로 보고 6차 note를 바로 게시하지 않는다.
+- note dashboard views/comments/スキ는 `scripts/record_note_dashboard_snapshot.py`로 `experiments/note_dashboard_snapshots.csv`에 기록한다. 먼저 `--dry-run`으로 숫자 파싱을 확인한 뒤 실제 기록하고, `scripts/summarize_validation_signals.py`를 재실행한다.
 - 개봉 후 향 손실/큰 병 부담 검증은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`와 source `content_aromaloss`를 사용한다. note 원고는 `mvp/note_aromaloss_posting_packet.md`에 준비됐지만 24h 재확인 전 live note 게시하지 않는다.
 - 매대 앞 선택 피로/신선도 증거 검증은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`와 짧은 경로 `https://korean-sesame-oil-mvp.vercel.app/shelf`를 사용한다. source는 `content_shelfcheck`다. 이 검증은 `한국식이면 좋다`가 아니라 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존/재구매 편의 같은 전환 증거가 있는 응답을 강한 신호로 센다.
 - `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`이다. Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교한 이유가 없는 호감 반응은 강한 수요로 세지 않는다.

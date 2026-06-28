@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T03:15:56+00:00
+Generated at: 2026-06-28T12:22:43+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -37,6 +37,19 @@ Verdict: `insufficient_external_evidence`
 | Posted/public rows | 14 |
 | Ready or pending rows | 14 |
 | Held or excluded rows | 3 |
+
+## Note Dashboard Snapshot
+
+| Field | Value |
+|---|---:|
+| Recorded | no |
+| Captured at | n/a |
+| Dashboard aggregation at | n/a |
+| Note posts in snapshot | 0 |
+| Total note views | 0 |
+| Total note comments | 0 |
+| Total note likes | 0 |
+| 24h action gate | `not_recorded` |
 
 ## Source Breakdown
 

@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T12:13+09:00
+최근 갱신: 2026-06-28T12:17+09:00
 
 ## 목적
 
@@ -20,6 +20,14 @@ note는 대시보드와 API를 함께 본다.
 - API: `like_count`, `comment_count`, `status`
 - Notion: export 또는 UI 원본 행. SQL query는 현재 Business/Notion AI 제한으로 막힐 수 있음
 - 공개 검색: exact hashtag, Vercel URL, note title
+
+대시보드 값을 확인한 뒤 아래처럼 snapshot을 기록한다. 실제 숫자를 넣기 전에는 `--dry-run`으로만 확인한다.
+
+```powershell
+$env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_note_dashboard_snapshot.py --dry-run --aggregation-at "2026年6月28日 21:45" --note "note_kfood=5,0,0" --note "note_content_travel=0,0,0" --note "note_content_shinokubo=0,0,0" --note "note_content_homecook=0,0,0" --note "note_content_homecook_ricebowl=0,0,0"
+```
+
+숫자가 맞으면 `--dry-run`을 빼고 기록한다. 기록 후 `scripts/summarize_validation_signals.py`를 재실행하면 `Note Dashboard Snapshot` 섹션과 `24h action gate`가 갱신된다.
 
 ## 2. 판정 게이트
 

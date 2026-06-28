@@ -19,6 +19,7 @@ NOTION_EXPORT_CSV = EXP_DIR / "notion_submissions_export.csv"
 FIELD_INTERVIEW_CSV = EXP_DIR / "field_interview_log.csv"
 PUBLIC_SOCIAL_CSV = EXP_DIR / "public_social_responses.csv"
 CHANNEL_LOG_CSV = EXP_DIR / "channel_posting_log.csv"
+NOTE_DASHBOARD_CSV = EXP_DIR / "note_dashboard_snapshots.csv"
 SUMMARY_MD = EXP_DIR / "validation_signal_summary.md"
 SUMMARY_JSON = EXP_DIR / "validation_signal_summary.json"
 
@@ -468,6 +469,54 @@ def channel_status() -> dict[str, int]:
     }
 
 
+def to_int(text: str) -> int:
+    try:
+        return int((text or "").strip())
+    except ValueError:
+        return 0
+
+
+def note_dashboard_snapshot() -> dict[str, str | int | bool]:
+    rows = [
+        row
+        for row in read_csv(NOTE_DASHBOARD_CSV)
+        if row.get("captured_at") and row.get("source")
+    ]
+    if not rows:
+        return {
+            "available": False,
+            "captured_at": "",
+            "aggregation_at": "",
+            "post_count": 0,
+            "views": 0,
+            "comments": 0,
+            "likes": 0,
+            "gate": "not_recorded",
+        }
+    latest_captured_at = max(row["captured_at"] for row in rows)
+    latest_rows = [row for row in rows if row["captured_at"] == latest_captured_at]
+    views = sum(to_int(row.get("views", "")) for row in latest_rows)
+    comments = sum(to_int(row.get("comments", "")) for row in latest_rows)
+    likes = sum(to_int(row.get("likes", "")) for row in latest_rows)
+    aggregation_at = next((row.get("aggregation_at", "") for row in latest_rows if row.get("aggregation_at")), "")
+    if comments > 0:
+        gate = "review_comments_for_strong_fit"
+    elif views < 30:
+        gate = "distribution_failure_hold_6th_note"
+    else:
+        gate = "problem_language_or_cta_failure_consider_aromaloss_note"
+    return {
+        "available": True,
+        "captured_at": latest_captured_at,
+        "aggregation_at": aggregation_at,
+        "post_count": len(latest_rows),
+        "views": views,
+        "comments": comments,
+        "likes": likes,
+        "gate": gate,
+    }
+
+
 def count_true(respondents: list[Respondent], attr: str) -> int:
     return sum(1 for respondent in respondents if getattr(respondent, attr))
 
@@ -532,7 +581,16 @@ def recommendation(metrics: dict[str, int], verdict: str) -> tuple[str, list[str
     ]
 
 
-def render_summary(respondents: list[Respondent], metrics: dict[str, int], status: dict[str, int], verdict: str, reasons: list[str], rec: str, rec_reasons: list[str]) -> str:
+def render_summary(
+    respondents: list[Respondent],
+    metrics: dict[str, int],
+    status: dict[str, int],
+    dashboard: dict[str, str | int | bool],
+    verdict: str,
+    reasons: list[str],
+    rec: str,
+    rec_reasons: list[str],
+) -> str:
     generated_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     source_counts = Counter(respondent.source or "untracked" for respondent in respondents)
     channel_counts = Counter(respondent.channel for respondent in respondents)
@@ -577,6 +635,19 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         f"| Posted/public rows | {status['posted_yes']} |",
         f"| Ready or pending rows | {status['ready_or_pending']} |",
         f"| Held or excluded rows | {status['held_or_excluded']} |",
+        "",
+        "## Note Dashboard Snapshot",
+        "",
+        "| Field | Value |",
+        "|---|---:|",
+        f"| Recorded | {'yes' if dashboard['available'] else 'no'} |",
+        f"| Captured at | {dashboard['captured_at'] or 'n/a'} |",
+        f"| Dashboard aggregation at | {dashboard['aggregation_at'] or 'n/a'} |",
+        f"| Note posts in snapshot | {dashboard['post_count']} |",
+        f"| Total note views | {dashboard['views']} |",
+        f"| Total note comments | {dashboard['comments']} |",
+        f"| Total note likes | {dashboard['likes']} |",
+        f"| 24h action gate | `{dashboard['gate']}` |",
         "",
         "## Source Breakdown",
         "",
@@ -633,6 +704,7 @@ def main() -> int:
         "bundle_price_positive": count_true(respondents, "bundle_price_positive"),
     }
     status = channel_status()
+    dashboard = note_dashboard_snapshot()
     verdict, reasons = decision(metrics)
     rec, rec_reasons = recommendation(metrics, verdict)
     payload = {
@@ -643,9 +715,10 @@ def main() -> int:
         "recommendation_reasons": rec_reasons,
         "metrics": metrics,
         "channel_status": status,
+        "note_dashboard": dashboard,
     }
     SUMMARY_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    SUMMARY_MD.write_text(render_summary(respondents, metrics, status, verdict, reasons, rec, rec_reasons), encoding="utf-8")
+    SUMMARY_MD.write_text(render_summary(respondents, metrics, status, dashboard, verdict, reasons, rec, rec_reasons), encoding="utf-8")
     print(f"Wrote {SUMMARY_MD} and {SUMMARY_JSON}. Verdict: {verdict}.")
     return 0
 

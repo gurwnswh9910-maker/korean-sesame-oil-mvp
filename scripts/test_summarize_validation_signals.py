@@ -3,8 +3,13 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+import summarize_validation_signals
 from summarize_validation_signals import (
     has_recent_purchase,
+    note_dashboard_snapshot,
     problem_fit_score,
     recommendation,
     split_submission,
@@ -119,6 +124,44 @@ def test_problem_fit_score_weak_interest() -> None:
     assert score < 5
 
 
+def test_note_dashboard_snapshot_gate() -> None:
+    original = summarize_validation_signals.NOTE_DASHBOARD_CSV
+    with TemporaryDirectory() as tmpdir:
+        snapshot = Path(tmpdir) / "note_dashboard_snapshots.csv"
+        snapshot.write_text(
+            "captured_at,aggregation_at,source,post_url,views,comments,likes,notes\n"
+            "2026-06-28T21:50:00+09:00,2026年6月28日 21:45,note_kfood,,20,0,0,\n"
+            "2026-06-28T21:50:00+09:00,2026年6月28日 21:45,note_content_travel,,15,0,0,\n",
+            encoding="utf-8",
+        )
+        summarize_validation_signals.NOTE_DASHBOARD_CSV = snapshot
+        try:
+            dashboard = note_dashboard_snapshot()
+        finally:
+            summarize_validation_signals.NOTE_DASHBOARD_CSV = original
+    assert dashboard["available"]
+    assert dashboard["views"] == 35
+    assert dashboard["gate"] == "problem_language_or_cta_failure_consider_aromaloss_note"
+
+
+def test_note_dashboard_snapshot_distribution_failure() -> None:
+    original = summarize_validation_signals.NOTE_DASHBOARD_CSV
+    with TemporaryDirectory() as tmpdir:
+        snapshot = Path(tmpdir) / "note_dashboard_snapshots.csv"
+        snapshot.write_text(
+            "captured_at,aggregation_at,source,post_url,views,comments,likes,notes\n"
+            "2026-06-28T21:50:00+09:00,2026年6月28日 21:45,note_kfood,,5,0,0,\n",
+            encoding="utf-8",
+        )
+        summarize_validation_signals.NOTE_DASHBOARD_CSV = snapshot
+        try:
+            dashboard = note_dashboard_snapshot()
+        finally:
+            summarize_validation_signals.NOTE_DASHBOARD_CSV = original
+    assert dashboard["views"] == 5
+    assert dashboard["gate"] == "distribution_failure_hold_6th_note"
+
+
 def main() -> int:
     test_collect_more_evidence()
     test_candidate_go_small_batch()
@@ -127,6 +170,8 @@ def main() -> int:
     test_shelfcheck_submission_fields_parse()
     test_problem_fit_score_strong_response()
     test_problem_fit_score_weak_interest()
+    test_note_dashboard_snapshot_gate()
+    test_note_dashboard_snapshot_distribution_failure()
     print("summarize_validation_signals recommendation tests passed")
     return 0
 
