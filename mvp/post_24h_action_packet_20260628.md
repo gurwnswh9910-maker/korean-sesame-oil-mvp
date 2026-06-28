@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T17:08+09:00
+최근 갱신: 2026-06-28T17:27+09:00
 
 ## 목적
 
@@ -59,7 +59,7 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 
 | 결과 | 판정 | 실행 |
 |---|---|---|
-| 합산 views < 30, 댓글/폼 0 | 유통 실패 | 6차 note 게시 보류. X/Threads 권한 또는 오프라인 실행 가능성 없이는 게시 수를 늘리지 않는다. |
+| 합산 views < 30, 댓글/폼 0 | 유통 실패 | 6차 note 게시 보류. `mvp/post_gate_external_channel_packet_20260628.md` 기준으로 X/Threads URL 없는 공개 질문 1회, 오프라인 인터뷰, 또는 Konest 규칙 확인 중 1개만 선택한다. |
 | 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 6차 note 향 손실/향 타이밍 글 게시 후보. 게시 전 `/aroma-loss-goma`, `/quick-answer`, `/field-aroma` production 검증. 문안은 Kadoya 5g使い切りパック, Ottogi 110ml, Kim-san 搾りたて로 충분한지와 `香りが一番よかった使い方`를 함께 묻는다. |
 | 댓글/폼 1~4건 | 질적 탐색 | strong 기준으로 수동 판정. 모자란 문항을 기록하고 추가 질문. |
 | strong 응답 5건 이상 | 문제 fit 후보 | 결제/예약 전 수입/표시/단가 gate로 이동. |
@@ -94,8 +94,9 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 
 유통 실패로 판정되면 아래 중 하나만 선택한다.
 
-- X/Threads 단일 게시 권한을 사용자에게 받아 `mvp/x_threads_posting_packet.md` 사용
+- X/Threads 단일 게시 권한을 사용자에게 받아 `mvp/x_threads_posting_packet.md`의 URL 없는 공개 질문 사용
 - 오프라인 실행자가 있을 때 `mvp/field_aroma_interview_script.md`와 `field-aroma` QR 사용. 실제 기록은 `experiments/field_interview_log.csv`의 `aroma_timing`에 향이 좋았던 요리/타이밍을 남긴다.
+- Konest는 `mvp/post_gate_external_channel_packet_20260628.md` 기준으로 규칙 확인 또는 운영자 문의 후, 링크 없는 여행 경험 질문만 검토한다.
 - 사용 가능한 외부 채널이 없으면 새 게시가 아니라 메시지/응답 경로만 더 다듬고 목표는 active로 둔다
 
 ## 6. strong 응답 판정
