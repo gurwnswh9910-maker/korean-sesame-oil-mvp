@@ -76,6 +76,67 @@ def gate_for_counts(counts: dict[str, int]) -> str:
     return "problem_language_or_cta_failure_consider_aromaloss_note"
 
 
+def decision_for_gate(gate: str) -> dict[str, object]:
+    decisions: dict[str, dict[str, object]] = {
+        "stale_dashboard_not_recorded": {
+            "interpretation": "dashboard aggregation is too old to use for the 24h gate",
+            "next_action": "rerun after the note dashboard aggregation time is at or after the gate minimum",
+            "allowed_actions": ["do_not_record_snapshot", "do_not_publish_6th_note"],
+            "reference_files": ["mvp/post_24h_action_packet_20260628.md"],
+        },
+        "distribution_failure_hold_6th_note": {
+            "interpretation": "note did not reach enough people, so the current evidence is distribution failure rather than message failure",
+            "next_action": "hold the 6th note and choose exactly one post-gate external/offline lane",
+            "allowed_actions": [
+                "ask_user_for_x_or_threads_one_question_permission",
+                "run_offline_shinokubo_or_korean_grocery_interviews_if_possible",
+                "check_konest_rules_before_any_post",
+            ],
+            "reference_files": [
+                "mvp/post_gate_external_channel_packet_20260628.md",
+                "mvp/x_threads_posting_packet.md",
+                "mvp/field_aroma_interview_script.md",
+            ],
+        },
+        "problem_language_or_cta_failure_consider_aromaloss_note": {
+            "interpretation": "note reached at least a minimal audience, but no one responded",
+            "next_action": "consider publishing the 6th aroma-loss note only after pre-publish routing checks",
+            "allowed_actions": [
+                "verify_aroma_loss_quick_answer_and_field_aroma_production_urls",
+                "publish_mvp_note_aromaloss_posting_packet_if_checks_pass",
+                "add_live_6th_note_url_to_source_routing_after_publish",
+            ],
+            "reference_files": [
+                "mvp/note_aromaloss_posting_packet.md",
+                "mvp/post_24h_action_packet_20260628.md",
+            ],
+        },
+        "review_comments_for_strong_fit": {
+            "interpretation": "there is at least one comment signal to inspect before expanding channels",
+            "next_action": "review original comments or form rows and score them against strong problem-fit criteria",
+            "allowed_actions": [
+                "open_original_response_sources",
+                "record_qualified_public_responses",
+                "ask_follow_up_questions_for_missing_strong_fit_fields",
+            ],
+            "reference_files": [
+                "scripts/record_public_social_response.py",
+                "experiments/public_social_responses.csv",
+                "검증/응답_데이터_상태.md",
+            ],
+        },
+    }
+    return decisions.get(
+        gate,
+        {
+            "interpretation": "unknown gate state",
+            "next_action": "inspect experiments/post_24h_gate_status.json and the dashboard snapshot manually",
+            "allowed_actions": ["manual_review"],
+            "reference_files": ["mvp/post_24h_action_packet_20260628.md"],
+        },
+    )
+
+
 def stamp_rows(rows: list[dict[str, str]], *, captured_at: str, aggregation_at: str) -> list[dict[str, str]]:
     stamped: list[dict[str, str]] = []
     for row in rows:
@@ -129,6 +190,8 @@ def main() -> int:
             result = run_command(command)
             downstream[name] = result.stdout.strip()
 
+    gate = gate_for_counts(counts) if can_record or not stale else "stale_dashboard_not_recorded"
+    decision = decision_for_gate(gate)
     status = {
         "captured_at": captured_at,
         "dashboard_text": str(args.dashboard_text),
@@ -139,7 +202,8 @@ def main() -> int:
         "stale": stale,
         "record_requested": bool(args.record),
         "recorded": bool(can_record),
-        "gate": gate_for_counts(counts) if can_record or not stale else "stale_dashboard_not_recorded",
+        "gate": gate,
+        "decision": decision,
         "counts": counts,
         "downstream": downstream,
     }
@@ -149,7 +213,8 @@ def main() -> int:
     print(
         f"post_24h_gate captured_at={captured_at} aggregation_at={aggregation_at or 'n/a'} "
         f"stale={stale} recorded={can_record} gate={status['gate']} "
-        f"views={counts['views']} comments={counts['comments']} likes={counts['likes']}"
+        f"views={counts['views']} comments={counts['comments']} likes={counts['likes']} "
+        f"next_action={decision['next_action']}"
     )
     if args.record and stale and not args.allow_stale:
         print("Refusing to record stale dashboard aggregation; rerun later or pass --allow-stale intentionally.", file=sys.stderr)

@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T17:27+09:00
+최근 갱신: 2026-06-28T17:32+09:00
 
 ## 목적
 
@@ -54,6 +54,7 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 - `--from-dashboard-text`는 `最新集計時刻`과 프로젝트 note 제목 5개를 읽어 rows를 만든다.
 - 대시보드에 안 보이는 프로젝트 note는 `--fill-missing-zero`를 붙였을 때만 0으로 기록한다.
 - 집계시각이 24h 체크 기준보다 오래된 값이면 기록하지 않는다. 2026-06-28T17:08+09:00 `run_post_24h_gate.py --record` 검증에서는 `最新集計時刻 2026年6月28日 01:31`, views 5, comments 0, likes 0이라 `stale_dashboard_not_recorded`로 기록을 거절했다.
+- 2026-06-28T17:32+09:00부터 `experiments/post_24h_gate_status.json`에는 `decision` 블록도 들어간다. 콘솔 출력에도 `next_action=...`가 붙는다. 따라서 21:50 이후에는 `gate`와 `decision.next_action`을 함께 보고, stale이면 기록/게시하지 않는다.
 
 ## 2. 판정 게이트
 

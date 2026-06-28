@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from run_post_24h_gate import gate_for_counts, parse_dashboard_datetime, parse_iso_datetime, summarize_counts
+from run_post_24h_gate import decision_for_gate, gate_for_counts, parse_dashboard_datetime, parse_iso_datetime, summarize_counts
 
 
 def test_parse_dashboard_datetime() -> None:
@@ -24,6 +24,22 @@ def test_gate_for_counts() -> None:
     assert gate_for_counts({"views": 5, "comments": 1, "likes": 0, "post_count": 5}) == "review_comments_for_strong_fit"
 
 
+def test_decision_for_gate() -> None:
+    stale = decision_for_gate("stale_dashboard_not_recorded")
+    assert stale["next_action"] == "rerun after the note dashboard aggregation time is at or after the gate minimum"
+    assert "do_not_publish_6th_note" in stale["allowed_actions"]
+
+    distribution = decision_for_gate("distribution_failure_hold_6th_note")
+    assert distribution["next_action"] == "hold the 6th note and choose exactly one post-gate external/offline lane"
+    assert "mvp/post_gate_external_channel_packet_20260628.md" in distribution["reference_files"]
+
+    message = decision_for_gate("problem_language_or_cta_failure_consider_aromaloss_note")
+    assert "publish_mvp_note_aromaloss_posting_packet_if_checks_pass" in message["allowed_actions"]
+
+    comments = decision_for_gate("review_comments_for_strong_fit")
+    assert "검증/응답_데이터_상태.md" in comments["reference_files"]
+
+
 def test_summarize_counts() -> None:
     rows = [
         {"views": "1", "comments": "0", "likes": "2"},
@@ -36,6 +52,7 @@ def main() -> int:
     test_parse_dashboard_datetime()
     test_parse_iso_datetime()
     test_gate_for_counts()
+    test_decision_for_gate()
     test_summarize_counts()
     print("run_post_24h_gate tests passed")
     return 0

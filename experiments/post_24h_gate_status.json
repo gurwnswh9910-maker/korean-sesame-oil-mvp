@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-06-28T17:07:34+09:00",
+  "captured_at": "2026-06-28T17:32:17+09:00",
   "dashboard_text": ".tmp\\note_dashboard_current.txt",
   "exported": false,
   "export_output": "",
@@ -9,6 +9,17 @@
   "record_requested": false,
   "recorded": false,
   "gate": "stale_dashboard_not_recorded",
+  "decision": {
+    "interpretation": "dashboard aggregation is too old to use for the 24h gate",
+    "next_action": "rerun after the note dashboard aggregation time is at or after the gate minimum",
+    "allowed_actions": [
+      "do_not_record_snapshot",
+      "do_not_publish_6th_note"
+    ],
+    "reference_files": [
+      "mvp/post_24h_action_packet_20260628.md"
+    ]
+  },
   "counts": {
     "post_count": 5,
     "views": 5,
