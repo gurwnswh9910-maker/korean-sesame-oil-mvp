@@ -11,8 +11,10 @@
 - `/answer-note`는 2026-06-27T22:56+09:00 기준 Vercel production에서 200, no redirect, mobile answer hub로 확인됐다.
 - 제품 외 콘텐츠/타겟 밀집 검증: `검증/제품외_콘텐츠_타겟밀집_검증법_20260627.md`
 - 참기름 판매 목표 아래의 욕구/문제 가설: `검증/욕구_문제_가설_20260627.md`
+- 향미오일/finishing oil 포지셔닝 가설: `검증/향미오일_포지셔닝_가설_20260628.md`
 - 글쓰기 레퍼런스 수집과 AI티 검수: `검증/글쓰기_레퍼런스_수집_AI티_검수_원칙_20260628.md`
 - note 댓글 관찰/접촉 패킷: `검증/note_댓글_관찰_접촉_패킷_20260628.md`
+- note 댓글 실행 큐: `검증/note_댓글_실행_큐_20260628.md`
 
 ## 반드시 지킬 것
 
@@ -31,6 +33,8 @@
 - 개봉 후 향 손실/큰 병 부담 검증은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`와 source `content_aromaloss`를 사용한다. note 원고는 `mvp/note_aromaloss_posting_packet.md`에 준비됐지만 24h 재확인 전 live note 게시하지 않는다.
 - 매대 앞 선택 피로/신선도 증거 검증은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`와 짧은 경로 `https://korean-sesame-oil-mvp.vercel.app/shelf`를 사용한다. source는 `content_shelfcheck`다. 이 검증은 `한국식이면 좋다`가 아니라 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존/재구매 편의 같은 전환 증거가 있는 응답을 강한 신호로 센다.
 - `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`를 묻는 것이다. `5g pack은 편하지만 여러 번 쓰는 한국요리에는 부족하다`, `Ottogi 110ml는 싸지만 제조일/향 신뢰가 약하다`, `신오쿠보 搾りたて는 좋지만 평소 재구매가 불편하다`처럼 대체재별로 남는 이유가 없는 호감 반응은 강한 수요로 세지 않는다.
+- 한국식 방앗간 참기름을 엑스트라 버진 올리브오일처럼 `炒め油`가 아니라 `仕上げの香味油`로 포지셔닝하는 가설은 `검증/향미오일_포지셔닝_가설_20260628.md`를 기준으로 검증한다. 이 가설도 아직 미검증이며, 강한 신호는 실제 finishing 사용 장면, 기존 브랜드 비교, 제조일/搾った日/향 비교 증거, 조건부 가격 반응이 함께 있을 때만 센다.
+- 2026-06-28T15:55+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/field-aroma`, 오프라인 PDF, note 댓글 실행 큐, 6차 note 후보는 `ごま油、炒めるより最後の香りに使いますか？`를 앞세우도록 보정됐다. 이 변경은 질문 품질과 카테고리 인식 검증 보강이지, 응답 데이터가 아니다.
 - 기존 대체재/가격 기준은 `research/07_existing_substitute_price_map_20260628.md`를 본다. Ottogi 110ml 506~518円, Kuki 600g 1,046円, Kim-san 계열 搾りたて 100~120ml 1,500円대 대체재를 알고도 남는 이유가 없는 100ml 1,480円 긍정은 약한 신호로 둔다.
 - 향 손실/큰 병 부담의 고의도 오프라인 검증은 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`와 source `offline_aromaloss`를 사용한다. QR은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`로 바로 보낸다. 실제 인터뷰 원본은 `experiments/field_interview_log.csv`에 기록되기 전까지 응답으로 세지 않는다. 2026-06-28T13:55+09:00부터 오프라인 질문은 `향이 가장 좋았던 요리/타이밍`, `5g・110ml・しぼりたて 후보로 충분한지`, `100ml 병이 더 맞는 이유`를 함께 묻는다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
@@ -40,7 +44,7 @@
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시/수정/댓글을 허용했다. 2026-06-28T14:20+09:00 기준 외부 공개 글 관찰도 허용됐다. X, Threads, Konest, 다른 커뮤니티는 별도 계정/명시 허용 전 게시·댓글·DM을 하지 않는다.
-- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 인앱 브라우저가 note 로그아웃 상태이거나 CDP 포트가 없으면 댓글을 게시한 것으로 기록하지 말고 `ready_not_posted`로 둔다. 후보 상태는 `scripts/check_note_comment_candidates.py --write`로 `experiments/note_comment_candidate_status.csv`에 재기록한다.
+- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`와 `검증/note_댓글_실행_큐_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 2026-06-28T15:27+09:00 기준 실행 1순위는 Ottogi 110ml 대체재 후보, 2순위는 신오쿠보 구매 맥락 후보다. 인앱 브라우저가 note 로그아웃 상태이거나 CDP 포트가 없으면 댓글을 게시한 것으로 기록하지 말고 `ready_not_posted`로 둔다. 후보 상태는 `scripts/check_note_comment_candidates.py --write`로 `experiments/note_comment_candidate_status.csv`에 재기록한다.
 - note/Vercel/커뮤니티 등 소비자-facing 글을 새로 쓰거나 크게 고칠 때는 유사한 일본어 글을 먼저 수집한다. 참고할 것은 문장 복사가 아니라 글 형태, 감정 흐름, 문체, 구조, CTA 거리감이다. 게시 전에는 기존에 쓴 글과 새 초안을 다시 읽고 AI티가 나는지 적대적으로 검수해 필요하면 수정한다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
 - 공개 답글은 `scripts/record_public_social_response.py`로 기록한다. strong 판정을 위해 `--brand-store`, `--volume-price`, `--use-up-period`, `--substitute-comparison`, `--needed-proof`를 가능한 한 채운다.
@@ -76,4 +80,4 @@
 - 게시/배포: `검증/게시_배포_기록.md`
 - 판단 변경: `검증/판단_로그.md`
 - 데이터 상태: `검증/응답_데이터_상태.md`
-- 원본 CSV 로그: `experiments/channel_posting_log.csv`, `experiments/live_validation_log.csv`
+- 원본 CSV 로그: `experiments/channel_posting_log.csv`, `experiments/live_validation_log.csv`, `experiments/note_comment_execution_queue.csv`

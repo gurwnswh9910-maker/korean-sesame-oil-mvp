@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>30秒購入メモ | 韓国式しぼりたてごま油</title>
-  <meta name="description" content="韓国式ごま油について、最後に買った場所、香りの残り方、買い直す条件を30秒でメモにできます。">
+  <meta name="description" content="韓国式ごま油について、炒め油ではなく仕上げの香味油として使うか、香りの残り方、買い直す条件を30秒でメモにできます。">
   <meta property="og:title" content="30秒購入メモ | 韓国式しぼりたてごま油">
   <meta property="og:description" content="フォームが1行でも答えやすいように、選択肢から回答メモを作れます。個人情報は不要です。">
   <meta property="og:type" content="website">
@@ -241,8 +241,8 @@
     <div class="wrap hero">
       <div>
         <p class="eyebrow">正式販売前の需要確認</p>
-        <h1>ごま油1本、香りが残るうちに使い切れますか。</h1>
-        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。5gパック、110ml小瓶、しぼりたて候補で十分か、覚えている範囲だけで大丈夫です。</p>
+        <h1>ごま油、炒めるより最後の香りに使いますか。</h1>
+        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。仕上げに少しかける油として見るか、5gパック・110ml小瓶・しぼりたて候補で十分か、覚えている範囲だけで大丈夫です。</p>
       </div>
     </div>
   </header>
@@ -250,6 +250,16 @@
   <main class="wrap">
     <div class="tool">
       <form class="questions" id="answer-form">
+        <fieldset>
+          <legend>ごま油の使い方</legend>
+          <div class="choices two">
+            <label class="option"><input type="radio" name="usage" value="最後に香りを足す">最後に香りを足す</label>
+            <label class="option"><input type="radio" name="usage" value="炒める時に使う">炒める時に使う</label>
+            <label class="option"><input type="radio" name="usage" value="和える・たれに使う">和える・たれに使う</label>
+            <label class="option"><input type="radio" name="usage" value="あまり意識しない">あまり意識しない</label>
+          </div>
+        </fieldset>
+
         <fieldset>
           <legend>最後に買った、または見た場所</legend>
           <div class="choices three">
@@ -328,7 +338,7 @@
             <label class="option"><input type="checkbox" name="reason" value="製造日">製造日</label>
             <label class="option"><input type="checkbox" name="reason" value="搾った日">搾った日</label>
             <label class="option"><input type="checkbox" name="reason" value="試食">試食</label>
-            <label class="option"><input type="checkbox" name="reason" value="最後まで残る香り">最後まで残る香り</label>
+            <label class="option"><input type="checkbox" name="reason" value="仕上げで残る香り">仕上げで残る香り</label>
             <label class="option"><input type="checkbox" name="reason" value="100ml小瓶">100ml小瓶</label>
             <label class="option"><input type="checkbox" name="reason" value="遮光瓶">遮光瓶</label>
             <label class="option"><input type="checkbox" name="reason" value="1〜2か月で使い切れる">1〜2か月で使い切れる</label>
@@ -349,7 +359,7 @@
 
         <fieldset>
           <legend>ひとこと</legend>
-          <textarea name="comment" rows="4" placeholder="例: 大きい瓶は使い切る前に香りが弱くなる / 韓国旅行の市場で買ったものが忘れられない"></textarea>
+          <textarea name="comment" rows="4" placeholder="例: 炒めるより最後に少しかける / 大きい瓶は使い切る前に香りが弱くなる / 韓国旅行の市場で買ったものが忘れられない"></textarea>
         </fieldset>
       </form>
 
@@ -419,6 +429,7 @@
       function buildSubmission() {
         return [
           "流入元: " + source,
+          "主な使い方: " + one("usage"),
           "最後に買ったまたは見た場所: " + one("place"),
           "ブランドや店名: " + text("brand"),
           "容量と価格: " + text("volume"),

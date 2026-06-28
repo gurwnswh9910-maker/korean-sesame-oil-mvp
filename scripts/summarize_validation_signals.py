@@ -86,6 +86,17 @@ EVIDENCE_WORDS = (
     "再購入",
     "使い切れる",
 )
+FINISHING_OIL_WORDS = (
+    "主な使い方: 最後に香りを足す",
+    "最後に香り",
+    "最後の香り",
+    "最後に少し",
+    "最後だけ",
+    "仕上げ",
+    "香味油",
+    "和える",
+    "たれ",
+)
 
 
 @dataclass
@@ -99,6 +110,7 @@ class Respondent:
     bundle_price_mentioned: bool
     bundle_price_positive: bool
     sample_or_purchase_signal: bool
+    finishing_oil_use_signal: bool = False
     use_up_burden_signal: bool = False
     substitute_gap_signal: bool = False
     strong_problem_fit: bool = False
@@ -157,6 +169,13 @@ def has_recent_purchase(text: str) -> bool:
 
 def use_up_burden(text: str) -> bool:
     return contains_any(normalize(text), USE_UP_BURDEN_WORDS)
+
+
+def finishing_oil_use(text: str) -> bool:
+    text = normalize(text)
+    if not text:
+        return False
+    return contains_any(text, FINISHING_OIL_WORDS)
 
 
 def substitute_gap(text: str) -> bool:
@@ -332,6 +351,7 @@ def notion_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(bundle),
                 bundle_price_positive=positive(bundle),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                finishing_oil_use_signal=finishing_oil_use(joined),
                 use_up_burden_signal=use_up_burden(" ".join([useup, aroma, comment])),
                 substitute_gap_signal=substitute_gap(" ".join([substitute, comment])),
                 strong_problem_fit=score >= 5,
@@ -370,6 +390,7 @@ def github_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price", "")),
                 bundle_price_positive=positive(row.get("bundle_price", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                finishing_oil_use_signal=finishing_oil_use(joined),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
                 strong_problem_fit=score >= 5,
@@ -413,6 +434,7 @@ def field_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "")),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                finishing_oil_use_signal=finishing_oil_use(joined),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
                 strong_problem_fit=score >= 5,
@@ -454,6 +476,7 @@ def public_social_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "") or text),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "") or text),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                finishing_oil_use_signal=finishing_oil_use(joined),
                 use_up_burden_signal=use_up_burden(joined),
                 substitute_gap_signal=substitute_gap(joined),
                 strong_problem_fit=score >= 5,
@@ -625,6 +648,7 @@ def render_summary(
         f"| Notion + GitHub responses | {metrics['form_or_github_responses']} |",
         f"| Public social responses | {metrics['public_social_responses']} |",
         f"| Aroma memory positive | {metrics['aroma_memory_positive']} |",
+        f"| Finishing-oil use signals | {metrics['finishing_oil_use_signals']} |",
         f"| Use-up or aroma-retention burden signals | {metrics['use_up_burden_signals']} |",
         f"| Existing-substitute gap signals | {metrics['substitute_gap_signals']} |",
         f"| Strong problem-fit responses | {metrics['strong_problem_fit_responses']} |",
@@ -698,6 +722,7 @@ def main() -> int:
         "offline_recent_purchase": sum(1 for respondent in respondents if respondent.channel == "offline" and respondent.recent_purchase),
         "sample_or_purchase_requests": count_true(respondents, "sample_or_purchase_signal"),
         "aroma_memory_positive": count_true(respondents, "aroma_memory"),
+        "finishing_oil_use_signals": count_true(respondents, "finishing_oil_use_signal"),
         "use_up_burden_signals": count_true(respondents, "use_up_burden_signal"),
         "substitute_gap_signals": count_true(respondents, "substitute_gap_signal"),
         "strong_problem_fit_responses": count_true(respondents, "strong_problem_fit"),

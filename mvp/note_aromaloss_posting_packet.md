@@ -2,18 +2,19 @@
 
 상태: ready_not_published
 작성 시각: 2026-06-28T02:52+09:00
-최근 갱신: 2026-06-28T13:40+09:00
+최근 갱신: 2026-06-28T15:34+09:00
 게시 권한: note 계정은 이 프로젝트에 한해 Codex 자유 게시 허용. 다만 5개 note 직후 연속 게시로 보일 수 있어 24h 집계 재확인 뒤 게시 여부를 결정한다.
 
 ## 게시 목적
 
-`참기름을 사고 싶나요?`보다 더 구체적으로, 큰 병을 향이 살아 있을 때 다 쓰지 못하는지, 그리고 Kadoya 5g使い切りパック, Kuki/Kadoya, Ottogi 110ml, 신오쿠보 搾りたて 대체재로 충분한지 확인한다.
+`참기름을 사고 싶나요?`보다 더 구체적으로, 참기름을 볶는 기름이 아니라 마지막 향을 올리는 `仕上げの香味油`로 이해하는지, 큰 병을 향이 살아 있을 때 다 쓰지 못하는지, 그리고 Kadoya 5g使い切りパック, Kuki/Kadoya, Ottogi 110ml, 신오쿠보 搾りたて 대체재로 충분한지 확인한다.
 
 강한 응답은 아래를 포함해야 한다.
 
 - 지금 쓰는 참기름의 구매처 또는 브랜드
 - 병 용량/가격
 - 개봉 후 사용 기간, 1병을 다 쓰는 기간, 또는 잔량
+- 炒める 것보다 마지막에 향을 올리는 용도로 쓰는지
 - 향이 약해졌는지, 마지막까지 충분했는지
 - 5g 팩, 110ml 소병, 신오쿠보 搾りたて로 충분한지, 아니면 선택 피로/향 보존/재구매 불편이 있는지
 - 100ml小瓶/제조일/搾った日/시식/차광병/가격/재구매 편의 중 전환 조건
@@ -46,7 +47,7 @@ https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_aromaloss
 
 ## 제목 후보
 
-冷奴やナムル、ごま油は最後まで香りますか？
+ごま油、炒めるより最後に香らせていますか？
 
 ## 태그 후보
 
@@ -56,7 +57,7 @@ https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_aromaloss
 
 冷奴に少し、ナムルに少し、ビビンバの最後に少し。
 
-たくさん使うわけではないのに、ごま油の香りで料理の印象が変わることがあります。
+炒めるためというより、仕上げに少しかけるだけで料理の印象が変わることがあります。
 
 ただ、家のごま油は一度開けると、最後まで同じ香りで使い切れているのか少し気になっています。
 
@@ -92,7 +93,7 @@ https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma?src=note_content_aromal
 
 https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_aromaloss
 
-特に知りたいのは、今使っているごま油の容量、1本を何か月で使い切るか、5g・110ml・しぼりたて候補で十分か、そして100ml前後の小瓶や製造日が買い直す理由になるかです。
+特に知りたいのは、ごま油を炒め油より仕上げの香りとして使うことがあるか、今使っているごま油の容量、1本を何か月で使い切るか、5g・110ml・しぼりたて候補で十分か、そして100ml前後の小瓶や製造日が買い直す理由になるかです。
 
 #ごま油 #韓国料理 #おうちごはん #自炊 #韓国食品
 
@@ -108,5 +109,5 @@ https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=note_content_aromaloss
 - 24h note 집계에서 1~5차 반응을 재확인한다.
 - `mvp/post_24h_action_packet_20260628.md`의 조회수 게이트를 적용한다. note 1~5 합산 views가 30 미만이면 유통 실패로 보고 이 글도 보류한다.
 - `/aroma-loss-goma?src=note_content_aromaloss`가 production 200인지 확인한다.
-- `/quick-answer?src=note_content_aromaloss`가 source, `1本を使い切る期間`, `5g・110ml・しぼりたて候補で十分か` 필드를 유지하는지 확인한다.
+- `/quick-answer?src=note_content_aromaloss`가 source, `主な使い方`, `1本を使い切る期間`, `5g・110ml・しぼりたて候補で十分か` 필드를 유지하는지 확인한다.
 - 게시 후에는 source별 note 댓글 라우팅에 6차 note URL을 추가한다.

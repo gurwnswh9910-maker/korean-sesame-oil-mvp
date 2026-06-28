@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 
 import summarize_validation_signals
 from summarize_validation_signals import (
+    finishing_oil_use,
     has_recent_purchase,
     note_dashboard_snapshot,
     problem_fit_score,
@@ -85,6 +86,16 @@ def test_shelfcheck_submission_fields_parse() -> None:
     assert use_up_burden(fields["1本を使い切る期間"])
     assert substitute_gap(fields["5g・110ml・しぼりたて候補で十分か"])
     assert has_recent_purchase(fields["最後に買ったまたは見た場所"])
+
+
+def test_finishing_oil_use_signal() -> None:
+    fields = split_submission(
+        "流入元: content_aromaloss / 主な使い方: 最後に香りを足す / "
+        "香りが一番よかった使い方: 冷奴に最後だけ"
+    )
+    assert fields["主な使い方"] == "最後に香りを足す"
+    assert finishing_oil_use(" ".join(fields.values()))
+    assert not finishing_oil_use("主な使い方: 炒める時に使う")
 
 
 def test_problem_fit_score_strong_response() -> None:
@@ -168,6 +179,7 @@ def main() -> int:
     test_candidate_pivot_price()
     test_candidate_stop_or_resegment()
     test_shelfcheck_submission_fields_parse()
+    test_finishing_oil_use_signal()
     test_problem_fit_score_strong_response()
     test_problem_fit_score_weak_interest()
     test_note_dashboard_snapshot_gate()
