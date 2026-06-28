@@ -11,6 +11,8 @@
 - Shin-Okubo substitute-check content MVP: https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma
 - Home-cooking last-aroma content MVP: https://korean-sesame-oil-mvp.vercel.app/homecook-goma
 - Aroma-retention / big-bottle burden content MVP: https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma
+- Aroma-retention offline field page: https://korean-sesame-oil-mvp.vercel.app/field-aroma
+- Aroma-retention offline field flyer: https://korean-sesame-oil-mvp.vercel.app/field-aroma-flyer
 - Primary Notion Form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
@@ -46,6 +48,7 @@
 - Shin-Okubo substitute-check MVP: `/shinokubo-goma` added to test whether people who already buy or browse Korean sesame oil in Shin-Okubo/Korean supermarkets have a switching reason around store/brand, volume/price, aroma retention, manufacturing date, 100ml small bottle, or repurchase convenience
 - Home-cooking last-aroma MVP: `/homecook-goma` added to test whether people making bibimbap/namul/kimbap/TKG/ramen/cold tofu/Korean seaweed rice have a last-aroma or aroma-retention problem strong enough to switch sesame oil
 - Aroma-retention MVP: `/aroma-loss-goma` added to test whether large bottles lose aroma before use-up and whether opened duration, remaining-bottle aroma, 100ml small bottle, manufacturing date, or light-blocking bottle create a stronger switching reason
+- Offline aroma-retention field kit: `/field-aroma` and QR target `/quick-answer?src=offline_aromaloss` added for high-intent Shin-Okubo/Korean supermarket interviews; this is not counted until real rows are entered in `experiments/field_interview_log.csv`
 - Need/problem frame: `검증/욕구_문제_가설_20260627.md`; strong content response requires recent purchase place, brand/store, volume/price, usage dish, aroma-retention experience, and a switching condition or complaint
 - `/answer-note` deployment check: first rewrite-only deploy returned 404, fixed by adding `docs/answer-note.html`; final production uses file-based clean URL without the underscore duplicate/rewrite, returns 200 with title `30秒回答 | 韓国式しぼりたてごま油`, no redirect, and mobile/desktop Playwright overflow count 0
 - Article response controls: direct Notion form links, copyable 1-line answer memo, X share intent, LINE share link, and URL copy button
@@ -69,6 +72,7 @@
 - 2026-06-28T02:39+09:00 update: post-publish recheck still found 0 real responses. GitHub waitlist is empty, local social/interview files have no real rows, Notion export is absent, note API shows all five posts published with like_count/comment_count 0, note profile lists all five posts, and note dashboard still shows latest aggregation 2026-06-28 01:31 with only note 1 at 5 views / 0 comments / 0 likes. Next problem priority is open-after-aroma loss / big-bottle burden before adding more note posts.
 - 2026-06-28T02:57+09:00 update: `/aroma-loss-goma` deployed for open-after-aroma loss / big-bottle burden with source `content_aromaloss`; `/quick-answer` now captures `開封後どのくらい`; production inspect `https://vercel.com/gurwnswh9910-makers-projects/korean-sesame-oil-mvp/8YMa5hWcnStVF1siPwCpuLAKWs42`; mobile390 browser checks passed for `/aroma-loss-goma`, `/quick-answer`, and landing source/link/overflow behavior. `mvp/note_aromaloss_posting_packet.md` is ready_not_published until 24h recheck; real response count remains 0.
 - 2026-06-28T03:07+09:00 update: response recheck still found 0 real responses; note API for all five posts remains like_count/comment_count 0. Added `research/05_aroma_retention_review_language_20260628.md`; aroma-loss language is supported by official storage guidance and consumer Q&A, but cheap 110ml Korean substitutes mean 100ml 1,480 yen needs manufacturing-date/fresh-pressing/aroma-retention proof, not small size alone.
+- 2026-06-28T10:42+09:00 update: added and deployed the offline aroma-retention field kit at `/field-aroma`, flyer `/field-aroma-flyer`, and QR target `/quick-answer?src=offline_aromaloss`; QR decode, PDF inspection, and production HTTP checks passed. Validation summary still reports total respondents 0, channel rows 17, posted/public rows 13.
 
 ## 성공 기준
 

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ごま油の開封後の香り 30秒メモ</title>
+  <meta name="description" content="大きいごま油を使い切る前に香りが弱くなるか、100ml小瓶に意味があるかを確認するオフライン検証用QRページです。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #221a13;
+      --muted: #665c52;
+      --paper: #fffaf2;
+      --cream: #f5eadb;
+      --green: #2d5b45;
+      --gold: #c58b32;
+      --line: #decfba;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 24px;
+      align-items: center;
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      padding: 38px 18px;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(1.9rem, 5.5vw, 4.1rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      border-left: 4px solid var(--gold);
+      padding: 2px 0 2px 12px;
+    }
+
+    .qr-card {
+      text-align: center;
+    }
+
+    .qr-card img {
+      width: min(100%, 350px);
+      aspect-ratio: 1;
+      display: block;
+      margin: 0 auto 16px;
+      border: 10px solid var(--white);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .url {
+      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .notice {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media print {
+      body { background: #fff; }
+      main { min-height: auto; padding: 16mm; }
+      section { break-inside: avoid; }
+    }
+
+    @media (max-width: 760px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 22px 14px;
+      }
+
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <p class="eyebrow">正式販売前・30秒メモ</p>
+      <h1>大きいごま油、使い切る前に香りが弱くなりますか？</h1>
+      <p class="lead">韓国式ごま油を売る前に、いま家で使っている瓶の大きさ、開封後の期間、残り少ない時の香りを確認しています。</p>
+      <ul>
+        <li>最後に買ったごま油の店・ブランド・容量・価格</li>
+        <li>開封後どのくらい経ったか</li>
+        <li>残り少ない時の香りが十分か、弱くなるか</li>
+        <li>製造日・搾りたて感・100ml小瓶・遮光瓶への反応</li>
+      </ul>
+      <p class="notice">住所・電話番号・メールアドレスなどの個人情報は不要です。正式販売前の検証で、決済や配送先は受け付けていません。</p>
+    </section>
+
+    <section class="qr-card">
+      <img src="assets/qr_offline_aromaloss.png" alt="ごま油の開封後の香りアンケートQR">
+      <strong>QRから30秒回答</strong>
+      <p class="url">https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss</p>
+      <a class="button" href="field_aroma_flyer.pdf">印刷用PDFを開く</a>
+    </section>
+  </main>
+</body>
+</html>

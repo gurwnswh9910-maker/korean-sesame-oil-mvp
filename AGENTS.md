@@ -21,6 +21,7 @@
 - 신오쿠보/한국식품점 대체재 전환 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`다.
 - 집밥 한국요리/마지막 향 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`다.
 - 개봉 후 향 손실/큰 병 부담 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`다.
+- 향 손실/큰 병 부담 오프라인 인터뷰 QR 페이지는 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`다. QR 타겟은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`이며, 실제 인터뷰 원본이 생기기 전에는 응답 데이터로 세지 않는다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
 - `/answer-note`와 `/quick-answer`의 note 댓글 버튼은 source별 게시물로 라우팅한다. `note_content_travel`은 note 2차, `note_content_shinokubo`는 note 3차, `note_content_homecook`은 note 4차, `note_content_homecook_ricebowl`은 note 5차로 보내야 한다.

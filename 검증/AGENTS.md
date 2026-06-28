@@ -24,6 +24,7 @@
 - 밥친구/한국김/TKG 같은 `밥 한 그릇 5분 완성` 축은 홈쿡 검증의 하위 문제로 본다. 강한 신호는 반복 사용 빈도, 현재 참기름 단품 구매처, 소량/향 보존/가격 전환 조건이 함께 있을 때만 센다.
 - note/콘텐츠 무응답이 이어질 때는 게시 수를 늘리기보다 `개봉 후 향 손실/큰 병 부담`, `기존 대체재 선택 피로`, `밥 한 그릇 5분 향미`를 비교한다. 최신 정리는 `검증/무응답_학습_및_다음검증_20260628.md`를 본다.
 - 개봉 후 향 손실/큰 병 부담 검증은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`와 source `content_aromaloss`를 사용한다. note 원고는 `mvp/note_aromaloss_posting_packet.md`에 준비됐지만 24h 재확인 전 live note 게시하지 않는다.
+- 향 손실/큰 병 부담의 고의도 오프라인 검증은 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`와 source `offline_aromaloss`를 사용한다. QR은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`로 바로 보낸다. 실제 인터뷰 원본은 `experiments/field_interview_log.csv`에 기록되기 전까지 응답으로 세지 않는다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
@@ -39,6 +40,7 @@
 - Vercel Shin-Okubo content MVP: `https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma`
 - Vercel home-cooking content MVP: `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`
 - Vercel aroma-retention MVP: `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`
+- Vercel aroma-retention offline QR page: `https://korean-sesame-oil-mvp.vercel.app/field-aroma`
 - Vercel article: `https://korean-sesame-oil-mvp.vercel.app/note`
 - Vercel answer memo: `https://korean-sesame-oil-mvp.vercel.app/share?src=note_kfood`
 - Vercel note/mobile answer entry: `https://korean-sesame-oil-mvp.vercel.app/answer-note`

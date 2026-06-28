@@ -5,7 +5,9 @@
     { "source": "/note", "destination": "/note_article.html" },
     { "source": "/share", "destination": "/share_note.html" },
     { "source": "/field", "destination": "/field_interview.html" },
-    { "source": "/field-flyer", "destination": "/field_interview_flyer.pdf" }
+    { "source": "/field-flyer", "destination": "/field_interview_flyer.pdf" },
+    { "source": "/field-aroma", "destination": "/field-aroma.html" },
+    { "source": "/field-aroma-flyer", "destination": "/field_aroma_flyer.pdf" }
   ],
   "redirects": [
     {
