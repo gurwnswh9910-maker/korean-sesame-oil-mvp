@@ -1,2 +1,2 @@
-date,location,source,person_id,recent_purchase,brand_or_store,volume_or_price,use_up_period,aroma_memory,substitute_comparison,needed_proof,dishes,single_price_reaction,bundle_price_reaction,main_objection,qr_completed,interview_notes
-2026-06-27,example,offline_shinokubo,P01,,,,,,,,,,,,,"replace this row after first interview"
+date,location,source,person_id,recent_purchase,brand_or_store,volume_or_price,use_up_period,aroma_memory,aroma_timing,substitute_comparison,needed_proof,dishes,single_price_reaction,bundle_price_reaction,main_objection,qr_completed,interview_notes
+2026-06-27,example,offline_shinokubo,P01,,,,,,,,,,,,,,"replace this row after first interview"

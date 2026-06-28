@@ -24,7 +24,7 @@
 - 집밥 한국요리/마지막 향 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/homecook-goma`다.
 - 개봉 후 향 손실/큰 병 부담 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`다.
 - 매대 앞 선택 피로/신선도 증거 검증 URL은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`이고, 짧은 공유 경로는 `https://korean-sesame-oil-mvp.vercel.app/shelf`다. `content_shelfcheck` 응답은 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존 같은 전환 증거가 있어야 강한 신호로 센다.
-- 향 손실/큰 병 부담 오프라인 인터뷰 QR 페이지는 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`다. QR 타겟은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`이며, 실제 인터뷰 원본이 생기기 전에는 응답 데이터로 세지 않는다.
+- 향 손실/큰 병 부담 오프라인 인터뷰 QR 페이지는 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`다. QR 타겟은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`이며, 실제 인터뷰 원본이 생기기 전에는 응답 데이터로 세지 않는다. 2026-06-28T13:55+09:00부터 이 경로는 `향이 가장 좋았던 요리/타이밍`과 `5g・110ml・しぼりたて 후보로 충분한지`도 묻는다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처 또는 현재 보고 있는 후보/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
 - 2026-06-28T13:04+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `5g・110ml・しぼりたて候補で十分か`를 묻는다. 집계 요약도 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
@@ -43,7 +43,7 @@
 - 식품 결제, 예약금, 배송지, 전화번호, 이메일 등 개인정보 수집은 수입/표시/단가 gate 통과 전 하지 않는다.
 - note/Vercel/커뮤니티 글은 레퍼런스 없이 바로 쓰지 않는다. 필요 시 기존 게시글과 원고 패킷을 다시 읽고, 너무 반듯한 기획서 말투, 광고 카피 느낌, 과한 검증 용어 반복, 구체 장면 부족, 반례 선택지 부재를 수정한다.
 - 검증 완료는 실제 응답 데이터로만 판단한다. 조회수, 스키, 좋아요, 공유는 보조 신호이며 응답 수로 세지 않는다. 신오쿠보 검증에서는 `신오쿠보를 좋아한다`가 아니라 실제 구매처/브랜드/용량·가격/불만/전환 조건이 있는 응답만 강한 신호로 본다. 홈쿡 검증에서는 `韓国料理が好き`가 아니라 최근 만든 요리, 현재 참기름, 향 불만 또는 충분한 이유, 바꿀 조건이 있는 응답만 강한 신호로 본다. 밥친구/한국김/TKG 축은 `맛있어 보임`이 아니라 반복 사용 빈도와 참기름 단품 구매/재구매 조건이 있어야 강한 신호로 본다.
-- 공개 답글은 `scripts/record_public_social_response.py`로 기록하며, strong 판정을 위해 브랜드/店名, 용량·가격, 1병 사용 기간, 기존 대체재 비교, 필요한 증거 컬럼을 가능한 한 채운다.
+- 공개 답글은 `scripts/record_public_social_response.py`로 기록하며, strong 판정을 위해 브랜드/店名, 용량·가격, 1병 사용 기간, 기존 대체재 비교, 필요한 증거 컬럼을 가능한 한 채운다. 오프라인 응답은 `experiments/field_interview_log.csv`의 `aroma_timing`에도 마지막으로 향이 좋았던 사용 장면을 남긴다.
 
 ## 기록 규칙
 

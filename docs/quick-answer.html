@@ -293,6 +293,11 @@
             <label class="option"><input type="checkbox" name="dish" value="焼肉">焼肉</label>
             <label class="option"><input type="checkbox" name="dish" value="その他">その他</label>
           </div>
+          <div class="inline" style="margin-top: 10px;">
+            <label>香りが一番よかった使い方
+              <input type="text" name="aromatiming" autocomplete="off" placeholder="例: 冷奴に最後だけ / ナムルを作った日 / 韓国のりご飯に少し">
+            </label>
+          </div>
         </fieldset>
 
         <fieldset>
@@ -420,6 +425,7 @@
           "開封してからの期間: " + text("opened"),
           "1本を使い切る期間: " + text("useup"),
           "使いたい料理: " + many("dish"),
+          "香りが一番よかった使い方: " + text("aromatiming"),
           "香りは最後まで残ったか: " + one("aroma"),
           "5g・110ml・しぼりたて候補で十分か: " + one("substitute"),
           "日本で買い直すなら決め手: " + many("reason"),

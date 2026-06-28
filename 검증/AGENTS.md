@@ -31,7 +31,7 @@
 - 매대 앞 선택 피로/신선도 증거 검증은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`와 짧은 경로 `https://korean-sesame-oil-mvp.vercel.app/shelf`를 사용한다. source는 `content_shelfcheck`다. 이 검증은 `한국식이면 좋다`가 아니라 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존/재구매 편의 같은 전환 증거가 있는 응답을 강한 신호로 센다.
 - `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`를 묻는 것이다. `5g pack은 편하지만 여러 번 쓰는 한국요리에는 부족하다`, `Ottogi 110ml는 싸지만 제조일/향 신뢰가 약하다`, `신오쿠보 搾りたて는 좋지만 평소 재구매가 불편하다`처럼 대체재별로 남는 이유가 없는 호감 반응은 강한 수요로 세지 않는다.
 - 기존 대체재/가격 기준은 `research/07_existing_substitute_price_map_20260628.md`를 본다. Ottogi 110ml 506~518円, Kuki 600g 1,046円, Kim-san 계열 搾りたて 100~120ml 1,500円대 대체재를 알고도 남는 이유가 없는 100ml 1,480円 긍정은 약한 신호로 둔다.
-- 향 손실/큰 병 부담의 고의도 오프라인 검증은 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`와 source `offline_aromaloss`를 사용한다. QR은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`로 바로 보낸다. 실제 인터뷰 원본은 `experiments/field_interview_log.csv`에 기록되기 전까지 응답으로 세지 않는다.
+- 향 손실/큰 병 부담의 고의도 오프라인 검증은 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`와 source `offline_aromaloss`를 사용한다. QR은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`로 바로 보낸다. 실제 인터뷰 원본은 `experiments/field_interview_log.csv`에 기록되기 전까지 응답으로 세지 않는다. 2026-06-28T13:55+09:00부터 오프라인 질문은 `향이 가장 좋았던 요리/타이밍`, `5g・110ml・しぼりたて 후보로 충분한지`, `100ml 병이 더 맞는 이유`를 함께 묻는다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
 - 구조화 응답이 필요하면 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`를 사용한다. 이 페이지는 다문항 선택을 Notion 1줄 `Submission`으로 변환하는 보조 MVP이며, 응답 데이터 자체는 Notion/export/note 댓글/공개 답글 원본으로만 센다.
 - 2026-06-28T13:04+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `5g・110ml・しぼりたて候補で十分か`를 묻는다. 집계 요약은 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
@@ -42,6 +42,7 @@
 - note/Vercel/커뮤니티 등 소비자-facing 글을 새로 쓰거나 크게 고칠 때는 유사한 일본어 글을 먼저 수집한다. 참고할 것은 문장 복사가 아니라 글 형태, 감정 흐름, 문체, 구조, CTA 거리감이다. 게시 전에는 기존에 쓴 글과 새 초안을 다시 읽고 AI티가 나는지 적대적으로 검수해 필요하면 수정한다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
 - 공개 답글은 `scripts/record_public_social_response.py`로 기록한다. strong 판정을 위해 `--brand-store`, `--volume-price`, `--use-up-period`, `--substitute-comparison`, `--needed-proof`를 가능한 한 채운다.
+- 오프라인 인터뷰는 `experiments/field_interview_log.csv`에 1명 1행으로 기록하고, 새 컬럼 `aroma_timing`에는 `冷奴に最後だけ`, `ナムルを作った日`, `韓国のりご飯に少し`처럼 향이 제일 좋았던 사용 장면을 적는다.
 - 조회수, 좋아요, 스키, 공유는 채널 품질 지표로만 기록하고, 구매/수요 응답으로 세지 않는다.
 
 ## 현재 canonical 공개면

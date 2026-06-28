@@ -87,11 +87,11 @@ def build_pdf():
 
     story = []
     story.append(Paragraph("正式販売前・30秒メモ", eyebrow))
-    story.append(Paragraph("大きいごま油、<br/>使い切る前に香りが弱くなりますか？", title))
+    story.append(Paragraph("冷奴やナムル、<br/>ごま油は最後まで香りますか？", title))
     story.append(
         Paragraph(
             "いま家で使っているごま油の瓶の大きさ、開封後の期間、"
-            "残り少ない時の香りを確認しています。",
+            "香りが一番よかった使い方を確認しています。",
             lead,
         )
     )
@@ -99,7 +99,8 @@ def build_pdf():
     questions = [
         "最後に買った店・ブランド・容量・価格",
         "開封後どのくらい経ったか",
-        "残り少ない時の香りが十分か、弱くなるか",
+        "香りが一番よかった料理やタイミング",
+        "5g・110ml・しぼりたて候補で十分か",
         "製造日・搾りたて感・100ml小瓶・遮光瓶への反応",
     ]
     question_rows = [
