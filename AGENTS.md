@@ -14,6 +14,8 @@
 
 제품 외 콘텐츠와 타겟 심리 검증은 `검증/제품외_콘텐츠_타겟밀집_검증법_20260627.md`와 `검증/욕구_문제_가설_20260627.md`를 함께 본다. 현재 방향은 `참기름을 살 사람`을 직접 찾기보다, 한국여행/신오쿠보/집밥 K-food/밥 한 그릇 맥락에서 최근 구매처, 향 불만, 대체재 전환 조건을 먼저 캐는 것이다.
 
+소비자-facing 글을 새로 쓰거나 크게 고칠 때는 `검증/글쓰기_레퍼런스_수집_AI티_검수_원칙_20260628.md`를 먼저 본다. 유사한 일본어 글을 수집해 글 형태, 감정 흐름, 문체, 구조, CTA 거리감을 참고하고, 게시 전에는 기존 글과 새 초안을 다시 읽어 AI티가 나는지 적대적으로 검수한다.
+
 ## 현재 운영 기준
 
 - 소비자에게 공유할 기본 URL은 Vercel clean URL이다: `https://korean-sesame-oil-mvp.vercel.app/`
@@ -25,7 +27,7 @@
 - 향 손실/큰 병 부담 오프라인 인터뷰 QR 페이지는 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`다. QR 타겟은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`이며, 실제 인터뷰 원본이 생기기 전에는 응답 데이터로 세지 않는다.
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처 또는 현재 보고 있는 후보/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
-- 2026-06-28T11:38+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `今の候補で十分か`를 묻는다. 집계 요약도 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
+- 2026-06-28T13:04+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `5g・110ml・しぼりたて候補で十分か`를 묻는다. 집계 요약도 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
 - 2026-06-28T12:13+09:00 기준 `scripts/summarize_validation_signals.py`는 `Strong problem-fit responses`와 `Highest problem-fit score`를 표시한다. 8개 기준 중 5개 이상인 응답만 strong으로 본다.
 - 기존 대체재/가격 지도는 `research/07_existing_substitute_price_map_20260628.md`를 본다. Ottogi 110ml 506~518円, Kuki 600g 1,046円, 신오쿠보 Kim-san 계열 搾りたて 100~120ml 1,500円대와 비교해 남는 이유가 있어야 100ml 1,480円 가설을 강하게 본다.
 - `/answer-note`와 `/quick-answer`의 note 댓글 버튼은 source별 게시물로 라우팅한다. `note_content_travel`은 note 2차, `note_content_shinokubo`는 note 3차, `note_content_homecook`은 note 4차, `note_content_homecook_ricebowl`은 note 5차로 보내야 한다.
@@ -35,10 +37,11 @@
 - note dashboard snapshot은 `scripts/record_note_dashboard_snapshot.py`로 `experiments/note_dashboard_snapshots.csv`에 기록한다. 먼저 `--dry-run`으로 확인하고 실제 기록 후 재집계한다.
 - note 공개 상태/댓글/スキ는 `scripts/check_note_public_api.py`로 확인한다. 이 스크립트는 조회수를 주지 않으므로 24h gate의 views는 대시보드 snapshot으로만 기록한다.
 - 매대 앞 선택 피로/신선도 증거 보강은 `research/06_shelf_choice_freshness_proof_20260628.md`를 본다. 이 축은 소량병 자체보다 제조일, 압착, 차광/보관, 마지막 향 보존, 재구매 편의가 실제 전환 이유인지 묻는다.
-- `참기름 팔기`를 더 구체적인 욕구/문제로 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 최신 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`까지 묻는 것이다. Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교되는 응답만 강하게 본다.
+- `참기름 팔기`를 더 구체적인 욕구/문제로 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 최신 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`까지 묻는 것이다. `5g pack은 편하지만 여러 번 쓰는 한국요리에는 부족하다`, `Ottogi 110ml는 싸지만 제조일/향 신뢰가 약하다`, `신오쿠보 搾りたて는 좋지만 평소 재구매가 불편하다`처럼 대체재별로 남는 이유가 있는 응답만 강하게 본다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.
 - note 계정은 이 프로젝트에 한해 Codex가 자유롭게 게시/수정할 수 있다고 사용자가 허용했다. 단, note 외부 채널인 X, Threads, Konest 등은 별도 명시 허용 전 게시하지 않는다.
 - 식품 결제, 예약금, 배송지, 전화번호, 이메일 등 개인정보 수집은 수입/표시/단가 gate 통과 전 하지 않는다.
+- note/Vercel/커뮤니티 글은 레퍼런스 없이 바로 쓰지 않는다. 필요 시 기존 게시글과 원고 패킷을 다시 읽고, 너무 반듯한 기획서 말투, 광고 카피 느낌, 과한 검증 용어 반복, 구체 장면 부족, 반례 선택지 부재를 수정한다.
 - 검증 완료는 실제 응답 데이터로만 판단한다. 조회수, 스키, 좋아요, 공유는 보조 신호이며 응답 수로 세지 않는다. 신오쿠보 검증에서는 `신오쿠보를 좋아한다`가 아니라 실제 구매처/브랜드/용량·가격/불만/전환 조건이 있는 응답만 강한 신호로 본다. 홈쿡 검증에서는 `韓国料理が好き`가 아니라 최근 만든 요리, 현재 참기름, 향 불만 또는 충분한 이유, 바꿀 조건이 있는 응답만 강한 신호로 본다. 밥친구/한국김/TKG 축은 `맛있어 보임`이 아니라 반복 사용 빈도와 참기름 단품 구매/재구매 조건이 있어야 강한 신호로 본다.
 - 공개 답글은 `scripts/record_public_social_response.py`로 기록하며, strong 판정을 위해 브랜드/店名, 용량·가격, 1병 사용 기간, 기존 대체재 비교, 필요한 증거 컬럼을 가능한 한 채운다.
 

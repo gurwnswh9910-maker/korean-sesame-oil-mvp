@@ -242,7 +242,7 @@
       <div>
         <p class="eyebrow">正式販売前の需要確認</p>
         <h1>ごま油1本、香りが残るうちに使い切れますか。</h1>
-        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。今の候補で十分か、覚えている範囲だけで大丈夫です。</p>
+        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。5gパック、110ml小瓶、しぼりたて候補で十分か、覚えている範囲だけで大丈夫です。</p>
       </div>
     </div>
   </header>
@@ -305,13 +305,14 @@
         </fieldset>
 
         <fieldset>
-          <legend>今の候補で十分ですか</legend>
+          <legend>5g・110ml・しぼりたて候補で十分ですか</legend>
           <div class="choices">
-            <label class="option"><input type="radio" name="substitute" value="今ので十分">今ので十分</label>
+            <label class="option"><input type="radio" name="substitute" value="5gパックで十分">5gパックで十分</label>
+            <label class="option"><input type="radio" name="substitute" value="110ml小瓶で十分">110ml小瓶で十分</label>
             <label class="option"><input type="radio" name="substitute" value="香り・鮮度が不安">香り・鮮度が不安</label>
             <label class="option"><input type="radio" name="substitute" value="使い切れない">使い切れない</label>
             <label class="option"><input type="radio" name="substitute" value="選び方が分からない">選び方が分からない</label>
-            <label class="option"><input type="radio" name="substitute" value="しぼりたてなら比べたい">しぼりたてなら比べたい</label>
+            <label class="option"><input type="radio" name="substitute" value="100ml前後なら比べたい">100ml前後なら比べたい</label>
             <label class="option"><input type="radio" name="substitute" value="覚えていない">覚えていない</label>
           </div>
         </fieldset>
@@ -420,7 +421,7 @@
           "1本を使い切る期間: " + text("useup"),
           "使いたい料理: " + many("dish"),
           "香りは最後まで残ったか: " + one("aroma"),
-          "今の候補で十分か: " + one("substitute"),
+          "5g・110ml・しぼりたて候補で十分か: " + one("substitute"),
           "日本で買い直すなら決め手: " + many("reason"),
           "100ml 1,480円: " + one("price"),
           "コメント: " + text("comment")

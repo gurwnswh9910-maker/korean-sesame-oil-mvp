@@ -78,12 +78,12 @@ def test_shelfcheck_submission_fields_parse() -> None:
     fields = split_submission(
         "流入元: content_shelfcheck / 最後に買ったまたは見た場所: 棚で見ている / "
         "候補のブランドや店名: 韓国スーパーの棚 / 1本を使い切る期間: 半年以上 / "
-        "今の候補で十分か: 香り・鮮度が不安 / 残りが少ない時の香り: 途中で弱くなる"
+        "5g・110ml・しぼりたて候補で十分か: 香り・鮮度が不安 / 残りが少ない時の香り: 途中で弱くなる"
     )
     assert fields["最後に買ったまたは見た場所"] == "棚で見ている"
     assert fields["1本を使い切る期間"] == "半年以上"
     assert use_up_burden(fields["1本を使い切る期間"])
-    assert substitute_gap(fields["今の候補で十分か"])
+    assert substitute_gap(fields["5g・110ml・しぼりたて候補で十分か"])
     assert has_recent_purchase(fields["最後に買ったまたは見た場所"])
 
 
@@ -92,7 +92,7 @@ def test_problem_fit_score_strong_response() -> None:
         "流入元: content_shelfcheck / 最後に買ったまたは見た場所: 新大久保の韓国スーパー / "
         "候補のブランドや店名: オットゥギ 110ml / 候補の容量や価格: 110ml 518円 / "
         "1本を使い切る期間: 半年以上 / 残りが少ない時の香り: 香りが弱くなる / "
-        "今の候補で十分か: かどやや九鬼より韓国料理の最後の香りが足りない / "
+        "5g・110ml・しぼりたて候補で十分か: 5gパックより何度も使う料理向きで、かどやや九鬼より韓国料理の最後の香りが足りない / "
         "買い直す条件: 製造日と搾った日、遮光瓶が見えるなら / 100ml 1,480円: 迷うが条件次第"
     )
     score = problem_fit_score(
@@ -101,7 +101,7 @@ def test_problem_fit_score_strong_response() -> None:
         volume_or_price="110ml 518円",
         useup="半年以上",
         aroma="香りが弱くなる",
-        substitute="かどやや九鬼より韓国料理の最後の香りが足りない",
+        substitute="5gパックより何度も使う料理向きで、かどやや九鬼より韓国料理の最後の香りが足りない",
         evidence="製造日と搾った日、遮光瓶",
         price_reaction="迷うが条件次第",
         joined=joined,

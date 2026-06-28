@@ -281,7 +281,11 @@ def notion_respondents() -> list[Respondent]:
             or fields.get("開封してからの期間", "")
             or fields.get("開封後どのくらいで使い切れそうか", "")
         )
-        substitute = fields.get("今の候補で十分か", "")
+        substitute = (
+            fields.get("5g・110ml・しぼりたて候補で十分か", "")
+            or fields.get("5g/110ml/しぼりたて候補で十分か", "")
+            or fields.get("今の候補で十分か", "")
+        )
         brand = (
             fields.get("候補のブランドや店名", "")
             or fields.get("ブランドや店名", "")
