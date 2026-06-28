@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T16:56+09:00
+최근 갱신: 2026-06-28T17:02+09:00
 
 ## 목적
 
@@ -29,17 +29,19 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_note
 
 숫자가 맞으면 `--dry-run`을 빼고 기록한다. 기록 후 `scripts/summarize_validation_signals.py`를 재실행하면 `Note Dashboard Snapshot` 섹션과 `24h action gate`가 갱신된다.
 
-2026-06-28T16:56+09:00부터는 대시보드 본문 텍스트를 파일로 저장한 뒤 자동 파싱할 수도 있다.
+2026-06-28T17:02+09:00부터는 CDP로 대시보드 본문 텍스트를 파일로 저장한 뒤 자동 파싱할 수도 있다.
 
 ```powershell
+node .\scripts\export_note_dashboard_text.mjs --output .\.tmp\note_dashboard_current.txt --wait-ms 1000
 $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_note_dashboard_snapshot.py --dry-run --from-dashboard-text .\.tmp\note_dashboard_current.txt --fill-missing-zero
 ```
 
 주의:
 
+- `export_note_dashboard_text.mjs`는 로그인된 Edge/Chrome CDP 포트 `9222`의 `https://note.com/sitesettings/stats` 탭에서 `document.body.innerText`를 저장한다.
 - `--from-dashboard-text`는 `最新集計時刻`과 프로젝트 note 제목 5개를 읽어 rows를 만든다.
 - 대시보드에 안 보이는 프로젝트 note는 `--fill-missing-zero`를 붙였을 때만 0으로 기록한다.
-- 집계시각이 24h 체크 기준보다 오래된 값이면 기록하지 않는다. 2026-06-28T16:56+09:00 dry-run에서는 `最新集計時刻 2026年6月28日 01:31`, views 5, comments 0, likes 0만 확인되어 공식 24h snapshot으로 기록하지 않았다.
+- 집계시각이 24h 체크 기준보다 오래된 값이면 기록하지 않는다. 2026-06-28T17:02+09:00 dry-run에서는 `最新集計時刻 2026年6月28日 01:31`, views 5, comments 0, likes 0만 확인되어 공식 24h snapshot으로 기록하지 않았다.
 
 ## 2. 판정 게이트
 
