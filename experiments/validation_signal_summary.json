@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T08:30:09+00:00",
+  "generated_at": "2026-06-28T21:56:36+09:00",
   "verdict": "insufficient_external_evidence",
   "reasons": [
     "External response threshold has not been met."
@@ -35,13 +35,13 @@
     "held_or_excluded": 7
   },
   "note_dashboard": {
-    "available": false,
-    "captured_at": "",
-    "aggregation_at": "",
-    "post_count": 0,
-    "views": 0,
+    "available": true,
+    "captured_at": "2026-06-28T21:56:33+09:00",
+    "aggregation_at": "2026年6月28日 21:46",
+    "post_count": 5,
+    "views": 36,
     "comments": 0,
     "likes": 0,
-    "gate": "not_recorded"
+    "gate": "problem_language_or_cta_failure_consider_aromaloss_note"
   }
 }

@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T08:30:09+00:00
+Generated at: 2026-06-28T21:56:36+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -43,14 +43,14 @@ Verdict: `insufficient_external_evidence`
 
 | Field | Value |
 |---|---:|
-| Recorded | no |
-| Captured at | n/a |
-| Dashboard aggregation at | n/a |
-| Note posts in snapshot | 0 |
-| Total note views | 0 |
+| Recorded | yes |
+| Captured at | 2026-06-28T21:56:33+09:00 |
+| Dashboard aggregation at | 2026年6月28日 21:46 |
+| Note posts in snapshot | 5 |
+| Total note views | 36 |
 | Total note comments | 0 |
 | Total note likes | 0 |
-| 24h action gate | `not_recorded` |
+| 24h action gate | `problem_language_or_cta_failure_consider_aromaloss_note` |
 
 ## Source Breakdown
 

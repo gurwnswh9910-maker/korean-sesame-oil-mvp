@@ -1,11 +1,24 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T17:41+09:00
+최근 갱신: 2026-06-28T21:56+09:00
 
 ## 목적
 
 2026-06-28T21:50+09:00 note 24h 체크 이후, 감으로 다음 글을 올리지 않기 위한 실행 패킷이다.
+
+## 0. 실제 24h gate 결과
+
+2026-06-28T21:56+09:00에 fresh note dashboard snapshot을 기록했다.
+
+- Dashboard aggregation at: `2026年6月28日 21:46`
+- note 1~5 total: views 36, comments 0, スキ 0
+- 글별 views/comments/スキ: note 1 `10/0/0`, note 2 `7/0/0`, note 3 `7/0/0`, note 4 `6/0/0`, note 5 `6/0/0`
+- 실제 응답자: 0
+- Strong problem-fit responses: 0
+- Gate: `problem_language_or_cta_failure_consider_aromaloss_note`
+
+해석: 유통 실패 기준인 views < 30은 피했지만, 실제 답변은 0이라 제품 검증 성공이 아니다. 다음 조치는 X/Threads 자동 게시가 아니라 6차 향 손실 note 후보의 pre-publish routing 확인이다. 게시 후보를 보려면 `/aroma-loss-goma`, `/quick-answer`, `/field-aroma` production 경로와 `note_content_aromaloss` source 라우팅을 먼저 확인한다.
 
 ## 1. 먼저 확인할 것
 

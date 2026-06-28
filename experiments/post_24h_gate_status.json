@@ -1,28 +1,30 @@
 {
-  "captured_at": "2026-06-28T17:41:22+09:00",
+  "captured_at": "2026-06-28T21:56:33+09:00",
   "dashboard_text": ".tmp\\note_dashboard_current.txt",
   "exported": false,
   "export_output": "",
-  "aggregation_at": "2026年6月28日 01:31",
+  "aggregation_at": "2026年6月28日 21:46",
   "min_aggregation_at": "2026-06-28T21:45:00+09:00",
-  "stale": true,
-  "record_requested": false,
-  "recorded": false,
-  "gate": "stale_dashboard_not_recorded",
+  "stale": false,
+  "record_requested": true,
+  "recorded": true,
+  "gate": "problem_language_or_cta_failure_consider_aromaloss_note",
   "decision": {
-    "interpretation": "dashboard aggregation is too old to use for the 24h gate",
-    "next_action": "rerun after the note dashboard aggregation time is at or after the gate minimum",
+    "interpretation": "note reached at least a minimal audience, but no one responded",
+    "next_action": "consider publishing the 6th aroma-loss note only after pre-publish routing checks",
     "allowed_actions": [
-      "do_not_record_snapshot",
-      "do_not_publish_6th_note"
+      "verify_aroma_loss_quick_answer_and_field_aroma_production_urls",
+      "publish_mvp_note_aromaloss_posting_packet_if_checks_pass",
+      "add_live_6th_note_url_to_source_routing_after_publish"
     ],
     "reference_files": [
+      "mvp/note_aromaloss_posting_packet.md",
       "mvp/post_24h_action_packet_20260628.md"
     ]
   },
   "counts": {
     "post_count": 5,
-    "views": 5,
+    "views": 36,
     "comments": 0,
     "likes": 0
   },
@@ -35,5 +37,9 @@
     "offline_interviews": 0,
     "sample_or_purchase_requests": 0
   },
-  "downstream": {}
+  "downstream": {
+    "followups": "source\tstatus\tposted\tcurrent\tdelta\ttitle\nnote_comment_ottogi_mill\tno_new_comment\t1\t1\t0\t【調味料の話】加熱せずに食べたい”ちょっといい”ごま油 | 韓国\nnote_comment_shinokubo_namul\tno_new_comment\t2\t2\t0\t新大久保のソウル市場で買える、魔法の赤い粉で作るもやしナムル #おつまみレシピ\n\nchecked=2 new_comment_signal=0 wrote=experiments\\note_comment_followup_status.csv",
+    "waitlist": "Wrote experiments\\waitlist_responses.csv and experiments\\waitlist_summary.md from 0 waitlist issues.",
+    "summary": "Wrote experiments\\validation_signal_summary.md and experiments\\validation_signal_summary.json. Verdict: insufficient_external_evidence."
+  }
 }
