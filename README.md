@@ -51,7 +51,7 @@
 - `experiments/validation_signal_summary.json`: 통합 판정 요약의 기계 판독용 JSON
 - `experiments/note_dashboard_snapshots.csv`: note 대시보드 views/comments/スキ snapshot 기록
 - `scripts/record_note_dashboard_snapshot.py`: note 대시보드 snapshot을 CSV에 기록하는 helper
-- `scripts/check_note_public_api.py`: note 공개 API에서 게시 상태, 댓글 수, スキ 수를 확인하는 helper. 조회수는 대시보드 snapshot으로만 기록한다.
+- `scripts/check_note_public_api.py`: note 공개 API에서 게시 상태, 댓글 수, スキ 수를 확인하는 helper. 기본값은 MVP note 1~5이며, `--note SOURCE=URL_OR_KEY`를 반복하면 외부 note 댓글 후보도 확인할 수 있다. 조회수는 대시보드 snapshot으로만 기록한다.
 - `scripts/record_public_social_response.py`: X/Threads 공개 응답 URL을 중복 없이 CSV에 기록하는 helper
 - `scripts/summarize_validation_signals.py`: 검증 신호 통합 집계 스크립트. `Strong problem-fit responses`와 `Highest problem-fit score`로 구매 맥락 있는 강한 응답을 자동 판정한다.
 

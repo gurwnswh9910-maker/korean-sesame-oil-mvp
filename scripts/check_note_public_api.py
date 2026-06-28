@@ -1,11 +1,13 @@
-"""Check public note status/comment/like counts for the MVP posts."""
+"""Check public note status/comment/like counts for note posts."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
@@ -18,13 +20,42 @@ NOTE_KEYS = {
     "note_content_homecook_ricebowl": "nbb21605544ca",
 }
 
+NOTE_KEY_RE = re.compile(r"^n[0-9a-f]{12,}$", re.IGNORECASE)
+
 
 def now_local() -> str:
     return datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
 
 
-def fetch_note(source: str, key: str) -> dict[str, object]:
+def extract_note_key(value: str) -> str:
+    value = value.strip()
+    if NOTE_KEY_RE.fullmatch(value):
+        return value
+    parsed = urllib.parse.urlparse(value)
+    path_parts = [part for part in parsed.path.split("/") if part]
+    for index, part in enumerate(path_parts):
+        if part == "n" and index + 1 < len(path_parts) and NOTE_KEY_RE.fullmatch(path_parts[index + 1]):
+            return path_parts[index + 1]
+    raise ValueError(f"Could not parse note key from {value!r}")
+
+
+def parse_note_spec(spec: str) -> tuple[str, str, str]:
+    if "=" in spec:
+        source, value = spec.split("=", 1)
+        source = source.strip()
+        if not source:
+            raise ValueError(f"Missing source name in {spec!r}")
+    else:
+        value = spec.strip()
+        source = extract_note_key(value)
+    key = extract_note_key(value)
+    display_url = value if value.startswith(("http://", "https://")) else f"https://note.com/n/{key}"
+    return source, key, display_url
+
+
+def fetch_note(source: str, key: str, display_url: str | None = None) -> dict[str, object]:
     url = f"https://note.com/api/v3/notes/{key}"
+    display_url = display_url or f"https://note.com/dreamy_viola8978/n/{key}"
     req = urllib.request.Request(
         url,
         headers={
@@ -39,7 +70,7 @@ def fetch_note(source: str, key: str) -> dict[str, object]:
         return {
             "source": source,
             "key": key,
-            "url": f"https://note.com/dreamy_viola8978/n/{key}",
+            "url": display_url,
             "ok": False,
             "error": str(exc),
         }
@@ -48,7 +79,7 @@ def fetch_note(source: str, key: str) -> dict[str, object]:
     return {
         "source": source,
         "key": key,
-        "url": f"https://note.com/dreamy_viola8978/n/{key}",
+        "url": display_url,
         "ok": True,
         "status": data.get("status"),
         "name": data.get("name"),
@@ -63,12 +94,26 @@ def fetch_note(source: str, key: str) -> dict[str, object]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="Emit JSON lines instead of a table.")
+    parser.add_argument(
+        "--note",
+        action="append",
+        default=[],
+        metavar="SOURCE=URL_OR_KEY",
+        help="Check an arbitrary note URL/key. Repeat to check several notes. Defaults to MVP posts when omitted.",
+    )
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    rows = [fetch_note(source, key) for source, key in NOTE_KEYS.items()]
+    try:
+        note_specs = [parse_note_spec(spec) for spec in args.note] if args.note else [
+            (source, key, f"https://note.com/dreamy_viola8978/n/{key}") for source, key in NOTE_KEYS.items()
+        ]
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+    rows = [fetch_note(source, key, display_url) for source, key, display_url in note_specs]
     if args.json:
         for row in rows:
             print(json.dumps({"checked_at": now_local(), **row}, ensure_ascii=False, sort_keys=True))
