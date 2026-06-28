@@ -17,6 +17,7 @@ from record_note_dashboard_snapshot import append_rows, parse_dashboard_text
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DASHBOARD_TEXT = ROOT / ".tmp" / "note_dashboard_current.txt"
 DEFAULT_STATUS_JSON = ROOT / "experiments" / "post_24h_gate_status.json"
+DEFAULT_SUMMARY_JSON = ROOT / "experiments" / "validation_signal_summary.json"
 DEFAULT_MIN_AGGREGATION_AT = "2026-06-28T21:45:00+09:00"
 SEOUL = ZoneInfo("Asia/Seoul")
 
@@ -68,12 +69,56 @@ def summarize_counts(rows: list[dict[str, str]]) -> dict[str, int]:
     }
 
 
-def gate_for_counts(counts: dict[str, int]) -> str:
-    if counts["comments"] > 0:
-        return "review_comments_for_strong_fit"
+def load_response_metrics(path: Path = DEFAULT_SUMMARY_JSON) -> dict[str, int]:
+    defaults = {
+        "total_respondents": 0,
+        "online_public_responses": 0,
+        "strong_problem_fit_responses": 0,
+        "public_social_responses": 0,
+        "form_or_github_responses": 0,
+        "offline_interviews": 0,
+        "sample_or_purchase_requests": 0,
+    }
+    if not path.exists():
+        return defaults
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return defaults
+    metrics = payload.get("metrics", {})
+    for key in defaults:
+        try:
+            defaults[key] = int(metrics.get(key, 0))
+        except (TypeError, ValueError):
+            defaults[key] = 0
+    return defaults
+
+
+def gate_for_counts(counts: dict[str, int], response_metrics: dict[str, int] | None = None) -> str:
+    response_metrics = response_metrics or {}
+    if int(response_metrics.get("strong_problem_fit_responses", 0)) >= 5:
+        return "problem_fit_candidate_import_label_gate"
+    if counts["comments"] > 0 or int(response_metrics.get("total_respondents", 0)) > 0:
+        return "review_responses_for_strong_fit"
     if counts["views"] < 30:
         return "distribution_failure_hold_6th_note"
     return "problem_language_or_cta_failure_consider_aromaloss_note"
+
+
+def select_gate(
+    counts: dict[str, int],
+    response_metrics: dict[str, int],
+    *,
+    stale: bool,
+    can_record: bool,
+) -> str:
+    has_strong_fit = int(response_metrics.get("strong_problem_fit_responses", 0)) >= 5
+    has_any_response = int(response_metrics.get("total_respondents", 0)) > 0
+    if has_strong_fit or has_any_response:
+        return gate_for_counts(counts, response_metrics)
+    if stale and not can_record:
+        return "stale_dashboard_not_recorded"
+    return gate_for_counts(counts, response_metrics)
 
 
 def decision_for_gate(gate: str) -> dict[str, object]:
@@ -111,9 +156,9 @@ def decision_for_gate(gate: str) -> dict[str, object]:
                 "mvp/post_24h_action_packet_20260628.md",
             ],
         },
-        "review_comments_for_strong_fit": {
-            "interpretation": "there is at least one comment signal to inspect before expanding channels",
-            "next_action": "review original comments or form rows and score them against strong problem-fit criteria",
+        "review_responses_for_strong_fit": {
+            "interpretation": "there is at least one comment, form, public reply, or interview signal to inspect before expanding channels",
+            "next_action": "review original response sources and score them against strong problem-fit criteria",
             "allowed_actions": [
                 "open_original_response_sources",
                 "record_qualified_public_responses",
@@ -122,6 +167,20 @@ def decision_for_gate(gate: str) -> dict[str, object]:
             "reference_files": [
                 "scripts/record_public_social_response.py",
                 "experiments/public_social_responses.csv",
+                "검증/응답_데이터_상태.md",
+            ],
+        },
+        "problem_fit_candidate_import_label_gate": {
+            "interpretation": "strong problem-fit response threshold has been met",
+            "next_action": "stop collecting lightweight traffic and move to import, labeling, unit economics, and sample-interview gates before any sale or reservation",
+            "allowed_actions": [
+                "audit_original_strong_responses",
+                "run_import_label_unit_economics_gate",
+                "plan_sample_interviews_without_payment_or_private_contact_collection",
+            ],
+            "reference_files": [
+                "research/02_import_label_unit_economics_gate.md",
+                "experiments/validation_signal_summary.md",
                 "검증/응답_데이터_상태.md",
             ],
         },
@@ -158,6 +217,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--allow-stale", action="store_true", help="Allow recording even if aggregation_at is older than the minimum.")
     parser.add_argument("--skip-downstream", action="store_true", help="Skip follow-up/waitlist/validation summary refresh.")
     parser.add_argument("--status-json", type=Path, default=DEFAULT_STATUS_JSON)
+    parser.add_argument("--summary-json", type=Path, default=DEFAULT_SUMMARY_JSON)
     return parser
 
 
@@ -190,7 +250,8 @@ def main() -> int:
             result = run_command(command)
             downstream[name] = result.stdout.strip()
 
-    gate = gate_for_counts(counts) if can_record or not stale else "stale_dashboard_not_recorded"
+    response_metrics = load_response_metrics(args.summary_json)
+    gate = select_gate(counts, response_metrics, stale=stale, can_record=can_record)
     decision = decision_for_gate(gate)
     status = {
         "captured_at": captured_at,
@@ -205,6 +266,7 @@ def main() -> int:
         "gate": gate,
         "decision": decision,
         "counts": counts,
+        "response_metrics": response_metrics,
         "downstream": downstream,
     }
     args.status_json.parent.mkdir(parents=True, exist_ok=True)
@@ -214,6 +276,7 @@ def main() -> int:
         f"post_24h_gate captured_at={captured_at} aggregation_at={aggregation_at or 'n/a'} "
         f"stale={stale} recorded={can_record} gate={status['gate']} "
         f"views={counts['views']} comments={counts['comments']} likes={counts['likes']} "
+        f"respondents={response_metrics['total_respondents']} strong={response_metrics['strong_problem_fit_responses']} "
         f"next_action={decision['next_action']}"
     )
     if args.record and stale and not args.allow_stale:

@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T17:32+09:00
+최근 갱신: 2026-06-28T17:41+09:00
 
 ## 목적
 
@@ -55,6 +55,7 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 - 대시보드에 안 보이는 프로젝트 note는 `--fill-missing-zero`를 붙였을 때만 0으로 기록한다.
 - 집계시각이 24h 체크 기준보다 오래된 값이면 기록하지 않는다. 2026-06-28T17:08+09:00 `run_post_24h_gate.py --record` 검증에서는 `最新集計時刻 2026年6月28日 01:31`, views 5, comments 0, likes 0이라 `stale_dashboard_not_recorded`로 기록을 거절했다.
 - 2026-06-28T17:32+09:00부터 `experiments/post_24h_gate_status.json`에는 `decision` 블록도 들어간다. 콘솔 출력에도 `next_action=...`가 붙는다. 따라서 21:50 이후에는 `gate`와 `decision.next_action`을 함께 보고, stale이면 기록/게시하지 않는다.
+- 2026-06-28T17:41+09:00부터 `run_post_24h_gate.py`는 `experiments/validation_signal_summary.json`의 `response_metrics`도 함께 읽는다. 대시보드 집계가 stale이어도 실제 폼/공개 답글/오프라인 응답이 있으면 `review_responses_for_strong_fit`로 보내고, `strong_problem_fit_responses >= 5`이면 수입/표시/단가 gate로 보낸다. stale 판정은 조회수 기반 의사결정만 막는다.
 
 ## 2. 판정 게이트
 
@@ -62,7 +63,7 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 |---|---|---|
 | 합산 views < 30, 댓글/폼 0 | 유통 실패 | 6차 note 게시 보류. `mvp/post_gate_external_channel_packet_20260628.md` 기준으로 X/Threads URL 없는 공개 질문 1회, 오프라인 인터뷰, 또는 Konest 규칙 확인 중 1개만 선택한다. |
 | 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 6차 note 향 손실/향 타이밍 글 게시 후보. 게시 전 `/aroma-loss-goma`, `/quick-answer`, `/field-aroma` production 검증. 문안은 Kadoya 5g使い切りパック, Ottogi 110ml, Kim-san 搾りたて로 충분한지와 `香りが一番よかった使い方`를 함께 묻는다. |
-| 댓글/폼 1~4건 | 질적 탐색 | strong 기준으로 수동 판정. 모자란 문항을 기록하고 추가 질문. |
+| 댓글/폼/공개 답글/오프라인 1~4건 | 질적 탐색 | 원본 응답을 열어 strong 기준으로 수동 판정. 모자란 문항을 기록하고 추가 질문. |
 | strong 응답 5건 이상 | 문제 fit 후보 | 결제/예약 전 수입/표시/단가 gate로 이동. |
 
 ## 3. 6차 note 게시 조건
