@@ -40,7 +40,7 @@
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시/수정/댓글을 허용했다. 2026-06-28T14:20+09:00 기준 외부 공개 글 관찰도 허용됐다. X, Threads, Konest, 다른 커뮤니티는 별도 계정/명시 허용 전 게시·댓글·DM을 하지 않는다.
-- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 인앱 브라우저가 note 로그아웃 상태이거나 CDP 포트가 없으면 댓글을 게시한 것으로 기록하지 말고 `ready_not_posted`로 둔다.
+- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 인앱 브라우저가 note 로그아웃 상태이거나 CDP 포트가 없으면 댓글을 게시한 것으로 기록하지 말고 `ready_not_posted`로 둔다. 후보 상태는 `scripts/check_note_comment_candidates.py --write`로 `experiments/note_comment_candidate_status.csv`에 재기록한다.
 - note/Vercel/커뮤니티 등 소비자-facing 글을 새로 쓰거나 크게 고칠 때는 유사한 일본어 글을 먼저 수집한다. 참고할 것은 문장 복사가 아니라 글 형태, 감정 흐름, 문체, 구조, CTA 거리감이다. 게시 전에는 기존에 쓴 글과 새 초안을 다시 읽고 AI티가 나는지 적대적으로 검수해 필요하면 수정한다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
 - 공개 답글은 `scripts/record_public_social_response.py`로 기록한다. strong 판정을 위해 `--brand-store`, `--volume-price`, `--use-up-period`, `--substitute-comparison`, `--needed-proof`를 가능한 한 채운다.
