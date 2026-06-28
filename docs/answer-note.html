@@ -82,6 +82,9 @@
       border-color: var(--green);
       background: #f0faf5;
     }
+    .choice.is-hidden {
+      display: none;
+    }
     .memo {
       display: grid;
       gap: 12px;
@@ -221,10 +224,12 @@
         if (value.indexOf("note_content_homecook_ricebowl") === 0) return ricebowlNoteUrl;
         if (value.indexOf("note_content_homecook") === 0) return homecookNoteUrl;
         if (value.indexOf("note_content_shinokubo") === 0) return shinokuboNoteUrl;
+        if (value.indexOf("note_content_aromaloss") === 0) return "";
         if (value.indexOf("note_content") === 0) return travelNoteUrl;
         return primaryNoteUrl;
       }
       function detailUrlForSource(value) {
+        if (value.indexOf("note_content_aromaloss") === 0) return "/aroma-loss-goma?src=" + encodeURIComponent(value);
         if (value.indexOf("note_content_homecook") === 0) return "/homecook-goma?src=" + encodeURIComponent(value);
         if (value.indexOf("note_content_shinokubo") === 0) return "/shinokubo-goma?src=" + encodeURIComponent(value);
         return "/korea-trip-goma?src=" + encodeURIComponent(value);
@@ -242,7 +247,14 @@
       if (builderLink) builderLink.href = "/quick-answer?src=" + encodeURIComponent(source);
       if (formLink) formLink.href = formBase + "?src=" + encodeURIComponent(source);
       if (detailLink) detailLink.href = detailUrlForSource(source);
-      if (noteCommentLink) noteCommentLink.href = noteUrl;
+      if (noteCommentLink) {
+        if (noteUrl) {
+          noteCommentLink.href = noteUrl;
+          noteCommentLink.classList.remove("is-hidden");
+        } else {
+          noteCommentLink.classList.add("is-hidden");
+        }
+      }
       if (template) template.value = "流入元: " + source + "\n" + template.value;
       if (xAnswerLink) {
         var socialText = "#韓国ごま油検証\n" + (template ? template.value : "流入元: " + source);
