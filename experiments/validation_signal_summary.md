@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T11:12:02+09:00
+Generated at: 2026-06-28T02:12:41+00:00
 
 Verdict: `insufficient_external_evidence`
 
