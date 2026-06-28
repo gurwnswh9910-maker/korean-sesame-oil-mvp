@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-06-28T17:07:34+09:00",
+  "dashboard_text": ".tmp\\note_dashboard_current.txt",
+  "exported": false,
+  "export_output": "",
+  "aggregation_at": "2026年6月28日 01:31",
+  "min_aggregation_at": "2026-06-28T21:45:00+09:00",
+  "stale": true,
+  "record_requested": false,
+  "recorded": false,
+  "gate": "stale_dashboard_not_recorded",
+  "counts": {
+    "post_count": 5,
+    "views": 5,
+    "comments": 0,
+    "likes": 0
+  },
+  "downstream": {}
+}
