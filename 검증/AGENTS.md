@@ -30,6 +30,7 @@
 - 고의도 채널 KPI와 24h 이후 실행 게이트는 `검증/고의도_채널_KPI_및_다음실험_20260628.md`와 `mvp/post_24h_action_packet_20260628.md`를 본다. note 1~5 합산 views가 30 미만이고 응답 0이면 유통 실패로 보고 6차 note를 바로 게시하지 않는다.
 - note dashboard views/comments/スキ는 `scripts/record_note_dashboard_snapshot.py`로 `experiments/note_dashboard_snapshots.csv`에 기록한다. 먼저 `--dry-run`으로 숫자 파싱을 확인한 뒤 실제 기록하고, `scripts/summarize_validation_signals.py`를 재실행한다.
 - note 공개 상태/댓글/スキ는 `scripts/check_note_public_api.py`로 확인한다. 이 스크립트는 조회수를 주지 않으므로 24h gate의 views는 note 대시보드 snapshot으로만 기록한다.
+- note 외부 댓글 follow-up은 `scripts/check_note_comment_followups.py --write`로 확인한다. 이 스크립트는 `experiments/note_comment_execution_queue.csv`의 `posted_pending_reply` 행만 읽고, 게시 직후 `comment_count`보다 현재 count가 늘었을 때만 `new_comment_signal`로 표시한다. 원본 댓글/답글을 열어보기 전에는 응답으로 세지 않는다.
 - 개봉 후 향 손실/큰 병 부담 검증은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`와 source `content_aromaloss`를 사용한다. note 원고는 `mvp/note_aromaloss_posting_packet.md`에 준비됐지만 24h 재확인 전 live note 게시하지 않는다.
 - 매대 앞 선택 피로/신선도 증거 검증은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`와 짧은 경로 `https://korean-sesame-oil-mvp.vercel.app/shelf`를 사용한다. source는 `content_shelfcheck`다. 이 검증은 `한국식이면 좋다`가 아니라 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존/재구매 편의 같은 전환 증거가 있는 응답을 강한 신호로 센다.
 - `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`를 묻는 것이다. `5g pack은 편하지만 여러 번 쓰는 한국요리에는 부족하다`, `Ottogi 110ml는 싸지만 제조일/향 신뢰가 약하다`, `신오쿠보 搾りたて는 좋지만 평소 재구매가 불편하다`처럼 대체재별로 남는 이유가 없는 호감 반응은 강한 수요로 세지 않는다.
@@ -44,7 +45,7 @@
 - `/answer-note`와 `/quick-answer`는 note source별 댓글 URL을 다르게 써야 한다. `note_content_travel` -> `n3f3af286cf6d`, `note_content_shinokubo` -> `n700b325ba824`, `note_content_homecook` -> `n08bad3dce2a9`, `note_content_homecook_ricebowl` -> `nbb21605544ca`.
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시/수정/댓글을 허용했다. 2026-06-28T14:20+09:00 기준 외부 공개 글 관찰도 허용됐다. X, Threads, Konest, 다른 커뮤니티는 별도 계정/명시 허용 전 게시·댓글·DM을 하지 않는다.
-- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`와 `검증/note_댓글_실행_큐_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 2026-06-28T16:31+09:00 기준 실행 1순위 `note_comment_ottogi_mill`과 2순위 `note_comment_shinokubo_namul`은 logged-in Edge CDP 세션으로 실제 게시 완료, `posted_pending_reply` 상태다. 아직 답글은 없으므로 응답 데이터로 세지 않는다. 후보 상태는 `scripts/check_note_comment_candidates.py --write`로 `experiments/note_comment_candidate_status.csv`에 재기록한다. 다음 댓글은 최소 6~24시간 뒤 답글/알림 확인 후 3순위 `note_comment_korean_mill_aroma`부터 검토한다.
+- note 댓글 실험은 `검증/note_댓글_관찰_접촉_패킷_20260628.md`와 `검증/note_댓글_실행_큐_20260628.md`를 기준으로 한다. 댓글은 하루 3개 이하, 링크 없이, 글 맥락에 맞는 질문만 허용한다. 2026-06-28T16:31+09:00 기준 실행 1순위 `note_comment_ottogi_mill`과 2순위 `note_comment_shinokubo_namul`은 logged-in Edge CDP 세션으로 실제 게시 완료, `posted_pending_reply` 상태다. 2026-06-28T16:46+09:00 `scripts/check_note_comment_followups.py --write` 기준 둘 다 `no_new_comment`라 아직 응답 데이터로 세지 않는다. 후보 상태는 `scripts/check_note_comment_candidates.py --write`로, 답글 신호는 `scripts/check_note_comment_followups.py --write`로 재기록한다. 다음 댓글은 최소 6~24시간 뒤 답글/알림 확인 후 3순위 `note_comment_korean_mill_aroma`부터 검토한다.
 - note/Vercel/커뮤니티 등 소비자-facing 글을 새로 쓰거나 크게 고칠 때는 유사한 일본어 글을 먼저 수집한다. 참고할 것은 문장 복사가 아니라 글 형태, 감정 흐름, 문체, 구조, CTA 거리감이다. 게시 전에는 기존에 쓴 글과 새 초안을 다시 읽고 AI티가 나는지 적대적으로 검수해 필요하면 수정한다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
 - 공개 답글은 `scripts/record_public_social_response.py`로 기록한다. strong 판정을 위해 `--brand-store`, `--volume-price`, `--use-up-period`, `--substitute-comparison`, `--needed-proof`를 가능한 한 채운다.
@@ -80,4 +81,4 @@
 - 게시/배포: `검증/게시_배포_기록.md`
 - 판단 변경: `검증/판단_로그.md`
 - 데이터 상태: `검증/응답_데이터_상태.md`
-- 원본 CSV 로그: `experiments/channel_posting_log.csv`, `experiments/live_validation_log.csv`, `experiments/note_comment_execution_queue.csv`
+- 원본 CSV 로그: `experiments/channel_posting_log.csv`, `experiments/live_validation_log.csv`, `experiments/note_comment_execution_queue.csv`, `experiments/note_comment_followup_status.csv`
