@@ -18,7 +18,12 @@ FIELDNAMES = [
     "response_url",
     "response_text",
     "recent_purchase",
+    "brand_or_store",
+    "volume_or_price",
+    "use_up_period",
     "aroma_memory",
+    "substitute_comparison",
+    "needed_proof",
     "single_price_reaction",
     "bundle_price_reaction",
     "sample_or_purchase_signal",
@@ -81,7 +86,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--url", required=True, help="Public response URL")
     parser.add_argument("--text", required=True, help="Response text or faithful summary")
     parser.add_argument("--recent-purchase", default="", help="Recent purchase/search signal")
+    parser.add_argument("--brand-store", default="", help="Brand, store, market, or candidate product")
+    parser.add_argument("--volume-price", default="", help="Bottle volume and/or remembered price")
+    parser.add_argument("--use-up-period", default="", help="How long one bottle takes to use up")
     parser.add_argument("--aroma-memory", default="", help="Aroma-memory signal")
+    parser.add_argument("--substitute-comparison", default="", help="Whether current Kadoya/Kuki/Ottogi/Kim-san substitutes are enough")
+    parser.add_argument("--needed-proof", default="", help="Needed proof such as manufacturing date, pressed date, tasting, dark bottle, or repurchase convenience")
     parser.add_argument("--single-price", default="", help="100ml 1,480 yen reaction")
     parser.add_argument("--bundle-price", default="", help="3-bottle 3,980 yen reaction")
     parser.add_argument("--sample-signal", default="", help="Sample, purchase, or stock-notice signal")
@@ -100,7 +110,12 @@ def main(argv: list[str] | None = None) -> int:
         "response_url": args.url,
         "response_text": args.text,
         "recent_purchase": args.recent_purchase,
+        "brand_or_store": args.brand_store,
+        "volume_or_price": args.volume_price,
+        "use_up_period": args.use_up_period,
         "aroma_memory": args.aroma_memory,
+        "substitute_comparison": args.substitute_comparison,
+        "needed_proof": args.needed_proof,
         "single_price_reaction": args.single_price,
         "bundle_price_reaction": args.bundle_price,
         "sample_or_purchase_signal": args.sample_signal,

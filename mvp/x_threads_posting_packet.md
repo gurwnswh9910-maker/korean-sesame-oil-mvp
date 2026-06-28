@@ -64,7 +64,7 @@ https://korean-sesame-oil-mvp.vercel.app/?src=x_threads_homecook
 공개 답글 URL 기록 명령:
 
 ```powershell
-$env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_public_social_response.py --platform X --source x_threads_travel --url "https://x.com/{user}/status/{id}" --text "{公開返信の要約}" --recent-purchase "{最近買ったごま油}" --aroma-memory "{香り経験}" --single-price "{100ml 1,480円の反応}" --sample-signal "{少量/購入/入荷案内の希望}"
+$env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_public_social_response.py --platform X --source x_threads_travel --url "https://x.com/{user}/status/{id}" --text "{公開返信の要約}" --recent-purchase "{最近買った/見た場所}" --brand-store "{ブランド/店名}" --volume-price "{容量/価格}" --use-up-period "{1本を使い切る期間}" --aroma-memory "{香り経験/香り低下}" --substitute-comparison "{今の候補で十分か}" --needed-proof "{製造日/搾った日/試食/遮光瓶など}" --single-price "{100ml 1,480円の反応}" --sample-signal "{少量/購入/入荷案内の希望}"
 ```
 
 ## 공개 응답 검색어

@@ -389,12 +389,12 @@ def field_respondents() -> list[Respondent]:
             continue
         score = problem_fit_score(
             purchase=row.get("recent_purchase", ""),
-            brand_or_store=joined,
-            volume_or_price=joined,
-            useup=joined,
+            brand_or_store=row.get("brand_or_store", "") or joined,
+            volume_or_price=row.get("volume_or_price", "") or joined,
+            useup=row.get("use_up_period", "") or joined,
             aroma=row.get("aroma_memory", "") or joined,
-            substitute=joined,
-            evidence=joined,
+            substitute=row.get("substitute_comparison", "") or joined,
+            evidence=row.get("needed_proof", "") or joined,
             price_reaction=row.get("single_price_reaction", ""),
             joined=joined,
         )
@@ -430,12 +430,12 @@ def public_social_respondents() -> list[Respondent]:
         source = row.get("source") or row.get("platform") or "social_untracked"
         score = problem_fit_score(
             purchase=row.get("recent_purchase", "") or text,
-            brand_or_store=joined,
-            volume_or_price=joined,
-            useup=joined,
+            brand_or_store=row.get("brand_or_store", "") or joined,
+            volume_or_price=row.get("volume_or_price", "") or joined,
+            useup=row.get("use_up_period", "") or joined,
             aroma=row.get("aroma_memory", "") or text,
-            substitute=joined,
-            evidence=joined,
+            substitute=row.get("substitute_comparison", "") or joined,
+            evidence=row.get("needed_proof", "") or joined,
             price_reaction=row.get("single_price_reaction", "") or text,
             joined=joined,
         )

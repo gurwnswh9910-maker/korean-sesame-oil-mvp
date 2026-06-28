@@ -1,2 +1,2 @@
-captured_at,platform,source,response_url,response_text,recent_purchase,aroma_memory,single_price_reaction,bundle_price_reaction,sample_or_purchase_signal,notes
-2026-06-27T00:00:00+09:00,X,example,example,"流入元: x_public_answer / 香り経験: ある / 最近買ったごま油: 新大久保で購入 / 使いたい料理: ビビンバ / 100ml 1,480円: 迷う / 3本 3,980円: はい / コメント: 少量なら試したい",新大久保で購入,ある,迷う,はい,サンプルなら試したい,replace this row with real public response URL
+captured_at,platform,source,response_url,response_text,recent_purchase,brand_or_store,volume_or_price,use_up_period,aroma_memory,substitute_comparison,needed_proof,single_price_reaction,bundle_price_reaction,sample_or_purchase_signal,notes
+2026-06-27T00:00:00+09:00,X,example,example,"流入元: x_public_answer / 最近買ったごま油: 新大久保で購入 / 候補: オットゥギ / 容量価格: 110ml 518円 / 1本を使い切る期間: 半年以上 / 今の候補で十分か: 香りと鮮度が不安 / 100ml 1,480円: 迷う / コメント: 少量なら試したい",新大久保で購入,オットゥギ,110ml 518円,半年以上,ある,香りと鮮度が不安,製造日と搾った日が見えるなら,迷う,はい,サンプルなら試したい,replace this row with real public response URL

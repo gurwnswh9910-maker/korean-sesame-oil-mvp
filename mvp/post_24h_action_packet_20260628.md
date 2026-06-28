@@ -34,7 +34,7 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_note
 | 결과 | 판정 | 실행 |
 |---|---|---|
 | 합산 views < 30, 댓글/폼 0 | 유통 실패 | 6차 note 게시 보류. X/Threads 권한 또는 오프라인 실행 가능성 없이는 게시 수를 늘리지 않는다. |
-| 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 6차 note 향 손실 글 게시 후보. 게시 전 `/aroma-loss-goma`, `/quick-answer` production 검증. |
+| 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 6차 note 향 손실 글 게시 후보. 게시 전 `/aroma-loss-goma`, `/quick-answer` production 검증. 문안은 Kadoya 5g使い切りパック, Ottogi 110ml, Kim-san 搾りたて와 비교해 100ml가 남는 이유를 묻도록 보정한다. |
 | 댓글/폼 1~4건 | 질적 탐색 | strong 기준으로 수동 판정. 모자란 문항을 기록하고 추가 질문. |
 | strong 응답 5건 이상 | 문제 fit 후보 | 결제/예약 전 수입/표시/단가 gate로 이동. |
 
@@ -47,6 +47,12 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\record_note
 3. 응답 0 또는 약한 응답의 원인이 `상품이 너무 넓음`으로 보인다.
 4. `/answer-note?src=note_content_aromaloss`와 `/quick-answer?src=note_content_aromaloss`가 6차 note URL 없이도 note 댓글 CTA를 숨기는 상태다.
 5. 게시 후 실제 note URL을 source routing에 추가할 시간이 있다.
+
+게시 직전 문안 점검:
+
+- `大きいごま油、使い切る前に香りが弱くなりますか？`만 묻지 않는다.
+- `5gの使い切りパック`, `110mlの安い韓国ごま油`, `100ml前後の搾りたてごま油` 중 무엇을 고르는지 묻는다.
+- 100ml 긍정은 향, 사용 기간, 제조일/압착일, 시식, 차광병, 재구매 편의 중 하나 이상의 이유가 있어야 강하게 본다.
 
 ## 4. 6차 note 게시 후 즉시 할 일
 

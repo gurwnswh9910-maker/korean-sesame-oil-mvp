@@ -27,7 +27,7 @@
 - note dashboard views/comments/スキ는 `scripts/record_note_dashboard_snapshot.py`로 `experiments/note_dashboard_snapshots.csv`에 기록한다. 먼저 `--dry-run`으로 숫자 파싱을 확인한 뒤 실제 기록하고, `scripts/summarize_validation_signals.py`를 재실행한다.
 - 개봉 후 향 손실/큰 병 부담 검증은 `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`와 source `content_aromaloss`를 사용한다. note 원고는 `mvp/note_aromaloss_posting_packet.md`에 준비됐지만 24h 재확인 전 live note 게시하지 않는다.
 - 매대 앞 선택 피로/신선도 증거 검증은 `https://korean-sesame-oil-mvp.vercel.app/shelf-check`와 짧은 경로 `https://korean-sesame-oil-mvp.vercel.app/shelf`를 사용한다. source는 `content_shelfcheck`다. 이 검증은 `한국식이면 좋다`가 아니라 실제로 본 후보 상품, 용량·가격, 안 사는 이유, 제조일/압착/마지막 향 보존/재구매 편의 같은 전환 증거가 있는 응답을 강한 신호로 센다.
-- `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`이다. Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교한 이유가 없는 호감 반응은 강한 수요로 세지 않는다.
+- `참기름 팔기` 목표를 더 작은 욕구/문제로 다시 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 현재 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`를 묻는 것이다. Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교한 이유가 없는 호감 반응은 강한 수요로 세지 않는다.
 - 기존 대체재/가격 기준은 `research/07_existing_substitute_price_map_20260628.md`를 본다. Ottogi 110ml 506~518円, Kuki 600g 1,046円, Kim-san 계열 搾りたて 100~120ml 1,500円대 대체재를 알고도 남는 이유가 없는 100ml 1,480円 긍정은 약한 신호로 둔다.
 - 향 손실/큰 병 부담의 고의도 오프라인 검증은 `https://korean-sesame-oil-mvp.vercel.app/field-aroma`와 source `offline_aromaloss`를 사용한다. QR은 `https://korean-sesame-oil-mvp.vercel.app/quick-answer?src=offline_aromaloss`로 바로 보낸다. 실제 인터뷰 원본은 `experiments/field_interview_log.csv`에 기록되기 전까지 응답으로 세지 않는다.
 - note/모바일 유입에서는 QR을 CTA로 쓰지 않는다. `https://korean-sesame-oil-mvp.vercel.app/answer-note` 모바일 응답 허브, note 댓글 템플릿, 탭 가능한 `/share` 링크를 우선한다.
@@ -38,6 +38,7 @@
 - GitHub Pages, GitHub Issue, 저장소 파일은 운영/감사용으로 유지한다. 일본 소비자에게 "참기름을 사거나 응답하는 곳"처럼 앞세우지 않는다.
 - note는 사용자가 이 프로젝트에 한해 자유 게시를 허용했다. X, Threads, Konest, 다른 커뮤니티는 별도 허용 전 게시하지 않는다.
 - 실제 검증 신호는 공개 답글 URL, Notion export, GitHub waitlist issue, 오프라인 인터뷰 기록처럼 원본이 남는 데이터만 센다.
+- 공개 답글은 `scripts/record_public_social_response.py`로 기록한다. strong 판정을 위해 `--brand-store`, `--volume-price`, `--use-up-period`, `--substitute-comparison`, `--needed-proof`를 가능한 한 채운다.
 - 조회수, 좋아요, 스키, 공유는 채널 품질 지표로만 기록하고, 구매/수요 응답으로 세지 않는다.
 
 ## 현재 canonical 공개면

@@ -105,8 +105,8 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
 - note 1~5차 게시물은 `note_kfood`, `note_content_travel`, `note_content_shinokubo`, `note_content_homecook`, `note_content_homecook_ricebowl` source로 별도 기록한다.
 - Vercel article은 `article` source로 Notion 응답을 기록한다. GitHub fallback은 내부용으로만 본다.
-- X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다.
-- 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.
+- X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다. 기록 시 구매처, 브랜드/店名, 용량·가격, 1병 사용 기간, 기존 대체재 비교, 필요한 증거, 100ml 가격 반응을 가능한 한 분리해 남긴다.
+- 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다. example row는 집계에서 제외된다.
 - Notion 응답은 Notion UI/export로 확인한다.
 - GitHub fallback 응답은 `experiments/waitlist_summary.md` 또는 GitHub Issues에서 확인한다.
 - 공개 X 응답은 검색/수동 확인 후 `experiments/public_social_responses.csv`로 옮긴다.
