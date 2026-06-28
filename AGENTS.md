@@ -33,6 +33,7 @@
 - 6차 후보인 개봉 후 향 손실/큰 병 부담 note 원고는 `mvp/note_aromaloss_posting_packet.md`에 `ready_not_published`로 준비돼 있다. 24h 재확인 전에는 live note 게시하지 않는다.
 - 24h 이후 실행 게이트는 `mvp/post_24h_action_packet_20260628.md`와 `검증/고의도_채널_KPI_및_다음실험_20260628.md`를 본다. note 1~5 합산 views가 30 미만이고 응답 0이면 유통 실패로 보고 6차 note를 바로 게시하지 않는다.
 - note dashboard snapshot은 `scripts/record_note_dashboard_snapshot.py`로 `experiments/note_dashboard_snapshots.csv`에 기록한다. 먼저 `--dry-run`으로 확인하고 실제 기록 후 재집계한다.
+- note 공개 상태/댓글/スキ는 `scripts/check_note_public_api.py`로 확인한다. 이 스크립트는 조회수를 주지 않으므로 24h gate의 views는 대시보드 snapshot으로만 기록한다.
 - 매대 앞 선택 피로/신선도 증거 보강은 `research/06_shelf_choice_freshness_proof_20260628.md`를 본다. 이 축은 소량병 자체보다 제조일, 압착, 차광/보관, 마지막 향 보존, 재구매 편의가 실제 전환 이유인지 묻는다.
 - `참기름 팔기`를 더 구체적인 욕구/문제로 해석할 때는 `검증/참기름_팔기_욕구_세분화_20260628.md`와 `research/08_micro_jtbd_and_competing_solutions_20260628.md`를 먼저 본다. 최신 보정은 `사용량-향 보존 불일치`, `대체재 선택 피로`, `搾りたて 체험 욕구`, `신오쿠보 밖 재구매 불편`, `요리 마지막 향`, `선물/나눔`에 더해 `Kadoya 5g使い切りパック보다 100ml가 나은 이유`까지 묻는 것이다. Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교되는 응답만 강하게 본다.
 - GitHub Pages와 GitHub Issue Form은 검증 기록, 자동 집계, 내부 fallback으로만 본다. 일본 소비자-facing 구매/응답 화면으로 앞세우지 않는다.

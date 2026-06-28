@@ -1,6 +1,6 @@
 # Waitlist Response Summary
 
-Generated at: 2026-06-28T03:44:45+00:00
+Generated at: 2026-06-28T12:52:03+09:00
 Repository: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp
 
 | Metric | Value |
