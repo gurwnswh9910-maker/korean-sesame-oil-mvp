@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from summarize_validation_signals import has_recent_purchase, recommendation, split_submission
+from summarize_validation_signals import has_recent_purchase, recommendation, split_submission, substitute_gap, use_up_burden
 
 
 def base_metrics() -> dict[str, int]:
@@ -65,9 +65,13 @@ def test_candidate_stop_or_resegment() -> None:
 def test_shelfcheck_submission_fields_parse() -> None:
     fields = split_submission(
         "流入元: content_shelfcheck / 最後に買ったまたは見た場所: 棚で見ている / "
-        "候補のブランドや店名: 韓国スーパーの棚 / 残りが少ない時の香り: 途中で弱くなる"
+        "候補のブランドや店名: 韓国スーパーの棚 / 1本を使い切る期間: 半年以上 / "
+        "今の候補で十分か: 香り・鮮度が不安 / 残りが少ない時の香り: 途中で弱くなる"
     )
     assert fields["最後に買ったまたは見た場所"] == "棚で見ている"
+    assert fields["1本を使い切る期間"] == "半年以上"
+    assert use_up_burden(fields["1本を使い切る期間"])
+    assert substitute_gap(fields["今の候補で十分か"])
     assert has_recent_purchase(fields["最後に買ったまたは見た場所"])
 
 

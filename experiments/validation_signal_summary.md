@@ -1,6 +1,6 @@
 # Validation Signal Summary
 
-Generated at: 2026-06-28T02:12:41+00:00
+Generated at: 2026-06-28T11:36:47+09:00
 
 Verdict: `insufficient_external_evidence`
 
@@ -22,6 +22,8 @@ Verdict: `insufficient_external_evidence`
 | Notion + GitHub responses | 0 |
 | Public social responses | 0 |
 | Aroma memory positive | 0 |
+| Use-up or aroma-retention burden signals | 0 |
+| Existing-substitute gap signals | 0 |
 | 100ml price-bearing responses | 0 |
 | 100ml price positive or conditional | 0 |
 | 100ml price positive share | n/a |

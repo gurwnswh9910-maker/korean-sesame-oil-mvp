@@ -6,6 +6,8 @@
 
 - Landing: `https://korean-sesame-oil-mvp.vercel.app/`
 - Content MVP: `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma`
+- Aroma-loss MVP: `https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma`
+- Shelf-check MVP: `https://korean-sesame-oil-mvp.vercel.app/shelf-check`
 - Share note: `https://korean-sesame-oil-mvp.vercel.app/share`
 - Mobile note answer hub: `https://korean-sesame-oil-mvp.vercel.app/answer-note`
 - Structured quick answer: `https://korean-sesame-oil-mvp.vercel.app/quick-answer`
@@ -20,7 +22,7 @@
 
 현재 우선 메시지: `韓国旅行や新大久保で、搾りたてのごま油の香りを覚えている人`을 먼저 찾는다. 넓은 주부층보다 과거 경험과 대체재 인지가 있는 사람을 먼저 검증한다.
 
-현재 우선 문제: `참기름을 사고 싶은가`가 아니라 마지막 구매 장소, 향이 끝까지 남았는지, 일본에서 다시 살 조건이다. 자세한 가설은 `검증/욕구_문제_가설_20260627.md`를 본다.
+현재 우선 문제: `참기름을 사고 싶은가`가 아니라 마지막 구매 장소, 사용량 대비 향 보존, 기존 Kuki/Kadoya/Ottogi/신오쿠보 搾りたて 대체재와 비교했을 때 일본에서 다시 살 조건이다. 최신 가설은 `검증/참기름_팔기_욕구_세분화_20260628.md`를 우선하고, 누적 기록은 `검증/욕구_문제_가설_20260627.md`를 본다.
 
 ### 1. note 설명형 게시 1개
 
@@ -45,6 +47,13 @@ https://note.com/dreamy_viola8978/n/n3f3af286cf6d
 ```
 
 이 글의 링크는 `https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma?src=note_content_travel`이며 제품 가격보다 여행/신오쿠보 구매 경험을 먼저 묻는다.
+
+추가 note 상태:
+
+- 3차 신오쿠보/한국식품점 대체재 체크: `https://note.com/dreamy_viola8978/n/n700b325ba824`
+- 4차 홈쿡/마지막 향 체크: `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`
+- 5차 한국김/TKG 밥 한 그릇 체크: `https://note.com/dreamy_viola8978/n/nbb21605544ca`
+- 6차 향 손실 후보 원고: `mvp/note_aromaloss_posting_packet.md`, `ready_not_published`
 
 ### 2. X/Threads 짧은 게시 1개
 
@@ -94,7 +103,7 @@ Konest는 규칙 확인 또는 운영자 문의 전까지 게시하지 않는다
 
 - 온라인 게시 후 `experiments/channel_posting_log.csv`의 `posted`, `post_url`, `visits`, `form_submits`, `replies`를 업데이트한다.
 - note 게시 후 24h/72h 전체뷰, 댓글, 스키를 기록한다.
-- note 2차 콘텐츠 게시물은 `note_content_travel` source로 별도 기록한다.
+- note 1~5차 게시물은 `note_kfood`, `note_content_travel`, `note_content_shinokubo`, `note_content_homecook`, `note_content_homecook_ricebowl` source로 별도 기록한다.
 - Vercel article은 `article` source로 Notion 응답을 기록한다. GitHub fallback은 내부용으로만 본다.
 - X 공개 응답은 해시태그 `#韓国ごま油検証`이 붙은 실제 응답 URL만 `experiments/public_social_responses.csv`에 기록한다. 단순 공유는 응답으로 세지 않는다.
 - 오프라인 대화는 `experiments/field_interview_log.csv`에 1명 1행으로 기록한다.

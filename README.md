@@ -12,6 +12,9 @@
 - `research/02_import_label_unit_economics_gate.md`: 일본 수입·표시·원가 gate
 - `research/03_live_signal_update_20260627.md`: 현재 웹 신호와 가설 보정
 - `research/04_public_discovery_and_benchmark_20260627.md`: MVP 응답 발견 여부와 주변 가격/대체재 벤치마크
+- `research/05_aroma_retention_review_language_20260628.md`: 개봉 후 향 손실/큰 병 부담 언어 검증
+- `research/06_shelf_choice_freshness_proof_20260628.md`: 매대 앞 선택 피로/신선도 증거 검증
+- `검증/참기름_팔기_욕구_세분화_20260628.md`: `참기름 팔기`를 사용량-향 보존, 대체재 선택 피로, 搾りたて 체험, 재구매 불편 등으로 세분화한 최신 KB
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안
 - `mvp/korea-trip-goma.html`: 제품 외 콘텐츠형 타겟 밀집 검증 페이지
@@ -49,12 +52,19 @@
 
 - Landing: https://korean-sesame-oil-mvp.vercel.app/
 - Content MVP: https://korean-sesame-oil-mvp.vercel.app/korea-trip-goma
+- Shin-Okubo substitute check: https://korean-sesame-oil-mvp.vercel.app/shinokubo-goma
+- Home-cooking last aroma check: https://korean-sesame-oil-mvp.vercel.app/homecook-goma
+- Aroma-loss check: https://korean-sesame-oil-mvp.vercel.app/aroma-loss-goma
+- Shelf-choice check: https://korean-sesame-oil-mvp.vercel.app/shelf-check
+- Shelf-choice short URL: https://korean-sesame-oil-mvp.vercel.app/shelf
 - Share note: https://korean-sesame-oil-mvp.vercel.app/share
 - Short answer link for note/mobile: https://korean-sesame-oil-mvp.vercel.app/answer-note
+- Structured quick answer: https://korean-sesame-oil-mvp.vercel.app/quick-answer
 - Public article: https://korean-sesame-oil-mvp.vercel.app/note
 - Field interview QR: https://korean-sesame-oil-mvp.vercel.app/field
+- Aroma-loss field QR: https://korean-sesame-oil-mvp.vercel.app/field-aroma
 - Printable flyer PDF: https://korean-sesame-oil-mvp.vercel.app/field-flyer
-- note post: https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9
+- note posts: 1차 https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9 / 2차 https://note.com/dreamy_viola8978/n/n3f3af286cf6d / 3차 https://note.com/dreamy_viola8978/n/n700b325ba824 / 4차 https://note.com/dreamy_viola8978/n/n08bad3dce2a9 / 5차 https://note.com/dreamy_viola8978/n/nbb21605544ca
 - Primary validation form: https://www.notion.so/forms/38c5da6ea39c8149beb3000c9ab0ea98
 - Public GitHub fallback: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/new?template=waitlist.yml
 - Validation tracker: https://github.com/gurwnswh9910-maker/korean-sesame-oil-mvp/issues/1

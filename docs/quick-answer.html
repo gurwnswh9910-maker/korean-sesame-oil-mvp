@@ -241,8 +241,8 @@
     <div class="wrap hero">
       <div>
         <p class="eyebrow">正式販売前の需要確認</p>
-        <h1>最後に買ったごま油のことだけ、30秒で残せます。</h1>
-        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。覚えている範囲だけで大丈夫です。</p>
+        <h1>ごま油1本、香りが残るうちに使い切れますか。</h1>
+        <p class="lead">韓国旅行、新大久保、韓国スーパー、家の韓国料理。今の候補で十分か、覚えている範囲だけで大丈夫です。</p>
       </div>
     </div>
   </header>
@@ -267,13 +267,16 @@
           <legend>覚えている商品情報</legend>
           <div class="inline">
             <label>ブランドや店名
-              <input type="text" name="brand" autocomplete="off" placeholder="例: いま見ている候補、店名、メーカー名">
+              <input type="text" name="brand" autocomplete="off" placeholder="例: かどや / 九鬼 / オットゥギ / キムさんの店 / いま見ている候補">
             </label>
             <label>容量と価格
               <input type="text" name="volume" autocomplete="off" placeholder="例: 100mlくらい / 300g / 1,000円前後">
             </label>
-            <label>開封後どのくらい
+            <label>開封してからの期間
               <input type="text" name="opened" autocomplete="off" placeholder="例: 1か月以内 / 半年くらい / 覚えていない">
+            </label>
+            <label>1本を使い切る期間
+              <input type="text" name="useup" autocomplete="off" placeholder="例: 1〜2か月 / 3〜4か月 / 半年以上 / 使い切れない">
             </label>
           </div>
         </fieldset>
@@ -302,13 +305,29 @@
         </fieldset>
 
         <fieldset>
+          <legend>今の候補で十分ですか</legend>
+          <div class="choices">
+            <label class="option"><input type="radio" name="substitute" value="今ので十分">今ので十分</label>
+            <label class="option"><input type="radio" name="substitute" value="香り・鮮度が不安">香り・鮮度が不安</label>
+            <label class="option"><input type="radio" name="substitute" value="使い切れない">使い切れない</label>
+            <label class="option"><input type="radio" name="substitute" value="選び方が分からない">選び方が分からない</label>
+            <label class="option"><input type="radio" name="substitute" value="しぼりたてなら比べたい">しぼりたてなら比べたい</label>
+            <label class="option"><input type="radio" name="substitute" value="覚えていない">覚えていない</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
           <legend>日本で買い直すなら決め手</legend>
           <div class="choices">
             <label class="option"><input type="checkbox" name="reason" value="製造日">製造日</label>
-            <label class="option"><input type="checkbox" name="reason" value="強い香り">強い香り</label>
-            <label class="option"><input type="checkbox" name="reason" value="少量">少量</label>
+            <label class="option"><input type="checkbox" name="reason" value="搾った日">搾った日</label>
+            <label class="option"><input type="checkbox" name="reason" value="試食">試食</label>
+            <label class="option"><input type="checkbox" name="reason" value="最後まで残る香り">最後まで残る香り</label>
+            <label class="option"><input type="checkbox" name="reason" value="100ml小瓶">100ml小瓶</label>
+            <label class="option"><input type="checkbox" name="reason" value="遮光瓶">遮光瓶</label>
+            <label class="option"><input type="checkbox" name="reason" value="1〜2か月で使い切れる">1〜2か月で使い切れる</label>
             <label class="option"><input type="checkbox" name="reason" value="価格">価格</label>
-            <label class="option"><input type="checkbox" name="reason" value="買いやすさ">買いやすさ</label>
+            <label class="option"><input type="checkbox" name="reason" value="買い直しやすさ">買い直しやすさ</label>
             <label class="option"><input type="checkbox" name="reason" value="その他">その他</label>
           </div>
         </fieldset>
@@ -396,9 +415,11 @@
           "最後に買ったまたは見た場所: " + one("place"),
           "ブランドや店名: " + text("brand"),
           "容量と価格: " + text("volume"),
-          "開封後どのくらい: " + text("opened"),
+          "開封してからの期間: " + text("opened"),
+          "1本を使い切る期間: " + text("useup"),
           "使いたい料理: " + many("dish"),
           "香りは最後まで残ったか: " + one("aroma"),
+          "今の候補で十分か: " + one("substitute"),
           "日本で買い直すなら決め手: " + many("reason"),
           "100ml 1,480円: " + one("price"),
           "コメント: " + text("comment")

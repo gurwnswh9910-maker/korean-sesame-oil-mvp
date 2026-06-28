@@ -28,6 +28,8 @@ MAYBE_WORDS = ("迷う", "条件", "サンプル", "試食", "maybe")
 NO_WORDS = ("いいえ", "ない", "興味なし", "高い", "no", "n")
 NEGATIVE_PURCHASE_WORDS = ("買っていない", "覚えていない", "なし", "ない", "未購入")
 SAMPLE_WORDS = ("サンプル", "試食", "少量", "買いたい", "購入", "入荷", "知らせて")
+USE_UP_BURDEN_WORDS = ("使い切れない", "半年", "3〜4か月", "3～4か月", "3か月", "4か月", "弱くなる", "油っぽくなる")
+SUBSTITUTE_GAP_WORDS = ("不安", "使い切れない", "分からない", "比べたい", "弱くなる", "足りない")
 
 
 @dataclass
@@ -41,6 +43,8 @@ class Respondent:
     bundle_price_mentioned: bool
     bundle_price_positive: bool
     sample_or_purchase_signal: bool
+    use_up_burden_signal: bool = False
+    substitute_gap_signal: bool = False
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -91,6 +95,17 @@ def has_recent_purchase(text: str) -> bool:
     if contains_any(text, NEGATIVE_PURCHASE_WORDS):
         return False
     return True
+
+
+def use_up_burden(text: str) -> bool:
+    return contains_any(normalize(text), USE_UP_BURDEN_WORDS)
+
+
+def substitute_gap(text: str) -> bool:
+    text = normalize(text)
+    if not text or "今ので十分" in text or text == "十分":
+        return False
+    return contains_any(text, SUBSTITUTE_GAP_WORDS)
 
 
 def parse_source_from_title(title: str) -> str:
@@ -147,10 +162,17 @@ def notion_respondents() -> list[Respondent]:
             or fields.get("香りは最後まで残ったか", "")
             or fields.get("残りが少ない時の香り", "")
         )
+        useup = (
+            fields.get("1本を使い切る期間", "")
+            or fields.get("開封後どのくらい", "")
+            or fields.get("開封してからの期間", "")
+            or fields.get("開封後どのくらいで使い切れそうか", "")
+        )
+        substitute = fields.get("今の候補で十分か", "")
         single = first_present(row, ("100ml 1,480円", "single_price", "Price reaction")) or fields.get("100ml 1,480円", "")
         bundle = first_present(row, ("3本 3,980円", "bundle_price")) or fields.get("3本 3,980円", "")
         comment = first_present(row, ("Comment", "comment", "Notes", "コメント")) or fields.get("コメント", "")
-        joined = " ".join([raw, comment, recent, aroma, single, bundle])
+        joined = " ".join([raw, comment, recent, aroma, useup, substitute, single, bundle])
         if not joined.strip():
             continue
         respondents.append(
@@ -164,6 +186,8 @@ def notion_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(bundle),
                 bundle_price_positive=positive(bundle),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                use_up_burden_signal=use_up_burden(" ".join([useup, aroma, comment])),
+                substitute_gap_signal=substitute_gap(" ".join([substitute, comment])),
             )
         )
     return respondents
@@ -187,6 +211,8 @@ def github_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price", "")),
                 bundle_price_positive=positive(row.get("bundle_price", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                use_up_burden_signal=use_up_burden(joined),
+                substitute_gap_signal=substitute_gap(joined),
             )
         )
     return respondents
@@ -215,6 +241,8 @@ def field_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "")),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "")),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                use_up_burden_signal=use_up_burden(joined),
+                substitute_gap_signal=substitute_gap(joined),
             )
         )
     return respondents
@@ -241,6 +269,8 @@ def public_social_respondents() -> list[Respondent]:
                 bundle_price_mentioned=mentioned(row.get("bundle_price_reaction", "") or text),
                 bundle_price_positive=positive(row.get("bundle_price_reaction", "") or text),
                 sample_or_purchase_signal=contains_any(joined, SAMPLE_WORDS),
+                use_up_burden_signal=use_up_burden(joined),
+                substitute_gap_signal=substitute_gap(joined),
             )
         )
     return respondents
@@ -348,6 +378,8 @@ def render_summary(respondents: list[Respondent], metrics: dict[str, int], statu
         f"| Notion + GitHub responses | {metrics['form_or_github_responses']} |",
         f"| Public social responses | {metrics['public_social_responses']} |",
         f"| Aroma memory positive | {metrics['aroma_memory_positive']} |",
+        f"| Use-up or aroma-retention burden signals | {metrics['use_up_burden_signals']} |",
+        f"| Existing-substitute gap signals | {metrics['substitute_gap_signals']} |",
         f"| 100ml price-bearing responses | {metrics['single_price_responses']} |",
         f"| 100ml price positive or conditional | {metrics['single_price_positive']} |",
         f"| 100ml price positive share | {percent(metrics['single_price_positive'], metrics['single_price_responses'])} |",
@@ -404,6 +436,8 @@ def main() -> int:
         "offline_recent_purchase": sum(1 for respondent in respondents if respondent.channel == "offline" and respondent.recent_purchase),
         "sample_or_purchase_requests": count_true(respondents, "sample_or_purchase_signal"),
         "aroma_memory_positive": count_true(respondents, "aroma_memory"),
+        "use_up_burden_signals": count_true(respondents, "use_up_burden_signal"),
+        "substitute_gap_signals": count_true(respondents, "substitute_gap_signal"),
         "single_price_responses": count_true(respondents, "single_price_mentioned"),
         "single_price_positive": count_true(respondents, "single_price_positive"),
         "bundle_price_responses": count_true(respondents, "bundle_price_mentioned"),
