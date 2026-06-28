@@ -14,6 +14,7 @@
 - `research/04_public_discovery_and_benchmark_20260627.md`: MVP 응답 발견 여부와 주변 가격/대체재 벤치마크
 - `research/05_aroma_retention_review_language_20260628.md`: 개봉 후 향 손실/큰 병 부담 언어 검증
 - `research/06_shelf_choice_freshness_proof_20260628.md`: 매대 앞 선택 피로/신선도 증거 검증
+- `research/07_existing_substitute_price_map_20260628.md`: Kadoya/Kuki/Ottogi/Kim-san 기존 대체재와 가격 기준 지도
 - `검증/참기름_팔기_욕구_세분화_20260628.md`: `참기름 팔기`를 사용량-향 보존, 대체재 선택 피로, 搾りたて 체험, 재구매 불편 등으로 세분화한 최신 KB
 - `research/hypothesis_scorecard.csv`: 가설 점수표
 - `mvp/index.html`: 일본어 MVP 랜딩 페이지 초안

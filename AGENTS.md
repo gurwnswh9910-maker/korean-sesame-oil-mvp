@@ -26,6 +26,7 @@
 - note/모바일 유입의 기본 응답 링크는 `https://korean-sesame-oil-mvp.vercel.app/answer-note`다. 이 링크는 모바일 응답 허브이며 note 댓글, Notion Form, 복사용 메모를 선택하게 한다. QR은 오프라인 종이/대면 인터뷰에서만 쓴다.
 - 구조화 응답 생성기는 `https://korean-sesame-oil-mvp.vercel.app/quick-answer`다. Notion이 1줄 Submission만 받는 한, 최근 구매처 또는 현재 보고 있는 후보/요리/향 보존/전환 조건을 고르게 한 뒤 1줄 메모로 복사하게 한다.
 - 2026-06-28T11:38+09:00 기준 `/quick-answer`, `/aroma-loss-goma`, `/shelf-check`, `/shelf`는 `1本を使い切る期間`과 `今の候補で十分か`를 묻는다. 집계 요약도 `Use-up or aroma-retention burden signals`, `Existing-substitute gap signals`를 supporting metric으로 표시한다.
+- 기존 대체재/가격 지도는 `research/07_existing_substitute_price_map_20260628.md`를 본다. Ottogi 110ml 506~518円, Kuki 600g 1,046円, 신오쿠보 Kim-san 계열 搾りたて 100~120ml 1,500円대와 비교해 남는 이유가 있어야 100ml 1,480円 가설을 강하게 본다.
 - `/answer-note`와 `/quick-answer`의 note 댓글 버튼은 source별 게시물로 라우팅한다. `note_content_travel`은 note 2차, `note_content_shinokubo`는 note 3차, `note_content_homecook`은 note 4차, `note_content_homecook_ricebowl`은 note 5차로 보내야 한다.
 - note 게시물은 5개다. 1차 제품/입하 안내형은 `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, 2차 여행/사용 콘텐츠형은 `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, 3차 신오쿠보/한국식품점 대체재 체크형은 `https://note.com/dreamy_viola8978/n/n700b325ba824`, 4차 홈쿡/마지막 향 체크형은 `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`, 5차 한국김/TKG 밥 한 그릇 체크형은 `https://note.com/dreamy_viola8978/n/nbb21605544ca`다.
 - 6차 후보인 개봉 후 향 손실/큰 병 부담 note 원고는 `mvp/note_aromaloss_posting_packet.md`에 `ready_not_published`로 준비돼 있다. 24h 재확인 전에는 live note 게시하지 않는다.
