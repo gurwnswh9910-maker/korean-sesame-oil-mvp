@@ -7,10 +7,15 @@ import argparse
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Callable, Iterable
 
 from check_note_public_api import extract_note_key, fetch_note, now_local
+
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
 QUEUE_CSV = Path("experiments/note_comment_execution_queue.csv")

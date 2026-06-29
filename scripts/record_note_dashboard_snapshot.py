@@ -18,6 +18,7 @@ NOTE_URLS = {
     "note_content_shinokubo": "https://note.com/dreamy_viola8978/n/n700b325ba824",
     "note_content_homecook": "https://note.com/dreamy_viola8978/n/n08bad3dce2a9",
     "note_content_homecook_ricebowl": "https://note.com/dreamy_viola8978/n/nbb21605544ca",
+    "note_content_aromaloss": "https://note.com/dreamy_viola8978/n/n363650c8697f",
 }
 NOTE_TITLES = {
     "note_kfood": "韓国旅行で覚えた「しぼりたてごま油の香り」は、日本の家でも使いたいですか？",
@@ -25,6 +26,7 @@ NOTE_TITLES = {
     "note_content_shinokubo": "新大久保で韓国ごま油、いつもどれを買っていますか？",
     "note_content_homecook": "ビビンバとナムル、最後のごま油の香りは足りていますか？",
     "note_content_homecook_ricebowl": "韓国のりご飯とTKG、ごま油を最後に少し足しますか？",
+    "note_content_aromaloss": "ごま油、炒めるより最後に香らせていますか？",
 }
 
 

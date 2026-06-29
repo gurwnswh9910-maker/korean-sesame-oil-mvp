@@ -53,7 +53,7 @@ https://note.com/dreamy_viola8978/n/n3f3af286cf6d
 - 3차 신오쿠보/한국식품점 대체재 체크: `https://note.com/dreamy_viola8978/n/n700b325ba824`
 - 4차 홈쿡/마지막 향 체크: `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`
 - 5차 한국김/TKG 밥 한 그릇 체크: `https://note.com/dreamy_viola8978/n/nbb21605544ca`
-- 6차 향 손실 후보 원고: `mvp/note_aromaloss_posting_packet.md`, `ready_not_published`
+- 6차 향 손실/仕上げの香味油 체크: `https://note.com/dreamy_viola8978/n/n363650c8697f`
 
 ### 2. X/Threads 짧은 게시 1개
 

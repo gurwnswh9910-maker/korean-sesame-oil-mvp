@@ -1,9 +1,21 @@
 # note 게시 패킷: 큰 병/개봉 후 향 손실 체크
 
-상태: ready_not_published
+상태: published
 작성 시각: 2026-06-28T02:52+09:00
-최근 갱신: 2026-06-28T15:34+09:00
+최근 갱신: 2026-06-29T23:31+09:00
 게시 권한: note 계정은 이 프로젝트에 한해 Codex 자유 게시 허용. 다만 5개 note 직후 연속 게시로 보일 수 있어 24h 집계 재확인 뒤 게시 여부를 결정한다.
+
+## 게시 결과
+
+- 공개 URL: https://note.com/dreamy_viola8978/n/n363650c8697f
+- 게시 시각: 2026-06-29T23:30:58+09:00
+- 제목: `ごま油、炒めるより最後に香らせていますか？`
+- source: `note_content_aromaloss`
+- 설정: 무료 글, 댓글 허용, 자동 번역 off, AI 학습 대가 환원 프로그램 off
+- 태그: `#ごま油`, `#韓国料理`, `#おうちごはん`, `#自炊`, `#韓国食品`
+- 공개 API 확인: 2026-06-29T23:31:31+09:00 기준 `published`, `can_comment=true`, `comment_count=0`, `like_count=0`
+- 비로그인 HTTP 확인: 200, 제목 포함, `/aroma-loss-goma?src=note_content_aromaloss`와 `/quick-answer?src=note_content_aromaloss` 링크 포함, HTML `noindex` 있음
+- 게시 직후 실제 응답 데이터는 아직 0명이다. 게시 완료는 새 검증면 추가이지 수요 검증 완료가 아니다.
 
 ## 게시 목적
 

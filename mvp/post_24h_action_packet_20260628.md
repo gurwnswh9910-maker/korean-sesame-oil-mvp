@@ -1,7 +1,7 @@
 # post-24h 실행 패킷
 
 작성 시각: 2026-06-28T12:05+09:00
-최근 갱신: 2026-06-28T21:56+09:00
+최근 갱신: 2026-06-29T23:31+09:00
 
 ## 목적
 
@@ -19,6 +19,15 @@
 - Gate: `problem_language_or_cta_failure_consider_aromaloss_note`
 
 해석: 유통 실패 기준인 views < 30은 피했지만, 실제 답변은 0이라 제품 검증 성공이 아니다. 다음 조치는 X/Threads 자동 게시가 아니라 6차 향 손실 note 후보의 pre-publish routing 확인이다. 게시 후보를 보려면 `/aroma-loss-goma`, `/quick-answer`, `/field-aroma` production 경로와 `note_content_aromaloss` source 라우팅을 먼저 확인한다.
+
+2026-06-29T23:31+09:00 실행 결과:
+
+- 6차 note 게시 완료: `https://note.com/dreamy_viola8978/n/n363650c8697f`
+- source: `note_content_aromaloss`
+- 게시 전 production route/pre-publish check 통과.
+- 게시 후 public API는 `published`, `can_comment=true`, 댓글 0, スキ 0.
+- `/answer-note`와 `/quick-answer`의 `note_content_aromaloss` source routing은 6차 note URL로 갱신한다.
+- 게시 직후 실제 응답 데이터는 0명이다. 이후 판단은 새 댓글/폼/공개 답글/오프라인 원본 응답으로만 한다.
 
 ## 1. 먼저 확인할 것
 
@@ -75,24 +84,24 @@ $env:PYTHONUTF8='1'; $env:PYTHONIOENCODING='utf-8'; python .\scripts\run_post_24
 | 결과 | 판정 | 실행 |
 |---|---|---|
 | 합산 views < 30, 댓글/폼 0 | 유통 실패 | 6차 note 게시 보류. `mvp/post_gate_external_channel_packet_20260628.md` 기준으로 X/Threads URL 없는 공개 질문 1회, 오프라인 인터뷰, 또는 Konest 규칙 확인 중 1개만 선택한다. |
-| 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 6차 note 향 손실/향 타이밍 글 게시 후보. 게시 전 `/aroma-loss-goma`, `/quick-answer`, `/field-aroma` production 검증. 문안은 Kadoya 5g使い切りパック, Ottogi 110ml, Kim-san 搾りたて로 충분한지와 `香りが一番よかった使い方`를 함께 묻는다. |
+| 합산 views >= 30, 댓글/폼 0 | 문제 언어 또는 CTA 실패 | 2026-06-29T23:31+09:00 6차 note 향 손실/향 타이밍 글을 게시했다. 이후에는 새 글을 더 늘리기보다 note 6 URL routing, 댓글/폼/공개 답글/오프라인 원본 응답, 대시보드 지표를 확인한다. |
 | 댓글/폼/공개 답글/오프라인 1~4건 | 질적 탐색 | 원본 응답을 열어 strong 기준으로 수동 판정. 모자란 문항을 기록하고 추가 질문. |
 | strong 응답 5건 이상 | 문제 fit 후보 | 결제/예약 전 수입/표시/단가 gate로 이동. |
 
-## 3. 6차 note 게시 조건
+## 3. 6차 note 게시 전 조건 기록
 
-아래가 모두 true일 때만 `mvp/note_aromaloss_posting_packet.md`를 게시한다.
+아래 조건은 2026-06-29T23:31+09:00 게시 전에 사용한 체크리스트다. 현재 6차 note는 게시 완료됐으므로, 새 판단에는 이 조건을 반복 적용하지 말고 게시 후 확인 항목과 실제 응답 데이터를 본다.
 
 1. 24h 체크가 끝났다.
 2. note 1~5가 적어도 일부 타겟에게 도달했다.
 3. 응답 0 또는 약한 응답의 원인이 `상품이 너무 넓음`으로 보인다.
-4. `/answer-note?src=note_content_aromaloss`와 `/quick-answer?src=note_content_aromaloss`가 6차 note URL 없이도 note 댓글 CTA를 숨기는 상태다.
-5. 게시 후 실제 note URL을 source routing에 추가할 시간이 있다.
+4. 게시 전에는 `/answer-note?src=note_content_aromaloss`와 `/quick-answer?src=note_content_aromaloss`가 6차 note URL 없이 note 댓글 CTA를 숨기는 상태였다.
+5. 게시 후 실제 note URL을 source routing에 추가할 시간이 있었다.
 
 게시 직전 문안 점검:
 
 - `大きいごま油、使い切る前に香りが弱くなりますか？`만 묻지 않는다.
-- 최신 6차 note 후보 제목은 `冷奴やナムル、ごま油は最後まで香りますか？`다.
+- 실제 게시 제목은 `ごま油、炒めるより最後に香らせていますか？`다.
 - `5gの使い切りパック`, `110mlの安い韓国ごま油`, `100ml前後の搾りたてごま油` 중 무엇을 고르는지 묻는다.
 - `香りが一番よかった使い方`를 물어, 단순 용량 문제가 아니라 향이 살아 있는 타이밍 문제인지 본다.
 - 100ml 긍정은 향, 사용 기간, 제조일/압착일, 시식, 차광병, 재구매 편의 중 하나 이상의 이유가 있어야 강하게 본다.

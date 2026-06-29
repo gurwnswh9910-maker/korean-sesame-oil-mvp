@@ -17,7 +17,7 @@
 - 검증 신호: 과거 구매 행동, 가격 수용, 사용 요리, note 댓글/폼 제출/공개 답글/후속 대화
 - Notion 데이터베이스: `韓国式しぼりたてごま油 MVP 検証`
 - 도구 한계: Notion MCP로 생성한 공개 Form은 현재 `Submission` 1줄 입력만 노출된다. `/quick-answer`에서 다문항처럼 선택하게 한 뒤 1줄 제출문을 자동 생성하고, `/answer-note`와 랜딩에서 이 경로로 보낸다. 폼이 부담스러운 사람은 note 댓글로 답하게 한다.
-- note 댓글 CTA는 source별로 분리한다. `note_kfood`는 1차 note `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, `note_content_travel`은 2차 note `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, `note_content_shinokubo`는 3차 note `https://note.com/dreamy_viola8978/n/n700b325ba824`, `note_content_homecook`은 4차 note `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`, `note_content_homecook_ricebowl`은 5차 note `https://note.com/dreamy_viola8978/n/nbb21605544ca`로 보낸다.
+- note 댓글 CTA는 source별로 분리한다. `note_kfood`는 1차 note `https://note.com/dreamy_viola8978/n/n77fa3f5a7fe9`, `note_content_travel`은 2차 note `https://note.com/dreamy_viola8978/n/n3f3af286cf6d`, `note_content_shinokubo`는 3차 note `https://note.com/dreamy_viola8978/n/n700b325ba824`, `note_content_homecook`은 4차 note `https://note.com/dreamy_viola8978/n/n08bad3dce2a9`, `note_content_homecook_ricebowl`은 5차 note `https://note.com/dreamy_viola8978/n/nbb21605544ca`, `note_content_aromaloss`는 6차 note `https://note.com/dreamy_viola8978/n/n363650c8697f`로 보낸다.
 
 ## 대체 권장 도구
 

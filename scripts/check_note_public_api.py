@@ -12,12 +12,17 @@ import urllib.request
 from datetime import datetime, timezone
 
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+
 NOTE_KEYS = {
     "note_kfood": "n77fa3f5a7fe9",
     "note_content_travel": "n3f3af286cf6d",
     "note_content_shinokubo": "n700b325ba824",
     "note_content_homecook": "n08bad3dce2a9",
     "note_content_homecook_ricebowl": "nbb21605544ca",
+    "note_content_aromaloss": "n363650c8697f",
 }
 
 NOTE_KEY_RE = re.compile(r"^n[0-9a-f]{12,}$", re.IGNORECASE)

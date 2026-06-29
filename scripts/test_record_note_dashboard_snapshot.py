@@ -41,7 +41,7 @@ def test_parse_dashboard_text_fill_missing_zero() -> None:
     )
     _, rows = parse_dashboard_text(text, fill_missing_zero=True)
     by_source = {row["source"]: row for row in rows}
-    assert len(rows) == 5
+    assert len(rows) == 6
     assert by_source["note_content_travel"]["views"] == "2"
     assert by_source["note_content_travel"]["comments"] == "1"
     assert by_source["note_kfood"]["views"] == "0"

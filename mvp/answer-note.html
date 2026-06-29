@@ -220,11 +220,12 @@
       var shinokuboNoteUrl = "https://note.com/dreamy_viola8978/n/n700b325ba824";
       var homecookNoteUrl = "https://note.com/dreamy_viola8978/n/n08bad3dce2a9";
       var ricebowlNoteUrl = "https://note.com/dreamy_viola8978/n/nbb21605544ca";
+      var aromalossNoteUrl = "https://note.com/dreamy_viola8978/n/n363650c8697f";
       function noteUrlForSource(value) {
         if (value.indexOf("note_content_homecook_ricebowl") === 0) return ricebowlNoteUrl;
         if (value.indexOf("note_content_homecook") === 0) return homecookNoteUrl;
         if (value.indexOf("note_content_shinokubo") === 0) return shinokuboNoteUrl;
-        if (value.indexOf("note_content_aromaloss") === 0) return "";
+        if (value.indexOf("note_content_aromaloss") === 0) return aromalossNoteUrl;
         if (value.indexOf("note_content") === 0) return travelNoteUrl;
         return primaryNoteUrl;
       }
